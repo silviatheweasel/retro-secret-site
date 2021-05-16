@@ -1,6 +1,6 @@
 import { ProductDetails } from "../Components/ProductDetails/ProductDetails";
 
-export const ProductPage = () => {
+export const ProductPage = ({ currentProduct }) => {
     return (
         <div>
             <nav>
@@ -10,7 +10,9 @@ export const ProductPage = () => {
             <button>Prev</button>
             <button>Next</button>
             <main>
-                <ProductDetails />
+                <ProductDetails 
+                    currentProduct={currentProduct} 
+                />
             </main>
         </div>
     )

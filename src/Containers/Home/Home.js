@@ -2,7 +2,7 @@ import { ProductGalary } from "../ProductGalary";
 
 
 const Home = ({ products, handleProductClick }) => {
-  
+
     return (<div>
             <div className="hero">
                 <img 
