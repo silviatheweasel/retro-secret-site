@@ -55,6 +55,7 @@ function App() {
     const filtededProduct = products.filter(product => product.name === productName)[0];
     setCurrentProduct(filtededProduct);
     setDisplayedPage("ProductPage");
+    window.scrollTo(0, 0);
   }
  
 

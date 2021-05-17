@@ -10,7 +10,7 @@ export const ProductDetails = ({ currentProduct }) => {
                         });
     }
     return (
-        <main>
+        <div className="product-details-container">
             <div className="thumbnails">
                 {images.map((image, i) => 
                     <img 
@@ -42,6 +42,6 @@ export const ProductDetails = ({ currentProduct }) => {
                 <button>Add to Cart</button>
             </div>
 
-        </main>
+        </div>
     )
 }
