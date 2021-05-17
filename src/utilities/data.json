@@ -1,0 +1,603 @@
+[
+    {
+      "id": "1",
+      "images": [
+        { 
+          "src": "https://static.wixstatic.com/media/01a936_68fe7ba344df450aaa93a489b431a972~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_68fe7ba344df450aaa93a489b431a972~mv2.webp",
+          "alt": ""
+        }, 
+        { 
+          "src": "https://static.wixstatic.com/media/01a936_6751a4de0bc0478ea035c78f5b9f25f6~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_6751a4de0bc0478ea035c78f5b9f25f6~mv2.webp",
+          "alt": ""
+        }, 
+        { 
+          "src": "https://static.wixstatic.com/media/01a936_86e289e243054bcea740ff3183efcf65~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_86e289e243054bcea740ff3183efcf65~mv2.webp",
+          "alt": ""
+        }, 
+        { 
+          "src": "https://static.wixstatic.com/media/01a936_673e4ab5fde34b7d803b818398fa94cf~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_673e4ab5fde34b7d803b818398fa94cf~mv2.webp",
+          "alt": ""
+        }
+      ],
+      "price": 23,
+      "name": "Scarlet Crystal Blossom Studs",
+      "category": "earrings",
+      "description": "These exquisite classical crystal studs are true art pieces. Gleaming radiantly, they give out a mesmerizing ladylike vibe. Their rich and vibrant scarlet colour makes them a perfect companion to scarlet lips and nails, promising ultimate feminine attraction.",
+      "main_image": { 
+        "src": "https://static.wixstatic.com/media/01a936_6751a4de0bc0478ea035c78f5b9f25f6~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_6751a4de0bc0478ea035c78f5b9f25f6~mv2.webp",
+        "alt": ""
+      },
+      "secondary_image": { 
+        "src": "https://static.wixstatic.com/media/01a936_68fe7ba344df450aaa93a489b431a972~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_68fe7ba344df450aaa93a489b431a972~mv2.webp",
+        "alt": ""
+      },
+      "length": 2.9,
+      "materials": "Artificial Crystals / Mixed Metal",
+      "quantity": 6
+    },
+    {
+      "id": "2",
+      "images": [        
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_cb68d151d6b146fab6d56c6cf4aa97e8~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_cb68d151d6b146fab6d56c6cf4aa97e8~mv2.webp",
+        "alt": ""
+      }, 
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_4c8b3849f71e446a9afbf39f3fbb3aa5~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_4c8b3849f71e446a9afbf39f3fbb3aa5~mv2.webp",
+        "alt": ""
+      }, 
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_6376225e74444861b9bc1f48f6cf715d~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_6376225e74444861b9bc1f48f6cf715d~mv2.webp",
+        "alt": ""
+      }, 
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_7d9e73fd65664db68f926d44a66692bd~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_7d9e73fd65664db68f926d44a66692bd~mv2.webp",
+        "alt": ""
+      }
+      ],
+      "price": 20,
+      "name": "Golden Spikes Fringe Necklace",
+      "category": "necklaces",
+      "description": "This punk-inspired short golden coloured necklace captures the spirit of strong, rebellious, yet elegant modern women in its design with vintage gold finish and abundant punk elements. Despite the heavy and armored look, this necklace is surprisingly light thanks to its thoughtful design, posing no burden to the wearer’s delicate neck.",
+      "main_image": {
+        "src": "https://static.wixstatic.com/media/01a936_cb68d151d6b146fab6d56c6cf4aa97e8~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_cb68d151d6b146fab6d56c6cf4aa97e8~mv2.webp",
+        "alt": ""
+      },
+      "secondary_image": {
+        "src": "https://static.wixstatic.com/media/01a936_4c8b3849f71e446a9afbf39f3fbb3aa5~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_4c8b3849f71e446a9afbf39f3fbb3aa5~mv2.webp",
+        "alt": ""
+      },
+      "length": 42,
+      "materials": "Mixed Metal / Plastic",
+      "quantity": 4
+    },
+    {
+      "id": "3",
+      "images": [        
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_6282d59a29664a04be16b795b522a26b~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_6282d59a29664a04be16b795b522a26b~mv2.webp",
+        "alt": ""
+      }, 
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_5c6ca3dc35904e4baabcbbd1d79ee43b~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_5c6ca3dc35904e4baabcbbd1d79ee43b~mv2.webp",
+        "alt": ""
+      }, 
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_7b55ce8a099046ab8ebdcb6a6092372a~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_7b55ce8a099046ab8ebdcb6a6092372a~mv2.webp",
+        "alt": ""
+      }, 
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_0ef5ccd773f54060a96051959632048f~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_0ef5ccd773f54060a96051959632048f~mv2.webp",
+        "alt": ""
+      }],
+      "price": 10,
+      "name": "Tutankhamun Vintage Bracelet",
+      "category": "bracelets",
+      "description": "description 3",
+      "main_image": {
+        "src": "https://static.wixstatic.com/media/01a936_6282d59a29664a04be16b795b522a26b~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_6282d59a29664a04be16b795b522a26b~mv2.webp",
+        "alt": ""
+      },
+      "secondary_image": {
+        "src": "https://static.wixstatic.com/media/01a936_5c6ca3dc35904e4baabcbbd1d79ee43b~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_5c6ca3dc35904e4baabcbbd1d79ee43b~mv2.webp",
+        "alt": ""
+      },
+      "inner_diameter": 6.2,
+      "materials": "Glazing / Brass / Zinc",
+      "quantity": 5
+    },
+    {
+      "id": "4",
+      "images": [        
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_59056b8afb3c405f828a31d758a37a96~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_59056b8afb3c405f828a31d758a37a96~mv2.webp",
+        "alt": ""
+      }, 
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_649f3b384ce049f5bdc411b8ed88c58f~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_649f3b384ce049f5bdc411b8ed88c58f~mv2.webp",
+        "alt": ""
+      }, 
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_a988b99ea2ed46aab4569dce7676d2de~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_a988b99ea2ed46aab4569dce7676d2de~mv2.webp",
+        "alt": ""
+      }, 
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_b93490f2bf9041babb2343232acb006a~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_b93490f2bf9041babb2343232acb006a~mv2.webp",
+        "alt": ""
+      }],
+      "price": 5,
+      "name": "Seashell Ring",
+      "category": "rings",
+      "description": "This daring and lustrious seashell ring is a bold statement. It is for you if you are looking to add a bit of personality and cheek to your look. As the the surface is made from natural seashells, allow for the perfect imperfection.",
+      "main_image": {
+        "src": "https://static.wixstatic.com/media/01a936_59056b8afb3c405f828a31d758a37a96~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_59056b8afb3c405f828a31d758a37a96~mv2.webp",
+        "alt": ""
+      },
+      "secondary_image": {
+        "src": "https://static.wixstatic.com/media/01a936_649f3b384ce049f5bdc411b8ed88c58f~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_649f3b384ce049f5bdc411b8ed88c58f~mv2.webp",
+        "alt": ""
+      },
+      "inner_diameter": 1.7,
+      "height": 4.4,
+      "materials": "Materials: Seashells / Plastic / Zinc",
+      "quantity": 31
+    },
+    {
+      "id": "5",
+      "images": [        
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_680905c48b40427a9d4483e7f056add5~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_680905c48b40427a9d4483e7f056add5~mv2.webp",
+        "alt": ""
+      }, 
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_8d332fcc2afc4c16823c570c6547c96b~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_8d332fcc2afc4c16823c570c6547c96b~mv2.webp",
+        "alt": ""
+      }, 
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_ccb97da7a9f24a9e8f421c23d27d9372~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_ccb97da7a9f24a9e8f421c23d27d9372~mv2.webp",
+        "alt": ""
+      }, 
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_e23ab9f07121457eaa6b5d9b633500de~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_e23ab9f07121457eaa6b5d9b633500de~mv2.webp",
+        "alt": ""
+      }],
+      "price": 13,
+      "name": "Roman Portrait Earrings",
+      "category": "earrings",
+      "description": "Each of these unique vintage earrings features a shallowly engraved Roman portrait on an old-coin-coloured translucent resin gem, complemented with a clasp of elegant matte gold finish, giving out a warm and chic vibe. They are a quaint and graceful addition to your daily wear.",
+      "main_image": {
+        "src": "https://static.wixstatic.com/media/01a936_680905c48b40427a9d4483e7f056add5~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_680905c48b40427a9d4483e7f056add5~mv2.webp",
+        "alt": ""
+      },
+      "secondary_image": {
+        "src": "https://static.wixstatic.com/media/01a936_8d332fcc2afc4c16823c570c6547c96b~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_8d332fcc2afc4c16823c570c6547c96b~mv2.webp",
+        "alt": ""
+      },
+      "length": 3.9,
+      "materials": "Resin / Mixed Metal / Gold Finish",
+      "quantity": 60
+    },
+    {
+      "id": "6",
+      "images": [        
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_d04e7f747d1e4df3ac1cdb91a311c769~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_d04e7f747d1e4df3ac1cdb91a311c769~mv2.webp",
+        "alt": ""
+      }, 
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_96bb1d3214a44cd2b64fb5b69d3b93f4~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_96bb1d3214a44cd2b64fb5b69d3b93f4~mv2.webp",
+        "alt": ""
+      }, 
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_28c1f1795891410191016d426cc4564d~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_28c1f1795891410191016d426cc4564d~mv2.webp",
+        "alt": ""
+      }, 
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_f8c987e85c244706af4a1d419e8e55a5~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_f8c987e85c244706af4a1d419e8e55a5~mv2.webp",
+        "alt": ""
+      },
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_08a98cac5f71458c82031c9075e0f632~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_08a98cac5f71458c82031c9075e0f632~mv2.webp",
+        "alt": ""
+      }, 
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_a479184c60e540c5a59f9a85efd35dd3~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_a479184c60e540c5a59f9a85efd35dd3~mv2.webp",
+        "alt": ""
+      }],
+      "price": 22,
+      "name": "Gold Multi-Chain Long Necklace",
+      "category": "necklaces",
+      "description": "This elegant and intricate golden-coloured long necklace with chartreuse coloured resin gems brings a dash of sophistication and class into your daily and going-out wear.",
+      "main_image": {
+        "src": "https://static.wixstatic.com/media/01a936_d04e7f747d1e4df3ac1cdb91a311c769~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_d04e7f747d1e4df3ac1cdb91a311c769~mv2.webp",
+        "alt": ""
+      },
+      "secondary_image": {
+        "src": "https://static.wixstatic.com/media/01a936_96bb1d3214a44cd2b64fb5b69d3b93f4~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_96bb1d3214a44cd2b64fb5b69d3b93f4~mv2.webp",
+        "alt": ""
+      },
+      "length": 84,
+      "materials": "Resin / Mixed Metal",
+      "quantity": 48
+    },
+    {
+      "id": "7",
+      "images": [        
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_2e2703f2e7dc4747814b16c329eaf7bf~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_2e2703f2e7dc4747814b16c329eaf7bf~mv2.webp",
+        "alt": ""
+      }, 
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_2956a23d7aae4283a37493aaa3170934~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_2956a23d7aae4283a37493aaa3170934~mv2.webp",
+        "alt": ""
+      }, 
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_458135e1dede4228ae1869b4897c56dc~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_458135e1dede4228ae1869b4897c56dc~mv2.webp",
+        "alt": ""
+      }, 
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_1d1f06d992f246b1815274a5485e4f8d~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_1d1f06d992f246b1815274a5485e4f8d~mv2.webp",
+        "alt": ""
+      }],
+      "price": 14,
+      "name": "Gold Disc Bracelet",
+      "category": "bracelets",
+      "description": "Lodged in elegant and intricate golden discs, the mysterious, shimmering seashell fragments embedded in the amber resin gems shine like twinkling stars in the sky, ushering you into a timeless magical world.",
+      "main_image": {
+        "src": "https://static.wixstatic.com/media/01a936_2e2703f2e7dc4747814b16c329eaf7bf~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_2e2703f2e7dc4747814b16c329eaf7bf~mv2.webp",
+        "alt": ""
+      },
+      "secondary_image": {
+        "src": "https://static.wixstatic.com/media/01a936_2956a23d7aae4283a37493aaa3170934~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_2956a23d7aae4283a37493aaa3170934~mv2.webp",
+        "alt": ""
+      },
+      "length": 16,
+      "materials": "Mixed Metal / Gold Finish / Shell Fragments / Resin",
+      "quantity": 23
+    },
+    {
+      "id": "8",
+      "images": [        
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_05f62f6026544014854793cce9f783fa~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_05f62f6026544014854793cce9f783fa~mv2.webp",
+        "alt": ""
+      }, 
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_d6ef2d0b6aff4a6791e25a3c777f9a48~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_d6ef2d0b6aff4a6791e25a3c777f9a48~mv2.webp",
+        "alt": ""
+      }, 
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_7565352ea89143b1aa867ca0910ba988~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_7565352ea89143b1aa867ca0910ba988~mv2.webp",
+        "alt": ""
+      }, 
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_1bba0c3438184e3d9e33b2d21d2daf15~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_1bba0c3438184e3d9e33b2d21d2daf15~mv2.webp",
+        "alt": ""
+      }],
+      "price": 28,
+      "name": "Gold Discs Necklace",
+      "category": "necklaces",
+      "description": "Lodged in elegant and intricate golden discs, the mysterious, shimmering seashell fragments embedded in the dark resin gems shine like twinkling stars in the sky, ushering you into a timeless magical world.",
+      "main_image": {
+        "src": "https://static.wixstatic.com/media/01a936_05f62f6026544014854793cce9f783fa~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_05f62f6026544014854793cce9f783fa~mv2.webp",
+        "alt": ""
+      },
+      "secondary_image": {
+        "src": "https://static.wixstatic.com/media/01a936_d6ef2d0b6aff4a6791e25a3c777f9a48~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_d6ef2d0b6aff4a6791e25a3c777f9a48~mv2.webp",
+        "alt": ""
+      },
+      "length": 37,
+      "materials": "Mixed Metal / Gold Finish / Shell Fragments / Resin",
+      "quantity": 29
+    },
+    {
+      "id": "9",
+      "images": [        
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_606e942b3aca4206805a354084986de0~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_606e942b3aca4206805a354084986de0~mv2.webp",
+        "alt": ""
+      }, 
+      {
+        "src": "https://static.wixstatic.com/media/01a936_c5c01a0d74234353982e6723f7ba275c~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_c5c01a0d74234353982e6723f7ba275c~mv2.webp",
+        "alt": ""
+      },
+      {
+        "src": "https://static.wixstatic.com/media/01a936_fcf6d89364e044dd891ad61951751cf0~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_fcf6d89364e044dd891ad61951751cf0~mv2.webp",
+        "alt": ""
+      },
+      {
+        "src": "https://static.wixstatic.com/media/01a936_d2db123f4e78418bb3f6b4865994b53c~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_d2db123f4e78418bb3f6b4865994b53c~mv2.webp",
+        "alt": ""
+      },
+      {
+        "src": "https://static.wixstatic.com/media/01a936_f01e15321bfd452dabc321bf6c4badb7~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_f01e15321bfd452dabc321bf6c4badb7~mv2.webp",
+        "alt": ""
+      },
+      {
+        "src": "https://static.wixstatic.com/media/01a936_d2c427fb6d3546dba62bd41ba4cbf67a~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_d2c427fb6d3546dba62bd41ba4cbf67a~mv2.webp",
+        "alt": ""
+      }
+    ],
+      "price": 26,
+      "name": "Teardrop Seashell Pendant Earrings",
+      "category": "earrings",
+      "description": "The lustrous and mysterious seashells embedded in the resin gems shimmer in the sunlight, releasing a thousand colours, as if murmuring in their dreams about the ocean, taking you into a world of enchantment and wonder.",
+      "main_image": {
+        "src": "https://static.wixstatic.com/media/01a936_606e942b3aca4206805a354084986de0~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_606e942b3aca4206805a354084986de0~mv2.webp",
+        "alt": ""
+      },
+      "secondary_image": {
+        "src": "https://static.wixstatic.com/media/01a936_c5c01a0d74234353982e6723f7ba275c~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_c5c01a0d74234353982e6723f7ba275c~mv2.webp",
+        "alt": ""
+      },
+      "length": 6.8,
+      "materials": "Sterling Silver / Gold Plated Zinc / Seashells / Resin",
+      "quantity": 0
+    },
+    {
+      "id": "10",
+      "images": [        
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_ac0a7348e83748e1ab65bf4dd0945165~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_ac0a7348e83748e1ab65bf4dd0945165~mv2.webp",
+        "alt": ""
+      }, 
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_f915336c92de43308e074baa2044d679~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_f915336c92de43308e074baa2044d679~mv2.webp",
+        "alt": ""
+      }, 
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_a0369962d7da43e89ca6835e68422be3~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_a0369962d7da43e89ca6835e68422be3~mv2.webp",
+        "alt": ""
+      }, 
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_e468ef5ba43542c9895361df374b3ae9~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_e468ef5ba43542c9895361df374b3ae9~mv2.webp",
+        "alt": ""
+      }],
+      "price": 22,
+      "name": "White Gold Pearl Ring",
+      "category": "rings",
+      "description": "This delicate and elegant one-size minimalist gold plated ring is charming and unique, promising an offhand display of class and luxury. ",
+      "main_image": {
+        "src": "https://static.wixstatic.com/media/01a936_ac0a7348e83748e1ab65bf4dd0945165~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_ac0a7348e83748e1ab65bf4dd0945165~mv2.webp",
+        "alt": ""
+      },
+      "secondary_image": {
+        "src": "https://static.wixstatic.com/media/01a936_f915336c92de43308e074baa2044d679~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_f915336c92de43308e074baa2044d679~mv2.webp",
+        "alt": ""
+      },
+      "length": 1.7,
+      "materials": "White Gold Plated Zinc / Imitation Pearls",
+      "quantity": 40
+    },
+    {
+      "id": "11",
+      "images": [        
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_b4bca800f20e43a89d7072a264f12bad~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_b4bca800f20e43a89d7072a264f12bad~mv2.webp",
+        "alt": ""
+      }, 
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_6b8c119a3ffb47f5aac20a55dfca63f4~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_6b8c119a3ffb47f5aac20a55dfca63f4~mv2.webp",
+        "alt": ""
+      }, 
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_404abd3e7a1b457fa78cefc41e3e6852~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_404abd3e7a1b457fa78cefc41e3e6852~mv2.webp",
+        "alt": ""
+      }, 
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_c2c784ee68ef4508b4302b1d505954e8~mv2.png/v1/fill/w_420,h_420,al_c,q_90,usm_0.66_1.00_0.01/01a936_c2c784ee68ef4508b4302b1d505954e8~mv2.webp",
+        "alt": ""
+      },
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_24d0c99d3a964887b5b66543de59e529~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_24d0c99d3a964887b5b66543de59e529~mv2.webp",
+        "alt": ""
+      }],
+      "price": 24,
+      "name": "Ocean Blue Studs",
+      "category": "earrings",
+      "description": "These stunning ocean blue minimalist studs are so clear and pure that you can hear the murmur of a calm, cool sea. They are the perfect accessories for you if you are looking for an elegant, clean, and fresh look.",
+      "main_image": {
+        "src": "https://static.wixstatic.com/media/01a936_b4bca800f20e43a89d7072a264f12bad~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_b4bca800f20e43a89d7072a264f12bad~mv2.webp",
+        "alt": ""
+      },
+      "secondary_image": {
+        "src": "https://static.wixstatic.com/media/01a936_6b8c119a3ffb47f5aac20a55dfca63f4~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_6b8c119a3ffb47f5aac20a55dfca63f4~mv2.webp",
+        "alt": ""
+      },
+      "length": 1.2,
+      "materials": "Zinc / Artificial Zircons / Aluminum",
+      "quantity": 36
+    },
+    {
+      "id": "12",
+      "images": [        
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_a92ba203eee945c3b107f99de3bbd333~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_a92ba203eee945c3b107f99de3bbd333~mv2.webp",
+        "alt": ""
+      }, 
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_969e590129414f5eb6be297a7f5e1b7e~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_969e590129414f5eb6be297a7f5e1b7e~mv2.webp",
+        "alt": ""
+      }, 
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_61a44884c0a04a119750dd777b4df662~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_61a44884c0a04a119750dd777b4df662~mv2.webp",
+        "alt": ""
+      }, 
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_7f40591c81f04529990e95b08107d9c6~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_7f40591c81f04529990e95b08107d9c6~mv2.webp",
+        "alt": ""
+      },
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_9f7cfed79cf14cafb998c05842eca747~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_9f7cfed79cf14cafb998c05842eca747~mv2.webp",
+        "alt": ""
+      }],
+      "price": 20,
+      "name": "Silver Tassel Necklace",
+      "category": "necklaces",
+      "description": "Combining the strength of the metal with the femininity of the tassel, this classic and intricate vintage tassel long necklace is perfect for spicing up your winter wear.",
+      "main_image": {
+        "src": "https://static.wixstatic.com/media/01a936_a92ba203eee945c3b107f99de3bbd333~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_a92ba203eee945c3b107f99de3bbd333~mv2.webp",
+        "alt": ""
+      },
+      "secondary_image": {
+        "src": "https://static.wixstatic.com/media/01a936_969e590129414f5eb6be297a7f5e1b7e~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_969e590129414f5eb6be297a7f5e1b7e~mv2.webp",
+        "alt": ""
+      },
+      "length": 71,
+      "materials": "Zinc / Aluminium",
+      "quantity": 48
+    },
+    {
+      "id": "13",
+      "images": [        
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_5b623af6c8e24a87ba825c72a17613de~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_5b623af6c8e24a87ba825c72a17613de~mv2.webp",
+        "alt": ""
+      }, 
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_593ff1d4caff485b8e7723c9ea658d4c~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_593ff1d4caff485b8e7723c9ea658d4c~mv2.webp",
+        "alt": ""
+      }, 
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_6c83b9de99dc498f8bc19de72f0a560d~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_6c83b9de99dc498f8bc19de72f0a560d~mv2.webp",
+        "alt": ""
+      }, 
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_4c3ffc2a0f24406ebf9f14e83079f79f~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_4c3ffc2a0f24406ebf9f14e83079f79f~mv2.webp",
+        "alt": ""
+      }],
+      "price": 15,
+      "name": "Sunshine Glazed Gold Ring",
+      "category": "rings",
+      "description": "Just like the sun, this bold bright yellow glazed ring radiates energy and strength, adding to your wear a dash of colour and personality. ",
+      "main_image": {
+        "src": "https://static.wixstatic.com/media/01a936_5b623af6c8e24a87ba825c72a17613de~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_5b623af6c8e24a87ba825c72a17613de~mv2.webp",
+        "alt": ""
+      },
+      "secondary_image": {
+        "src": "https://static.wixstatic.com/media/01a936_593ff1d4caff485b8e7723c9ea658d4c~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_593ff1d4caff485b8e7723c9ea658d4c~mv2.webp",
+        "alt": ""
+      },
+      "inner-diameter": 1.7,
+      "height": 3.2,
+      "materials": "Crystalline Glaze / Mixed Metal / Gold Finish",
+      "quantity": 17
+    },
+    {
+      "id": "14",
+      "images": [        
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_8970112ad47f4a24a230195031ae5546~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_8970112ad47f4a24a230195031ae5546~mv2.webp",
+        "alt": ""
+      }, 
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_0a48f2f9bf804a1bbd60ad1f2d95aace~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_0a48f2f9bf804a1bbd60ad1f2d95aace~mv2.webp",
+        "alt": ""
+      }, 
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_58476affc9da47238683729d836785b5~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_58476affc9da47238683729d836785b5~mv2.webp",
+        "alt": ""
+      }, 
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_240522d622e44afa8b6f59a6edb611af~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_240522d622e44afa8b6f59a6edb611af~mv2.webp",
+        "alt": ""
+      },
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_99f5584ff89b423e8c64790162163e1e~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_99f5584ff89b423e8c64790162163e1e~mv2.webp",
+        "alt": ""
+      }],
+      "price": 19,
+      "name": "Vintage Feather Earrings",
+      "category": "earrings",
+      "description": "These intricate eye-catching vintage earrings give out a classical, mystical vibe. The stark contrast between the metallic texture and the shape of a soft feather produces an interesting effect, leaving room for wonder.",
+      "main_image": {
+        "src": "https://static.wixstatic.com/media/01a936_8970112ad47f4a24a230195031ae5546~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_8970112ad47f4a24a230195031ae5546~mv2.webp",
+        "alt": ""
+      },
+      "secondary_image": {
+        "src": "https://static.wixstatic.com/media/01a936_0a48f2f9bf804a1bbd60ad1f2d95aace~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_0a48f2f9bf804a1bbd60ad1f2d95aace~mv2.webp",
+        "alt": ""
+      },
+      "length": 7.7,
+      "materials": "Artificial Crystals / Mixed Metal",
+      "quantity": 19
+    },
+    {
+      "id": "15",
+      "images": [        
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_c50e4803b54e4281a98be700432c21fc~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_c50e4803b54e4281a98be700432c21fc~mv2.webp",
+        "alt": ""
+      }, 
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_415f37d3537545d28c778d6bc3a3c52b~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_415f37d3537545d28c778d6bc3a3c52b~mv2.webp",
+        "alt": ""
+      }, 
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_910aebbb34614ae1a1a224aa276b5be8~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_910aebbb34614ae1a1a224aa276b5be8~mv2.webp",
+        "alt": ""
+      }, 
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_debfd5e045b14429a1c3a2b77fa651ce~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_debfd5e045b14429a1c3a2b77fa651ce~mv2.webp",
+        "alt": ""
+      },
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_fb7e3b96cc9845df89bee256d64e28c3~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_fb7e3b96cc9845df89bee256d64e28c3~mv2.webp",
+        "alt": ""
+      }],
+      "price": 37,
+      "name": "Sun Goddess Necklace",
+      "category": "necklaces",
+      "description": "With this elegant, intricate, sun-inspired classic short gold-plated necklace with sparkling artificial crystals, awaken your inner radiant sun goddess. ",
+      "main_image": {
+        "src": "https://static.wixstatic.com/media/01a936_c50e4803b54e4281a98be700432c21fc~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_c50e4803b54e4281a98be700432c21fc~mv2.webp",
+        "alt": ""
+      },
+      "secondary_image": {
+        "src": "https://static.wixstatic.com/media/01a936_415f37d3537545d28c778d6bc3a3c52b~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_415f37d3537545d28c778d6bc3a3c52b~mv2.webp",
+        "alt": ""
+      },
+      "length": 48,
+      "materials": "Artificial Crystals/ Gold-Finish / Zinc",
+      "quantity": 2
+    },
+    {
+      "id": "16",
+      "images": [        
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_ce2456386ccf420d85b8ef236fded7c1~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_ce2456386ccf420d85b8ef236fded7c1~mv2.webp",
+        "alt": ""
+      }, 
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_33f4ba585e9743c1925420b525078a7a~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_33f4ba585e9743c1925420b525078a7a~mv2.webp",
+        "alt": ""
+      }, 
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_5aa42039126b4ecf8e8158045bcbdc02~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_5aa42039126b4ecf8e8158045bcbdc02~mv2.webp",
+        "alt": ""
+      }, 
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_1bd6746eff064740a8d9b68f44302d2e~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_1bd6746eff064740a8d9b68f44302d2e~mv2.webp",
+        "alt": ""
+      },
+      { 
+        "src": "https://static.wixstatic.com/media/01a936_09e228de31ff4b74883ec6a1739c8bba~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_09e228de31ff4b74883ec6a1739c8bba~mv2.webp",
+        "alt": ""
+      }],
+      "price": 13,
+      "name": "Red Red Rose Metal Studs",
+      "category": "earrings",
+      "description": "These unique rosebud-shaped studs usher you into a romantic and whimsical fantasy world. Their vibrant bright red colour makes them a perfect companion to scarlet lips and nails. A tip for wearing these studs: disregard the back stoppers and wear the studs with the tip of the rosebuds pointing down so they look more like earrings than studs sticking out of your lobes.",
+      "main_image": {
+        "src": "https://static.wixstatic.com/media/01a936_ce2456386ccf420d85b8ef236fded7c1~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_ce2456386ccf420d85b8ef236fded7c1~mv2.webp",
+        "alt": ""
+      },
+      "secondary_image": {
+        "src": "https://static.wixstatic.com/media/01a936_33f4ba585e9743c1925420b525078a7a~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_33f4ba585e9743c1925420b525078a7a~mv2.webp",
+        "alt": ""
+      },
+      "length": 1.8,
+      "materials": "Aluminium / Zinc",
+      "quantity": 32
+    }
+  ]

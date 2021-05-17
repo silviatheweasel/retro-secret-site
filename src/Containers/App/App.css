@@ -1,0 +1,240 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html, body {
+  width: 100%;
+  text-align: center;
+  font-size: 15px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #F2F1F0;
+}
+
+.App {
+  background-color: #F2F1F0;
+}
+
+.site-header {
+  padding: 20px 0;
+  left: 0;
+  top: 0;
+  position: fixed;
+  z-index: 20;
+  background-color: #F2F1F0;
+  width: 100%;
+}
+
+.site-header .site-title {
+  font-family: "KoHo", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.site-header .site-title:hover, .site-header .site-title :active, .site-header .site-title :focus {
+  color: #9E8765;
+}
+
+.site-header .nav-bar {
+  margin-top: 20px;
+}
+
+.site-header .nav-bar .menu-list {
+  width: 70%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.site-header .nav-bar .menu-list .menu-item {
+  list-style-type: none;
+  display: inline-block;
+  width: 120px;
+  cursor: pointer;
+  font-family: "Open Sans", sans-serif;
+}
+
+.site-header .nav-bar .menu-list .menu-item:hover, .site-header .nav-bar .menu-list .menu-item :active, .site-header .nav-bar .menu-list .menu-item :focus {
+  color: #9E8765;
+}
+
+.site-body {
+  min-height: 100vh;
+  height: auto;
+  margin-top: 100px;
+}
+
+.homepage .hero {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.homepage .hero .hero-image {
+  width: 100%;
+  height: 650px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  left: 0;
+}
+
+.homepage .hero .hero-text {
+  position: absolute;
+  bottom: 70px;
+  left: 30%;
+  color: white;
+}
+
+.homepage .hero .hero-text .hero-title {
+  font-family: "KoHo", sans-serif;
+  font-size: 72px;
+}
+
+.homepage .hero .hero-text .hero-subtitle {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.homepage .site-intro {
+  background-color: white;
+  padding: 80px 40px;
+  background-color: white;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.homepage .site-intro .intro-heading {
+  font-family: "KoHo", sans-serif;
+  margin-bottom: 30px;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.homepage .site-intro .intro-text {
+  font-family: "Open Sans", sans-serif;
+  width: 50%;
+  margin: 0 auto;
+  line-height: 1.8rem;
+}
+
+.product-galary {
+  padding: 0 25px 40px 25px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(250px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  -webkit-column-gap: 30px;
+          column-gap: 30px;
+  row-gap: 30px;
+  grid-auto-flow: row;
+  background-color: white;
+}
+
+.product-galary .product-overview-container {
+  cursor: pointer;
+  background-color: white;
+  border: none;
+  font-family: "Open Sans", sans-serif;
+}
+
+.product-galary .product-overview-container .display-image {
+  width: 100%;
+  height: auto;
+}
+
+.product-galary .product-overview-container .product-overview-title {
+  margin-top: 10px;
+  font-weight: 400;
+}
+
+.product-galary .product-overview-container .product-overview-title:after {
+  content: " ";
+  width: 20px;
+  display: block;
+  height: 1px;
+  border-bottom: 1px solid black;
+  margin: 10px auto;
+}
+
+.product-galary .product-overview-container .product-overview-text {
+  color: gray;
+}
+
+.product-page {
+  padding: 0 200px;
+}
+
+.product-page .product-page-nav {
+  padding: 60px 0;
+  width: 100%;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.product-page .product-page-nav .breadcrumb-menu {
+  display: inline-block;
+}
+
+.product-page .product-page-nav .breadcrumb-menu li {
+  display: inline-block;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.product-page .product-page-nav .breadcrumb-menu .breadcrumb-prev:after {
+  content: "/";
+  margin-left: 5px;
+}
+
+.product-page .product-page-nav .breadcrumb-menu .breadcrumb-current {
+  color: gray;
+  cursor: default;
+}
+
+.product-page .product-page-nav .product-navigation {
+  display: inline-block;
+}
+
+.product-page .product-page-nav .product-navigation li {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.product-page .product-page-nav .product-navigation .prev-btn:before {
+  content: "<";
+  margin-right: 5px;
+}
+
+.product-page .product-page-nav .product-navigation .prev-btn:after {
+  content: "|";
+  margin: 0 5px;
+}
+
+.product-page .product-page-nav .product-navigation .next-btn:after {
+  content: ">";
+  margin-left: 5px;
+}
+
+.site-footer {
+  padding: 50px;
+  bottom: 0;
+  width: 100%;
+  z-index: 40;
+}
+/*# sourceMappingURL=App.css.map */
