@@ -22,7 +22,6 @@ function App() {
       const productsByCategory = productData.filter(product => product.category  === currentCategory);
 
       setProducts(productsByCategory);
-  
     }
     
     setIsLoading(true);
@@ -46,6 +45,7 @@ function App() {
     } else {
       setCurrentCategory(null);
     }
+    window.scrollTo(0, 0);
   }
 
   const [currentProduct, setCurrentProduct] = useState(null);
@@ -80,11 +80,15 @@ function App() {
 
   return (
     <div className="App">
-      <header>
-        <h2>RETRO SECRETS</h2>
-        <nav>
-          <ul>
-            <li   
+      <header className="site-header">
+        <h1 
+          className="site-title"
+          onClick={() => setDisplayedPage("Home")}
+        >RETRO SECRETS</h1>
+        <nav className="nav-bar">
+          <ul className="menu-list">
+            <li
+              className="menu-item"   
               onClick={handleMenuClick}
             >Home
             </li>
@@ -92,18 +96,19 @@ function App() {
               (category, i) => (
                 <li 
                   key={"category" + i}
+                  className="menu-item" 
                   onClick={handleMenuClick}
                   >{category}
                   </li>))}
           </ul>
         </nav>
       </header>
-      <main>
-        {isLoading && <p>Loading...</p>}
+      <main className="site-body">
         {products && attachPage()}
+        {/* {isLoading && <p>Loading...</p>} */}
       </main>
-      <footer>
-        <p>footer</p>
+      <footer className="site-footer">
+        <p>© 2020 by Retro Secrets</p>
       </footer>
     </div>
   );
