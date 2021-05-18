@@ -15,9 +15,13 @@ export const ProductPage = ({ currentProduct }) => {
                     <li className="next-btn">Next</li>
                 </ul>
             </nav>
-                <ProductDetails 
-                    currentProduct={currentProduct} 
-                />
+            <ProductDetails 
+                currentProduct={currentProduct} 
+            />
+            <div className="care-instruction-container">
+                <h2 className="care-title">Care Instructions</h2>
+                <p className="care-text">Do not wear during swims or showers, and the jewellery must be removed before bed and before exercise.</p>
+            </div>
         </div>
     )
 }

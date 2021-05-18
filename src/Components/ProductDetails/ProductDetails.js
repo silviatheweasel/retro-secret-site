@@ -1,6 +1,6 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
-export const ProductDetails = ({ currentProduct }) => {
+export const ProductDetails = React.memo(({ currentProduct }) => {
     const { images, name, price, main_image, description, length, materials } = currentProduct;
     const [displayImg, setDisplayImg] = useState(main_image);
     const handleClick = ({target}) => {
@@ -8,26 +8,34 @@ export const ProductDetails = ({ currentProduct }) => {
                         "src": target.src, 
                         "alt": target.alt
                         });
+        // target.style.border = "2px solid black";
     }
     return (
         <div className="product-details-container">
-            <div className="thumbnails">
+            <div className="thumbnails-container">
                 {images.map((image, i) => 
                     <img 
+                        className="thumbnail"
                         src={image.src} 
                         alt={image.alt}
+                        style = {{
+                            border: image.src === displayImg.src ? "2px solid black" : "none"
+                        }}
                         key={name + "image" + i}
                         onClick={handleClick}
                         ></img>)}
             </div>
             <div className="large-product-image">
-                <img src={displayImg.src} alt={displayImg.alt}></img>
+                <img 
+                    src={displayImg.src} 
+                    alt={displayImg.alt}
+                    ></img>
             </div>
             <div className="content">
-                <h1>{name}</h1>
-                <h2>{`£${price}.00`}</h2>
-                <div>
-                    <p>{description}</p>
+                <h1 className="product-name">{name}</h1>
+                <p className="product-price">{`£${price}.00`}</p>
+                <div className="product-description-container">
+                    <p className="product-description">{description}</p>
                     <p>Length: {length}cm</p>
                     <p>Materials: {materials}</p>
                 </div>
@@ -41,7 +49,6 @@ export const ProductDetails = ({ currentProduct }) => {
                 </label>
                 <button>Add to Cart</button>
             </div>
-
         </div>
     )
-}
+})

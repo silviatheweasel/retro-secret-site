@@ -1,8 +1,12 @@
 import { ProductOverview } from "../Components/ProductOverview/ProductOverview";
+import React from "react";
 
-export const ProductGalary = ({ products, handleProductClick }) => {
+export const ProductGalary = React.memo(({ currentCategory, products, handleProductClick }) => {
     return (
-        <div className="product-galary">
+        <div 
+            className="product-galary"
+            style={{backgroundColor: currentCategory === null ? "white" : "#F2F1F0"}}
+            >
               {products.map((product, i) => (
                 <ProductOverview
                     key={"product" + i}
@@ -15,4 +19,4 @@ export const ProductGalary = ({ products, handleProductClick }) => {
                 ))}
         </div>
     )
-}
+})

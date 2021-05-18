@@ -1,17 +1,14 @@
-import { ProductGalary } from "./ProductGalary"
+import { ProductGalary } from "./ProductGalary";
+import React from "react";
 
-export const CategoryPage = ({ currentCategory, products, handleProductClick }) => {
+export const CategoryPage = React.memo(({ currentCategory, products, handleProductClick }) => {
     const header = currentCategory[0].toUpperCase() + currentCategory.substring(1)
 
-    return (
-        <main className="category-page">
+    return (<>
             <h1>{header}</h1>
             <ProductGalary 
                 products={products}
                 handleProductClick={handleProductClick}
                 />
-        </main>
-
-    )
-
-}
+             </>)
+})

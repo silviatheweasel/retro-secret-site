@@ -1,9 +1,8 @@
 import { ProductGalary } from "../ProductGalary";
 
+const Home = ({ products, handleProductClick, currentCategory }) => {
 
-const Home = ({ products, handleProductClick }) => {
-
-    return (<div className="homepage">
+    return (<>
                 <div className="hero">
                     <img 
                         src="https://static.wixstatic.com/media/01a936_d977a5241bb844e19ab90ff30a9fb078~mv2.jpg/v1/fill/w_1280,h_744,al_c,q_90/01a936_d977a5241bb844e19ab90ff30a9fb078~mv2.webp"
@@ -21,9 +20,10 @@ const Home = ({ products, handleProductClick }) => {
                 </div>
                 <ProductGalary 
                     products={products}
-                    handleProductClick={handleProductClick} 
+                    currentCategory={currentCategory}
+                    handleProductClick={handleProductClick}                   
                     />
-            </div>)
+            </>)
 }
 
 export default Home;
