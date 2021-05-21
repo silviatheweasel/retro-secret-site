@@ -18,11 +18,13 @@ const Home = ({ products, handleProductClick, currentCategory }) => {
                     <h2 className="intro-heading">OUR COLLECTION</h2>
                     <p className="intro-text">Our vintage-inspired collection of earrings, bracelets, rings, and necklaces is bold yet fitting, nostalgic yet timeless, mystic and enchanting. It is for you, the dancing queen, the rebel girl, the fashion guru, the office lady to step up your accessory game and become the envy of all.  </p>
                 </div>
-                <ProductGalary 
-                    products={products}
-                    currentCategory={currentCategory}
-                    handleProductClick={handleProductClick}                   
-                    />
+                <div className="galary-container">
+                    <ProductGalary 
+                        products={products}
+                        currentCategory={currentCategory}
+                        handleProductClick={handleProductClick}                   
+                        />
+                </div>
             </>)
 }
 

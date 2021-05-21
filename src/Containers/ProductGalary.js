@@ -15,6 +15,7 @@ export const ProductGalary = React.memo(({ currentCategory, products, handleProd
                     price={product.price}
                     secondaryImg={product.secondary_image}
                     handleProductClick={handleProductClick}
+                    currentCategory={currentCategory}
                 />
                 ))}
         </div>

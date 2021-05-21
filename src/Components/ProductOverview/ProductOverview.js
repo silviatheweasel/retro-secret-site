@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Placeholder from "./product-image-placeholder.jpg";
 
-export const ProductOverview = React.memo(({ mainImg, secondaryImg, name, price, handleProductClick }) => {
+export const ProductOverview = React.memo(({ mainImg, currentCategory, secondaryImg, name, price, handleProductClick }) => {
 
     const [displayImg, setDisplayImg] = useState({
         src: {Placeholder},
@@ -33,6 +33,7 @@ export const ProductOverview = React.memo(({ mainImg, secondaryImg, name, price,
             className="product-overview-container"
             id={name + "5"}
             onClick={handleProductClick}
+            style={{backgroundColor: currentCategory === null ? "white" : "#F2F1F0"}}
             >
             <div className="flip-image">
                 <img 
