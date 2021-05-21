@@ -1,4 +1,12 @@
 $gold: #9E8765;
 $grey: #F2F1F0;
+$darkgrey: rgb(71, 71, 71);
 $KoHo: 'KoHo', sans-serif;
 $OpenSans: 'Open Sans', sans-serif;
+
+%text {
+    font-size: 15px;
+    font-family: $OpenSans;
+    color: $darkgrey;
+    line-height: 1.8rem;
+}

@@ -65,63 +65,78 @@ html, body {
     margin-top: 100px;
 }
 
-.homepage {
-    .hero {
-        position: relative;
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: auto;
+    .hero-image {
         width: 100%;
-        height: auto;
-        .hero-image {
-            width: 100%;
-            height: 650px;
-            object-fit: cover;
-            left: 0;
-        }
-        .hero-text {
-            position: absolute;
-            bottom: 70px;
-            left: 30%;
-            color: white;
-            .hero-title {              
-                font-family: $KoHo;
-                font-size: 72px;
-                
-            }
-            .hero-subtitle {
-                font-family: $OpenSans;
-                font-weight: 400;
-                font-size: 20px;
-            }
-        }       
+        height: 650px;
+        object-fit: cover;
+        left: 0;
     }
-    .site-intro {
-        background-color: white;
-        padding: 80px 40px;
-        background-color: white;
-        margin: 0 auto;
-        text-align: center;
-        .intro-heading {
+    .hero-text {
+        position: absolute;
+        bottom: 70px;
+        left: 30%;
+        color: white;
+        .hero-title {              
             font-family: $KoHo;
-            margin-bottom: 30px;
-            font-size: 30px;
-            font-weight: 500;
+            font-size: 72px;
+            
         }
-        .intro-text {
+        .hero-subtitle {
             font-family: $OpenSans;
-            width: 50%;
-            margin: 0 auto;
-            line-height: 1.8rem;
+            font-weight: 400;
+            font-size: 20px;
         }
+    }       
+}
+
+.site-intro {
+    background-color: white;
+    padding: 80px 40px;
+    background-color: white;
+    margin: 0 auto;
+    text-align: center;
+    .intro-heading {
+        font-family: $KoHo;
+        margin-bottom: 30px;
+        font-size: 30px;
+        font-weight: 500;
+    }
+    .intro-text {
+        font-family: $OpenSans;
+        width: 50%;
+        margin: 0 auto;
+        line-height: 1.8rem;
+    }
+}
+
+.galary-container {
+    padding: 0 30px 100px 30px;
+    background-color: white;
+}
+
+.category-page {
+    padding: 50px 150px;
+    .category-title {
+        text-align: left;
+        font-family: $KoHo;
+        font-weight: 500;
+        font-size: 23px;
+        margin-bottom: 25px;
+        
     }
 }
 
 .product-galary {
-    padding: 0 25px 40px 25px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     column-gap: 30px;
     row-gap: 30px;
     grid-auto-flow: row;
-    background-color: white;
     .product-overview-container {
         cursor: pointer;
         background-color: white;
@@ -198,8 +213,64 @@ html, body {
             }           
         }
     }
+    .care-instruction-container {
+        padding: 100px 0;
+        text-align: left;
+        .care-title {
+            font-weight: 400;
+            font-family: $KoHo;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .care-text {
+            @extend %text;
+        }
+    }
 }
+.product-details-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    .thumbnails-container {
+        width: 5%;
+        .thumbnail {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+    }
+    .large-product-image {
+        width: 47%;
+        img {
+            width: 100%;
+        }
+    }
+    .content {
+        width: 35%;
+        text-align: left;
+        .product-name {
+            font-weight: 500;
+            font-family: $KoHo;
+            color: $darkgrey;
+        }
+        .product-price {
+            @extend %text;
+            margin: 20px 0;
+            font-size: 25px;
+        }
+        .product-description-container {
+            @extend %text;
+            margin-bottom: 20px;
+            .product-description {
+                margin-bottom: 20px;
+            }
+        }
 
+    }
+
+}
 
 
 .site-footer {

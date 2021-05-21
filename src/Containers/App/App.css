@@ -1,3 +1,10 @@
+.product-page .care-instruction-container .care-text, .product-details-container .content .product-price, .product-details-container .content .product-description-container {
+  font-size: 15px;
+  font-family: "Open Sans", sans-serif;
+  color: #474747;
+  line-height: 1.8rem;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -75,13 +82,13 @@ html, body {
   margin-top: 100px;
 }
 
-.homepage .hero {
+.hero {
   position: relative;
   width: 100%;
   height: auto;
 }
 
-.homepage .hero .hero-image {
+.hero .hero-image {
   width: 100%;
   height: 650px;
   -o-object-fit: cover;
@@ -89,25 +96,25 @@ html, body {
   left: 0;
 }
 
-.homepage .hero .hero-text {
+.hero .hero-text {
   position: absolute;
   bottom: 70px;
   left: 30%;
   color: white;
 }
 
-.homepage .hero .hero-text .hero-title {
+.hero .hero-text .hero-title {
   font-family: "KoHo", sans-serif;
   font-size: 72px;
 }
 
-.homepage .hero .hero-text .hero-subtitle {
+.hero .hero-text .hero-subtitle {
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
   font-size: 20px;
 }
 
-.homepage .site-intro {
+.site-intro {
   background-color: white;
   padding: 80px 40px;
   background-color: white;
@@ -115,22 +122,38 @@ html, body {
   text-align: center;
 }
 
-.homepage .site-intro .intro-heading {
+.site-intro .intro-heading {
   font-family: "KoHo", sans-serif;
   margin-bottom: 30px;
   font-size: 30px;
   font-weight: 500;
 }
 
-.homepage .site-intro .intro-text {
+.site-intro .intro-text {
   font-family: "Open Sans", sans-serif;
   width: 50%;
   margin: 0 auto;
   line-height: 1.8rem;
 }
 
+.galary-container {
+  padding: 0 30px 100px 30px;
+  background-color: white;
+}
+
+.category-page {
+  padding: 50px 150px;
+}
+
+.category-page .category-title {
+  text-align: left;
+  font-family: "KoHo", sans-serif;
+  font-weight: 500;
+  font-size: 23px;
+  margin-bottom: 25px;
+}
+
 .product-galary {
-  padding: 0 25px 40px 25px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(250px, 1fr))[auto-fill];
@@ -139,7 +162,6 @@ html, body {
           column-gap: 30px;
   row-gap: 30px;
   grid-auto-flow: row;
-  background-color: white;
 }
 
 .product-galary .product-overview-container {
@@ -229,6 +251,75 @@ html, body {
 .product-page .product-page-nav .product-navigation .next-btn:after {
   content: ">";
   margin-left: 5px;
+}
+
+.product-page .care-instruction-container {
+  padding: 100px 0;
+  text-align: left;
+}
+
+.product-page .care-instruction-container .care-title {
+  font-weight: 400;
+  font-family: "KoHo", sans-serif;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.product-details-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.product-details-container .thumbnails-container {
+  width: 5%;
+}
+
+.product-details-container .thumbnails-container .thumbnail {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.product-details-container .large-product-image {
+  width: 47%;
+}
+
+.product-details-container .large-product-image img {
+  width: 100%;
+}
+
+.product-details-container .content {
+  width: 35%;
+  text-align: left;
+}
+
+.product-details-container .content .product-name {
+  font-weight: 500;
+  font-family: "KoHo", sans-serif;
+  color: #474747;
+}
+
+.product-details-container .content .product-price {
+  margin: 20px 0;
+  font-size: 25px;
+}
+
+.product-details-container .content .product-description-container {
+  margin-bottom: 20px;
+}
+
+.product-details-container .content .product-description-container .product-description {
+  margin-bottom: 20px;
 }
 
 .site-footer {

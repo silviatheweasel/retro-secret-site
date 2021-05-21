@@ -12,6 +12,8 @@ function App() {
 
   const [currentCategory, setCurrentCategory] = useState(null);
 
+  const [currentProduct, setCurrentProduct] = useState(null);
+
   //retrieves data and saves product data in the state
   const [products, setProducts] = useState(null);
 
@@ -19,36 +21,37 @@ function App() {
 
   useEffect(() => {
     const getProductsByCategory = (productData) => {
+      setIsLoading(true);
       const productsByCategory = productData.filter(product => product.category  === currentCategory);
-
       setProducts(productsByCategory);
-    }
-    
-    setIsLoading(true);
+    }; 
     getProductData().then(
         (resolvedData) => {
-          setIsLoading(false);
           if (currentCategory === null) {
             setProducts(resolvedData);
           } else {
             getProductsByCategory(resolvedData);
           }
-        }
-    )
+          setIsLoading(false);
+    })
   }, [displayedPage]);
 
+  useEffect(() => {
+    setCurrentProduct(null);
+    setProducts(null);
+  }, [currentCategory]);
 
   const handleMenuClick = ({target}) => {
     setDisplayedPage(`${target.innerHTML}`);
     if (categories.includes(target.innerHTML)) {
       setCurrentCategory(target.innerHTML.toLowerCase());
     } else {
-      setCurrentCategory(null);
+      setCurrentCategory(null);  
     }
     window.scrollTo(0, 0);
+    setCurrentProduct(null);
   }
 
-  const [currentProduct, setCurrentProduct] = useState(null);
 
   const handleProductClick = ({target}) => {
     const productName = target.id.slice(0, -1);
@@ -58,11 +61,11 @@ function App() {
     window.scrollTo(0, 0);
   }
  
-
   const attachPage = () => {
     if (displayedPage === "Home") {
       return <Home 
                 products={products}
+                currentCategory={currentCategory}
                 handleProductClick={handleProductClick} 
                 />
     } else if (displayedPage === "ProductPage") {
@@ -76,7 +79,6 @@ function App() {
                 currentCategory={currentCategory}
             />
     }
-    
   }
 
   return (
@@ -109,7 +111,7 @@ function App() {
         {/* {isLoading && <p>Loading...</p>} */}
       </main>
       <footer className="site-footer">
-        <p>© 2020 by Retro Secrets</p>
+        <p>© {new Date().getFullYear()} by Retro Secrets</p>
       </footer>
     </div>
   );

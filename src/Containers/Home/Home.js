@@ -1,9 +1,8 @@
 import { ProductGalary } from "../ProductGalary";
 
+const Home = ({ products, handleProductClick, currentCategory }) => {
 
-const Home = ({ products, handleProductClick }) => {
-
-    return (<div className="homepage">
+    return (<>
                 <div className="hero">
                     <img 
                         src="https://static.wixstatic.com/media/01a936_d977a5241bb844e19ab90ff30a9fb078~mv2.jpg/v1/fill/w_1280,h_744,al_c,q_90/01a936_d977a5241bb844e19ab90ff30a9fb078~mv2.webp"
@@ -19,11 +18,14 @@ const Home = ({ products, handleProductClick }) => {
                     <h2 className="intro-heading">OUR COLLECTION</h2>
                     <p className="intro-text">Our vintage-inspired collection of earrings, bracelets, rings, and necklaces is bold yet fitting, nostalgic yet timeless, mystic and enchanting. It is for you, the dancing queen, the rebel girl, the fashion guru, the office lady to step up your accessory game and become the envy of all.  </p>
                 </div>
-                <ProductGalary 
-                    products={products}
-                    handleProductClick={handleProductClick} 
-                    />
-            </div>)
+                <div className="galary-container">
+                    <ProductGalary 
+                        products={products}
+                        currentCategory={currentCategory}
+                        handleProductClick={handleProductClick}                   
+                        />
+                </div>
+            </>)
 }
 
 export default Home;
