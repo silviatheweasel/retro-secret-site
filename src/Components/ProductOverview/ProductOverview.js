@@ -19,13 +19,15 @@ export const ProductOverview = React.memo(({ mainImg, currentCategory, secondary
         }      
     }, [mainImg])
 
-    
+    // const quickViewBtn = document.getElementById(`${name}-quick-view`);
     const handleMouseEnter = () => {
         setDisplayImg(secondaryImg);
+        // quickViewBtn.className = "isVisible quick-view-btn";
     }
 
     const handleMouseLeave = () => {
         setDisplayImg(mainImg);
+        // quickViewBtn.className = "notVisible quick-view-btn";
     }
     
     return (
@@ -33,21 +35,26 @@ export const ProductOverview = React.memo(({ mainImg, currentCategory, secondary
             className="product-overview-container"
             id={name + "5"}
             onClick={handleProductClick}
-            style={{backgroundColor: currentCategory === null ? "white" : "#F2F1F0"}}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            style={{backgroundColor: currentCategory === null | currentCategory === "all" ? "white" : "#F2F1F0"}}
             >
             <div className="flip-image">
                 <img 
                     src={displayImg.src} 
                     alt={displayImg.alt}
                     id={name + "1"}
-                    onMouseEnter={handleMouseEnter}
-                    onMouseLeave={handleMouseLeave}
                     className="display-image"
                     style={{
                         opacity: isLoading ? 0.5 : 1,
                         transition: "opacity .15s linear"
                       }}
                 ></img>
+                <div 
+                    id={name + "-quick-view"}
+                    className="quick-view-btn notVisible"
+                >Quick View
+            </div>
             </div>
             <h3 
                 id={name + "3"}

@@ -1,15 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { AddToCart } from "../AddToCart";
 
 export const ProductDetails = React.memo(({ currentProduct }) => {
-    const { images, name, price, main_image, description, length, materials } = currentProduct;
+    const { images, name, price, main_image, description, length, materials, inner_diameter, height } = currentProduct;
     const [displayImg, setDisplayImg] = useState(main_image);
+    useEffect(() => setDisplayImg(main_image), [currentProduct]);
     const handleClick = ({target}) => {
         setDisplayImg({
                         "src": target.src, 
                         "alt": target.alt
                         });
-        // target.style.border = "2px solid black";
     }
+    const [isShort, setIsShort] = useState(true);
+    const handleBtnClick = () => {
+        setIsShort(!isShort);
+    }
+   
     return (
         <div className="product-details-container">
             <div className="thumbnails-container">
@@ -19,8 +25,8 @@ export const ProductDetails = React.memo(({ currentProduct }) => {
                         src={image.src} 
                         alt={image.alt}
                         style = {{
-                            border: image.src === displayImg.src ? "2px solid black" : "none"
-                        }}
+                                    border: image.src === displayImg.src ? "2px solid black" : "none"
+                                }}
                         key={name + "image" + i}
                         onClick={handleClick}
                         ></img>)}
@@ -29,25 +35,32 @@ export const ProductDetails = React.memo(({ currentProduct }) => {
                 <img 
                     src={displayImg.src} 
                     alt={displayImg.alt}
-                    ></img>
+                ></img>
             </div>
             <div className="content">
                 <h1 className="product-name">{name}</h1>
                 <p className="product-price">{`£${price}.00`}</p>
                 <div className="product-description-container">
-                    <p className="product-description">{description}</p>
-                    <p>Length: {length}cm</p>
-                    <p>Materials: {materials}</p>
+                    <p 
+                        className={isShort ? "product-description clamped" : "product-description"} 
+                        id="product-description"
+                        >{description}</p>
+                    <div 
+                        className = { isShort ? "notVisible" : "isVisible"} 
+                        id="extra-info"
+                        >
+                        {length && <p>Length: {length} cm</p>}
+                        {inner_diameter && <p>Inner Diameter: {inner_diameter} cm</p>}
+                        {height && <p>Height: {height} cm</p>}
+                        <p>Materials: {materials}</p>
+                    </div>
+                    <button 
+                        onClick={handleBtnClick}
+                        id="toggle-content-btn"
+                        >{isShort ? "Read more" : "Less"}
+                    </button>
                 </div>
-                <label>
-                    Quantity
-                    <input 
-                        type="number"
-                        name="quantity"
-                        min="1"
-                        ></input>
-                </label>
-                <button>Add to Cart</button>
+                <AddToCart />
             </div>
         </div>
     )

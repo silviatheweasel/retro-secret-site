@@ -5,7 +5,7 @@ export const ProductGalary = React.memo(({ currentCategory, products, handleProd
     return (
         <div 
             className="product-galary"
-            style={{backgroundColor: currentCategory === null ? "white" : "#F2F1F0"}}
+            style={{backgroundColor: currentCategory === null | currentCategory === "all" ? "white" : "#F2F1F0"}}
             >
               {products.map((product, i) => (
                 <ProductOverview
