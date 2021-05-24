@@ -22,7 +22,7 @@ const Home = ({ products, handleProductClick, currentCategory }) => {
                     <ProductGalary 
                         products={products}
                         currentCategory={currentCategory}
-                        handleProductClick={handleProductClick}                   
+                        handleProductClick={handleProductClick}              
                         />
                 </div>
             </>)

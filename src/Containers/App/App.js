@@ -8,7 +8,7 @@ import { useState, useEffect } from "react";
 function App() {
   const categories = ["Necklaces", "Bracelets", "Rings", "Earrings"];
 
-  const [isLoading, setIsLoading] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
 
   const [currentCategory, setCurrentCategory] = useState(null);
 
@@ -21,37 +21,42 @@ function App() {
 
   useEffect(() => {
     const getProductsByCategory = (productData) => {
-      setIsLoading(true);
+      // setIsLoading(true);
       const productsByCategory = productData.filter(product => product.category  === currentCategory);
       setProducts(productsByCategory);
     }; 
     getProductData().then(
         (resolvedData) => {
-          if (currentCategory === null) {
+          if (currentCategory === null | currentCategory === "all") {
             setProducts(resolvedData);
           } else {
             getProductsByCategory(resolvedData);
           }
-          setIsLoading(false);
+          // setIsLoading(false);
     })
-  }, [displayedPage]);
-
-  useEffect(() => {
-    setCurrentProduct(null);
-    setProducts(null);
   }, [currentCategory]);
 
   const handleMenuClick = ({target}) => {
-    setDisplayedPage(`${target.innerHTML}`);
-    if (categories.includes(target.innerHTML)) {
-      setCurrentCategory(target.innerHTML.toLowerCase());
-    } else {
-      setCurrentCategory(null);  
+    if (target.innerHTML !== displayedPage) {
+      setDisplayedPage(`${target.innerHTML}`);
+      if (categories.includes(target.innerHTML)) {
+        setCurrentCategory(target.innerHTML.toLowerCase());
+      } else {
+        setCurrentCategory("all");  
+      }
+      setProducts(null);
+      window.scrollTo(0, 0);
+      setCurrentProduct(null);
     }
+    return;
+  }
+
+  const handleSiteLogoClick = () => {
+    setDisplayedPage("Home");
+    setCurrentCategory("all");
     window.scrollTo(0, 0);
     setCurrentProduct(null);
   }
-
 
   const handleProductClick = ({target}) => {
     const productName = target.id.slice(0, -1);
@@ -60,7 +65,7 @@ function App() {
     setDisplayedPage("ProductPage");
     window.scrollTo(0, 0);
   }
- 
+
   const attachPage = () => {
     if (displayedPage === "Home") {
       return <Home 
@@ -71,6 +76,10 @@ function App() {
     } else if (displayedPage === "ProductPage") {
       return <ProductPage
                 currentProduct={currentProduct} 
+                getCategoryPage={getCategoryPage}
+                handleSiteLogoClick={handleSiteLogoClick}
+                navigateProducts={navigateProducts}
+                products={products}
               />
     } else if (displayedPage.toLocaleLowerCase() === currentCategory) {
       return <CategoryPage
@@ -81,18 +90,36 @@ function App() {
     }
   }
 
+  const getCategoryPage = () => {
+    setDisplayedPage(currentCategory);
+  }
+
+  const navigateProducts = ({target}) => {
+    const currentProductName = currentProduct.name;
+    let index = products.findIndex(product => product.name === currentProductName);
+      if (index < products.length - 1 && target.id==="next-btn") {
+        setCurrentProduct(products[index +1]);
+      } else if (index > 0 && target.id==="prev-btn") {
+          setCurrentProduct(products[index -1]);
+      } else {
+        return;
+      }
+  }
+
   return (
     <div className="App">
       <header className="site-header">
         <h1 
           className="site-title"
-          onClick={() => setDisplayedPage("Home")}
+          onClick={handleSiteLogoClick}
         >RETRO SECRETS</h1>
         <nav className="nav-bar">
           <ul className="menu-list">
             <li
               className="menu-item"   
               onClick={handleMenuClick}
+              style={{color: currentCategory === null ? "#9E8765" : "black"
+                    }}
             >Home
             </li>
             {categories.map(
@@ -101,6 +128,7 @@ function App() {
                   key={"category" + i}
                   className="menu-item" 
                   onClick={handleMenuClick}
+                  style={{color: currentCategory === category.toLowerCase() ? "#9E8765" : "black"}}
                   >{category}
                   </li>))}
           </ul>
