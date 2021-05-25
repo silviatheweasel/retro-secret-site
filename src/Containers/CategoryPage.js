@@ -1,7 +1,14 @@
 import { ProductGalary } from "./ProductGalary";
 import React from "react";
 
-export const CategoryPage = React.memo(({ currentCategory, products, handleProductClick }) => {
+export const CategoryPage = React.memo(({ 
+                                            hideQuickViewPage, 
+                                            showQuickViewPage, 
+                                            currentCategory, 
+                                            products, 
+                                            handleProductClick, 
+                                            currentProduct 
+                                        }) => {
     const header = currentCategory[0].toUpperCase() + currentCategory.substring(1)
 
     return (<div className="category-page">
@@ -9,6 +16,9 @@ export const CategoryPage = React.memo(({ currentCategory, products, handleProdu
                 <ProductGalary 
                     products={products}
                     handleProductClick={handleProductClick}
+                    showQuickViewPage={showQuickViewPage}
+                    hideQuickViewPage={hideQuickViewPage}
+                    currentProduct={currentProduct} 
                     />
              </div>)
 })

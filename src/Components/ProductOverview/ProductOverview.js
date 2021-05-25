@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Placeholder from "./product-image-placeholder.jpg";
+import { QuickViewPage } from "../../Containers/QuickViewPage";
 
 export const ProductOverview = React.memo(({ mainImg, currentCategory, secondaryImg, name, price, handleProductClick }) => {
 
@@ -19,15 +20,12 @@ export const ProductOverview = React.memo(({ mainImg, currentCategory, secondary
         }      
     }, [mainImg])
 
-    // const quickViewBtn = document.getElementById(`${name}-quick-view`);
     const handleMouseEnter = () => {
         setDisplayImg(secondaryImg);
-        // quickViewBtn.className = "isVisible quick-view-btn";
     }
 
     const handleMouseLeave = () => {
         setDisplayImg(mainImg);
-        // quickViewBtn.className = "notVisible quick-view-btn";
     }
     
     return (
@@ -51,8 +49,8 @@ export const ProductOverview = React.memo(({ mainImg, currentCategory, secondary
                       }}
                 ></img>
                 <div 
-                    id={name + "-quick-view"}
-                    className="quick-view-btn notVisible"
+                    id={name + "6"}
+                    className="quick-view-btn"
                 >Quick View
             </div>
             </div>

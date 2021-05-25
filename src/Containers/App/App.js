@@ -3,6 +3,7 @@ import Home from "../Home/Home";
 import { ProductPage } from "../ProductPage";
 import { CategoryPage } from "../CategoryPage";
 import { getProductData } from "../../utilities/getProductData";
+import { QuickViewPage } from "../QuickViewPage";
 import { useState, useEffect } from "react";
 
 function App() {
@@ -34,7 +35,7 @@ function App() {
           }
           // setIsLoading(false);
     })
-  }, [currentCategory]);
+  }, [displayedPage]);
 
   const handleMenuClick = ({target}) => {
     if (target.innerHTML !== displayedPage) {
@@ -58,12 +59,21 @@ function App() {
     setCurrentProduct(null);
   }
 
+  const [showQuickViewPage, setShowQuickViewPage] = useState(false);
   const handleProductClick = ({target}) => {
     const productName = target.id.slice(0, -1);
     const filtededProduct = products.filter(product => product.name === productName)[0];
     setCurrentProduct(filtededProduct);
-    setDisplayedPage("ProductPage");
-    window.scrollTo(0, 0);
+    if (target.id.slice(-1) !== "6") {
+      setDisplayedPage("ProductPage");
+      window.scrollTo(0, 0);
+    } else {
+      setShowQuickViewPage(true);
+    }
+  }
+
+  const hideQuickViewPage = () => {
+    setShowQuickViewPage(false);
   }
 
   const attachPage = () => {
@@ -72,6 +82,9 @@ function App() {
                 products={products}
                 currentCategory={currentCategory}
                 handleProductClick={handleProductClick} 
+                showQuickViewPage={showQuickViewPage}
+                hideQuickViewPage={hideQuickViewPage}
+                currentProduct={currentProduct} 
                 />
     } else if (displayedPage === "ProductPage") {
       return <ProductPage
@@ -86,6 +99,9 @@ function App() {
                 products={products}
                 handleProductClick={handleProductClick}
                 currentCategory={currentCategory}
+                showQuickViewPage={showQuickViewPage}
+                hideQuickViewPage={hideQuickViewPage}
+                currentProduct={currentProduct} 
             />
     }
   }

@@ -2,7 +2,17 @@ import React, { useEffect, useState } from "react";
 import { AddToCart } from "../AddToCart";
 
 export const ProductDetails = React.memo(({ currentProduct }) => {
-    const { images, name, price, main_image, description, length, materials, inner_diameter, height } = currentProduct;
+    const { 
+            images, 
+            name, 
+            price, 
+            main_image, 
+            description, 
+            length, 
+            materials, 
+            inner_diameter, 
+            height 
+          } = currentProduct;
     const [displayImg, setDisplayImg] = useState(main_image);
     useEffect(() => setDisplayImg(main_image), [currentProduct]);
     const handleClick = ({target}) => {

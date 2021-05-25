@@ -1,7 +1,15 @@
 import { ProductOverview } from "../Components/ProductOverview/ProductOverview";
 import React from "react";
+import { QuickViewPage } from "./QuickViewPage";
 
-export const ProductGalary = React.memo(({ currentCategory, products, handleProductClick }) => {
+export const ProductGalary = React.memo(({ 
+                                            hideQuickViewPage, 
+                                            showQuickViewPage, 
+                                            currentCategory, 
+                                            products, 
+                                            handleProductClick,
+                                            currentProduct 
+                                        }) => {
     return (
         <div 
             className="product-galary"
@@ -18,6 +26,17 @@ export const ProductGalary = React.memo(({ currentCategory, products, handleProd
                     currentCategory={currentCategory}
                 />
                 ))}
+                {showQuickViewPage && 
+                <div>
+                    <button 
+                        onClick={hideQuickViewPage}
+                        >&times;
+                    </button>
+                    <QuickViewPage 
+                        currentProduct={currentProduct}
+                    />
+                </div>
+                }
         </div>
     )
 })

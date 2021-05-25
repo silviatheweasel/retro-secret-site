@@ -1,6 +1,6 @@
 import { ProductGalary } from "../ProductGalary";
 
-const Home = ({ products, handleProductClick, currentCategory }) => {
+const Home = ({ hideQuickViewPage, showQuickViewPage, products, handleProductClick, currentCategory, currentProduct }) => {
 
     return (<>
                 <div className="hero">
@@ -22,7 +22,10 @@ const Home = ({ products, handleProductClick, currentCategory }) => {
                     <ProductGalary 
                         products={products}
                         currentCategory={currentCategory}
-                        handleProductClick={handleProductClick}              
+                        handleProductClick={handleProductClick}   
+                        showQuickViewPage={showQuickViewPage}  
+                        hideQuickViewPage={hideQuickViewPage}  
+                        currentProduct={currentProduct}        
                         />
                 </div>
             </>)
