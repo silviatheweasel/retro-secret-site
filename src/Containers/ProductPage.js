@@ -1,6 +1,13 @@
 import { ProductDetails } from "../Components/ProductDetails/ProductDetails";
 
-export const ProductPage = ({ currentProduct, getCategoryPage, handleSiteLogoClick, navigateProducts, products }) => {
+export const ProductPage = ({ 
+                                currentProduct, 
+                                getCategoryPage, 
+                                handleSiteLogoClick, 
+                                navigateProducts, 
+                                products,
+                                currentCategory 
+                            }) => {
     const categoryName = currentProduct.category[0].toUpperCase() + currentProduct.category.substring(1);
     const index = products.findIndex(product => product.name === currentProduct.name);
     return (
@@ -11,10 +18,10 @@ export const ProductPage = ({ currentProduct, getCategoryPage, handleSiteLogoCli
                         className="breadcrumb-prev"
                         onClick={handleSiteLogoClick}
                         >Home</li>
-                    <li 
+                    {currentCategory !== "all" && <li 
                         className="breadcrumb-prev"
                         onClick={getCategoryPage}
-                        >{categoryName}</li>
+                        >{categoryName}</li>}
                     <li className="breadcrumb-current">{currentProduct.name}</li>
                 </ul>
                 <ul className="product-navigation">

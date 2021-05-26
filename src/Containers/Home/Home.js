@@ -1,7 +1,14 @@
 import { ProductGalary } from "../ProductGalary";
 
-const Home = ({ hideQuickViewPage, showQuickViewPage, products, handleProductClick, currentCategory, currentProduct }) => {
-
+const Home = ({     
+                hideQuickViewPage, 
+                showQuickViewPage, 
+                products, 
+                handleProductClick, 
+                currentCategory, 
+                currentProduct,
+                getProductPage 
+            }) => {
     return (<>
                 <div className="hero">
                     <img 
@@ -25,7 +32,8 @@ const Home = ({ hideQuickViewPage, showQuickViewPage, products, handleProductCli
                         handleProductClick={handleProductClick}   
                         showQuickViewPage={showQuickViewPage}  
                         hideQuickViewPage={hideQuickViewPage}  
-                        currentProduct={currentProduct}        
+                        currentProduct={currentProduct}  
+                        getProductPage={getProductPage}       
                         />
                 </div>
             </>)

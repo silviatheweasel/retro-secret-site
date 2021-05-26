@@ -11,7 +11,7 @@ function App() {
 
   // const [isLoading, setIsLoading] = useState(false);
 
-  const [currentCategory, setCurrentCategory] = useState(null);
+  const [currentCategory, setCurrentCategory] = useState("all");
 
   const [currentProduct, setCurrentProduct] = useState(null);
 
@@ -28,7 +28,7 @@ function App() {
     }; 
     getProductData().then(
         (resolvedData) => {
-          if (currentCategory === null | currentCategory === "all") {
+          if (currentCategory === "all") {
             setProducts(resolvedData);
           } else {
             getProductsByCategory(resolvedData);
@@ -84,7 +84,8 @@ function App() {
                 handleProductClick={handleProductClick} 
                 showQuickViewPage={showQuickViewPage}
                 hideQuickViewPage={hideQuickViewPage}
-                currentProduct={currentProduct} 
+                currentProduct={currentProduct}
+                getProductPage={getProductPage} 
                 />
     } else if (displayedPage === "ProductPage") {
       return <ProductPage
@@ -92,6 +93,7 @@ function App() {
                 getCategoryPage={getCategoryPage}
                 handleSiteLogoClick={handleSiteLogoClick}
                 navigateProducts={navigateProducts}
+                currentCategory={currentCategory}
                 products={products}
               />
     } else if (displayedPage.toLocaleLowerCase() === currentCategory) {
@@ -102,12 +104,19 @@ function App() {
                 showQuickViewPage={showQuickViewPage}
                 hideQuickViewPage={hideQuickViewPage}
                 currentProduct={currentProduct} 
+                getProductPage={getProductPage} 
             />
     }
   }
 
   const getCategoryPage = () => {
     setDisplayedPage(currentCategory);
+  }
+
+  const getProductPage = () => {
+    setDisplayedPage("ProductPage");
+    setShowQuickViewPage(false);
+    window.scrollTo(0, 0);
   }
 
   const navigateProducts = ({target}) => {

@@ -1,8 +1,28 @@
-.product-page .care-instruction-container .care-text, .product-details-container .content .product-price, .product-details-container .content .product-description-container {
+.product-details-container .content .product-price, .quick-view-wrapper .quick-view-container .quick-view-content .quick-view-text-container p, .product-page .care-instruction-container .care-text, .product-details-container .content .product-description-container {
   font-size: 15px;
   font-family: "Open Sans", sans-serif;
   color: #474747;
   line-height: 1.8rem;
+}
+
+.product-details-container .content .product-name, .quick-view-wrapper .quick-view-container .quick-view-content .quick-view-text-container h1 {
+  font-weight: 500;
+  font-family: "KoHo", sans-serif;
+  color: #474747;
+}
+
+.product-details-container .content .product-price, .quick-view-wrapper .quick-view-container .quick-view-content .quick-view-text-container p {
+  margin: 20px 0;
+  font-size: 25px;
+}
+
+.product-details-container .content .product-description-container #toggle-content-btn, .quick-view-wrapper .quick-view-container .quick-view-content .quick-view-text-container .more-info-btn {
+  border: none;
+  display: block;
+  background-color: transparent;
+  text-decoration: underline;
+  outline: none;
+  cursor: pointer;
 }
 
 * {
@@ -324,17 +344,6 @@ html, body {
   text-align: left;
 }
 
-.product-details-container .content .product-name {
-  font-weight: 500;
-  font-family: "KoHo", sans-serif;
-  color: #474747;
-}
-
-.product-details-container .content .product-price {
-  margin: 20px 0;
-  font-size: 25px;
-}
-
 .product-details-container .content .product-description-container {
   margin-bottom: 20px;
 }
@@ -359,19 +368,13 @@ html, body {
   margin-top: 20px;
 }
 
-.product-details-container .content .product-description-container #toggle-content-btn {
-  border: none;
-  text-decoration: underline;
-  outline: none;
-  cursor: pointer;
-}
-
-.product-details-container .content label {
+label {
   display: block;
   width: 80px;
+  text-align: left;
 }
 
-.product-details-container .content label input {
+label input {
   width: 80px;
   padding: 10px;
   border-radius: 0;
@@ -380,7 +383,7 @@ html, body {
   margin: 10px 0 30px 0;
 }
 
-.product-details-container .content .add-to-cart-btn {
+.add-to-cart-btn {
   width: 100%;
   background-color: black;
   color: white;
@@ -391,9 +394,88 @@ html, body {
   cursor: pointer;
 }
 
-.product-details-container .content .add-to-cart-btn:hover, .product-details-container .content .add-to-cart-btn :active {
+.add-to-cart-btn:hover, .add-to-cart-btn :active {
   background-color: #474747;
   color: #F2F1F0;
+}
+
+.quick-view-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 40;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(128, 128, 128, 0.7);
+}
+
+.quick-view-wrapper .quick-view-container {
+  width: 70%;
+  height: 80%;
+  background-color: white;
+  display: block;
+  margin: 5% auto;
+  padding: 30px;
+}
+
+.quick-view-wrapper .quick-view-container .close-btn {
+  padding: 0 8px;
+  background-color: transparent;
+  font-size: 30px;
+  display: block;
+  float: right;
+  margin: 10px;
+  cursor: pointer;
+  border: none;
+}
+
+.quick-view-wrapper .quick-view-container .quick-view-content {
+  margin: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.quick-view-wrapper .quick-view-container .quick-view-content .quick-view-image-container {
+  width: 50%;
+}
+
+.quick-view-wrapper .quick-view-container .quick-view-content .quick-view-image-container img {
+  width: 100%;
+  display: block;
+}
+
+.quick-view-wrapper .quick-view-container .quick-view-content .quick-view-text-container {
+  width: 40%;
+  margin-left: 10%;
+}
+
+.quick-view-wrapper .quick-view-container .quick-view-content .quick-view-text-container h1 {
+  text-align: left;
+}
+
+.quick-view-wrapper .quick-view-container .quick-view-content .quick-view-text-container p {
+  text-align: left;
+}
+
+.quick-view-wrapper .quick-view-container .quick-view-content .quick-view-text-container .more-info-btn {
+  margin-top: 20px;
+}
+
+.image-control-dots {
+  padding: 15px 0;
+}
+
+.image-control-dots .dot {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  margin: 0 5px;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
 }
 
 .site-footer {

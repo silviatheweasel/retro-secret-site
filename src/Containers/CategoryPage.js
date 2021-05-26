@@ -7,7 +7,8 @@ export const CategoryPage = React.memo(({
                                             currentCategory, 
                                             products, 
                                             handleProductClick, 
-                                            currentProduct 
+                                            currentProduct,
+                                            getProductPage 
                                         }) => {
     const header = currentCategory[0].toUpperCase() + currentCategory.substring(1)
 
@@ -19,6 +20,7 @@ export const CategoryPage = React.memo(({
                     showQuickViewPage={showQuickViewPage}
                     hideQuickViewPage={hideQuickViewPage}
                     currentProduct={currentProduct} 
+                    getProductPage={getProductPage} 
                     />
              </div>)
 })

@@ -8,7 +8,8 @@ export const ProductGalary = React.memo(({
                                             currentCategory, 
                                             products, 
                                             handleProductClick,
-                                            currentProduct 
+                                            currentProduct,
+                                            getProductPage 
                                         }) => {
     return (
         <div 
@@ -27,14 +28,18 @@ export const ProductGalary = React.memo(({
                 />
                 ))}
                 {showQuickViewPage && 
-                <div>
-                    <button 
-                        onClick={hideQuickViewPage}
-                        >&times;
-                    </button>
-                    <QuickViewPage 
-                        currentProduct={currentProduct}
-                    />
+                <div className="quick-view-wrapper">
+                    <div className="quick-view-container">
+                        <button 
+                            onClick={hideQuickViewPage}
+                            className="close-btn"
+                            >&times;
+                        </button>
+                        <QuickViewPage 
+                            currentProduct={currentProduct}
+                            getProductPage={getProductPage} 
+                        />
+                    </div>
                 </div>
                 }
         </div>
