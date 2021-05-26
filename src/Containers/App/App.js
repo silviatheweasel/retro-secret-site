@@ -1,15 +1,13 @@
 import './App.css';
-import Home from "../Home/Home";
+import Home from "../Home";
 import { ProductPage } from "../ProductPage";
 import { CategoryPage } from "../CategoryPage";
 import { getProductData } from "../../utilities/getProductData";
-import { QuickViewPage } from "../QuickViewPage";
 import { useState, useEffect } from "react";
+import { SlideOutCart } from '../SlideOutCart';
 
 function App() {
   const categories = ["Necklaces", "Bracelets", "Rings", "Earrings"];
-
-  // const [isLoading, setIsLoading] = useState(false);
 
   const [currentCategory, setCurrentCategory] = useState("all");
 
@@ -22,7 +20,6 @@ function App() {
 
   useEffect(() => {
     const getProductsByCategory = (productData) => {
-      // setIsLoading(true);
       const productsByCategory = productData.filter(product => product.category  === currentCategory);
       setProducts(productsByCategory);
     }; 
@@ -33,7 +30,6 @@ function App() {
           } else {
             getProductsByCategory(resolvedData);
           }
-          // setIsLoading(false);
     })
   }, [displayedPage]);
 
@@ -76,6 +72,34 @@ function App() {
     setShowQuickViewPage(false);
   }
 
+  const [productsInCart, setProductsInCart] = useState([]);
+  const [quantityInCart, setQuantityInCart] = useState(1);
+  const [showCart, setShowCart] = useState(false);
+  const addItemToCart = () => {
+    setProductsInCart((prev) => {
+      if (!productsInCart.find(product => product.name === currentProduct.name)) {
+        return [...prev, {...currentProduct, quantityInCart: quantityInCart}]
+    } else {
+        const filtered = prev.filter(product => product.name !== currentProduct.name);
+        return [...filtered, {...currentProduct, quantityInCart: quantityInCart}]
+      }
+    })
+    setShowQuickViewPage(false);
+    setShowCart(true);
+  }
+  const hideCart = () => {
+    setShowCart(false);
+  }
+
+
+  const handleQuantityInputChange = ({ target: { value }}) => {
+    setQuantityInCart(parseInt(value));
+  }
+
+  useEffect(() => {
+    setQuantityInCart(1)
+  }, [currentProduct]);
+
   const attachPage = () => {
     if (displayedPage === "Home") {
       return <Home 
@@ -86,6 +110,9 @@ function App() {
                 hideQuickViewPage={hideQuickViewPage}
                 currentProduct={currentProduct}
                 getProductPage={getProductPage} 
+                addItemToCart={addItemToCart}
+                handleQuantityInputChange={handleQuantityInputChange}
+                quantityInCart={quantityInCart}
                 />
     } else if (displayedPage === "ProductPage") {
       return <ProductPage
@@ -95,6 +122,9 @@ function App() {
                 navigateProducts={navigateProducts}
                 currentCategory={currentCategory}
                 products={products}
+                addItemToCart={addItemToCart}
+                handleQuantityInputChange={handleQuantityInputChange}
+                quantityInCart={quantityInCart}
               />
     } else if (displayedPage.toLocaleLowerCase() === currentCategory) {
       return <CategoryPage
@@ -105,6 +135,9 @@ function App() {
                 hideQuickViewPage={hideQuickViewPage}
                 currentProduct={currentProduct} 
                 getProductPage={getProductPage} 
+                addItemToCart={addItemToCart}
+                handleQuantityInputChange={handleQuantityInputChange}
+                quantityInCart={quantityInCart}
             />
     }
   }
@@ -161,7 +194,17 @@ function App() {
       </header>
       <main className="site-body">
         {products && attachPage()}
-        {/* {isLoading && <p>Loading...</p>} */}
+        {/* {showCart && <SlideOutCart
+                        productsInCart={productsInCart}
+                        showCart={showCart}
+                        hideCart={hideCart}
+          />} */}
+
+          <SlideOutCart
+              productsInCart={productsInCart}
+              showCart={showCart}
+              hideCart={hideCart} 
+              />
       </main>
       <footer className="site-footer">
         <p>© {new Date().getFullYear()} by Retro Secrets</p>

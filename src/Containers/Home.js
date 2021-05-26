@@ -1,4 +1,4 @@
-import { ProductGalary } from "../ProductGalary";
+import { ProductGalary } from "./ProductGalary";
 
 const Home = ({     
                 hideQuickViewPage, 
@@ -7,7 +7,10 @@ const Home = ({
                 handleProductClick, 
                 currentCategory, 
                 currentProduct,
-                getProductPage 
+                getProductPage,
+                addItemToCart,
+                handleQuantityInputChange,
+                quantityInCart
             }) => {
     return (<>
                 <div className="hero">
@@ -33,7 +36,10 @@ const Home = ({
                         showQuickViewPage={showQuickViewPage}  
                         hideQuickViewPage={hideQuickViewPage}  
                         currentProduct={currentProduct}  
-                        getProductPage={getProductPage}       
+                        getProductPage={getProductPage}
+                        addItemToCart={addItemToCart}
+                        handleQuantityInputChange={handleQuantityInputChange}
+                        quantityInCart={quantityInCart}       
                         />
                 </div>
             </>)

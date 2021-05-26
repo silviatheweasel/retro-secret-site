@@ -2,13 +2,20 @@ import { AddToCart } from "../Components/AddToCart";
 import { ImageControlDots } from "../Components/ImageControlDots";
 import { useState, useEffect } from "react";
 
-export const QuickViewPage = ({ currentProduct, getProductPage }) => {     
+export const QuickViewPage = ({  
+                                currentProduct, 
+                                getProductPage, 
+                                addItemToCart,
+                                handleQuantityInputChange,
+                                quantityInCart 
+                            }) => {     
     const {
             images, 
             name, 
             price, 
             main_image 
         } = currentProduct;
+        
     const [displayedImg, setDisplayedImg] = useState(main_image); 
     useEffect(() => setDisplayedImg(main_image), [currentProduct]); 
 
@@ -38,7 +45,11 @@ export const QuickViewPage = ({ currentProduct, getProductPage }) => {
                     <div className="quick-view-text-container">
                         <h1 className="product-name">{name}</h1>
                         <p className="product-price">£{price}.00</p>
-                        <AddToCart />
+                        <AddToCart 
+                            addItemToCart={addItemToCart}
+                            handleQuantityInputChange={handleQuantityInputChange}
+                            quantityInCart={quantityInCart}
+                        />
                         <button
                             onClick={getProductPage}
                             className="more-info-btn"

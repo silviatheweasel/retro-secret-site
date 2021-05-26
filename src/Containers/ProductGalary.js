@@ -9,7 +9,10 @@ export const ProductGalary = React.memo(({
                                             products, 
                                             handleProductClick,
                                             currentProduct,
-                                            getProductPage 
+                                            getProductPage,
+                                            addItemToCart,
+                                            handleQuantityInputChange,
+                                            quantityInCart
                                         }) => {
     return (
         <div 
@@ -37,7 +40,10 @@ export const ProductGalary = React.memo(({
                         </button>
                         <QuickViewPage 
                             currentProduct={currentProduct}
-                            getProductPage={getProductPage} 
+                            getProductPage={getProductPage}
+                            addItemToCart={addItemToCart}
+                            handleQuantityInputChange={handleQuantityInputChange} 
+                            quantityInCart={quantityInCart}
                         />
                     </div>
                 </div>

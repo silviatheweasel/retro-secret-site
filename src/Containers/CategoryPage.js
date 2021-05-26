@@ -8,7 +8,9 @@ export const CategoryPage = React.memo(({
                                             products, 
                                             handleProductClick, 
                                             currentProduct,
-                                            getProductPage 
+                                            getProductPage,
+                                            addItemToCart,
+                                            quantityInCart
                                         }) => {
     const header = currentCategory[0].toUpperCase() + currentCategory.substring(1)
 
@@ -20,7 +22,9 @@ export const CategoryPage = React.memo(({
                     showQuickViewPage={showQuickViewPage}
                     hideQuickViewPage={hideQuickViewPage}
                     currentProduct={currentProduct} 
-                    getProductPage={getProductPage} 
+                    getProductPage={getProductPage}
+                    addItemToCart={addItemToCart}
+                    quantityInCart={quantityInCart} 
                     />
              </div>)
 })

@@ -1,4 +1,4 @@
-import { ProductDetails } from "../Components/ProductDetails/ProductDetails";
+import { ProductDetails } from "../Components/ProductDetails";
 
 export const ProductPage = ({ 
                                 currentProduct, 
@@ -6,7 +6,11 @@ export const ProductPage = ({
                                 handleSiteLogoClick, 
                                 navigateProducts, 
                                 products,
-                                currentCategory 
+                                currentCategory, 
+                                addItemToCart,
+                                handleQuantityInputChange,
+                                quantityInCart
+
                             }) => {
     const categoryName = currentProduct.category[0].toUpperCase() + currentProduct.category.substring(1);
     const index = products.findIndex(product => product.name === currentProduct.name);
@@ -45,6 +49,9 @@ export const ProductPage = ({
             </nav>
             <ProductDetails 
                 currentProduct={currentProduct} 
+                addItemToCart={addItemToCart}
+                handleQuantityInputChange={handleQuantityInputChange}
+                quantityInCart={quantityInCart}
             />
             <div className="care-instruction-container">
                 <h2 className="care-title">Care Instructions</h2>

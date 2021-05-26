@@ -333,13 +333,9 @@ label {
 }
 
 .quick-view-wrapper {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 40;
-    width: 100%;
-    height: 100%;
+    @extend %dimmer;
     background-color: fade-out($color: gray, $amount: 0.3);
+    z-index: 40;
     .quick-view-container {
         width: 70%;
         height: 80%;
@@ -403,6 +399,79 @@ label {
         margin: 0 5px;
         transition: 0.5s ease;
     }
+}
+
+#slide-out-cart-wrapper {
+    @extend %dimmer;
+    background-color: fade-out($color: #000000, $amount: 0.6);
+    #slide-out-cart {
+        position: fixed;
+        right: 0;
+        top: 0;
+        z-index: 50;
+        background-color: white;
+        height: 100vh;    
+        transition: width 0.75s ease;
+        header {
+            padding: 35px;
+            background-color: black;
+            color: white;
+            .slide-right-btn {
+                float: left;
+                outline: none;
+                border: none;
+                i {
+                    color: white;
+                    background-color: black;
+                    font-size: 20px;
+                    cursor: pointer;
+                }
+            }
+            h1 {
+                display: inline;
+                font-family: $KoHo;
+                font-weight: 600;
+                font-size: 23px;
+            }
+        }
+        main {
+            height: 400px;
+            padding: 30px;
+            overflow-y: scroll;
+            .empty-cart {
+                font-family: $OpenSans;
+                font-size: 17px;
+                font-weight: 500;
+            }  
+        }
+        .subtotal-container {
+            padding: 10px 30px;
+            p {
+               text-align: left;
+               color: black;
+               font-size: 24px;
+               margin: 10px 0;
+            }
+        }  
+        .view-cart-container {
+            padding: 10px 30px;
+            .view-cart-btn {
+                width: 100%;
+                padding: 15px;
+                background-color: $gold;
+                color: white;
+                font-size: 16px;
+                font-family: $OpenSans;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                &:hover, :active, :focus {
+                    background-color: fade-out($color: $gold, $amount: 0.3);
+                }
+            }
+        }
+    }
+    
 }
 
 .site-footer {

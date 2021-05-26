@@ -1,7 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { AddToCart } from "../AddToCart";
+import { AddToCart } from "./AddToCart";
 
-export const ProductDetails = React.memo(({ currentProduct }) => {
+export const ProductDetails = React.memo(({ 
+                                            currentProduct, 
+                                            addItemToCart, 
+                                            handleQuantityInputChange,
+                                            quantityInCart 
+                                        }) => 
+{
     const { 
             images, 
             name, 
@@ -11,8 +17,9 @@ export const ProductDetails = React.memo(({ currentProduct }) => {
             length, 
             materials, 
             inner_diameter, 
-            height 
+            height, 
           } = currentProduct;
+          
     const [displayImg, setDisplayImg] = useState(main_image);
     useEffect(() => setDisplayImg(main_image), [currentProduct]);
     const handleClick = ({target}) => {
@@ -70,7 +77,11 @@ export const ProductDetails = React.memo(({ currentProduct }) => {
                         >{isShort ? "Read more" : "Less"}
                     </button>
                 </div>
-                <AddToCart />
+                <AddToCart 
+                    addItemToCart={addItemToCart}
+                    handleQuantityInputChange={handleQuantityInputChange}
+                    quantityInCart={quantityInCart}
+                    />
             </div>
         </div>
     )

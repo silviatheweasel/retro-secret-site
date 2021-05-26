@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Placeholder from "./product-image-placeholder.jpg";
-import { QuickViewPage } from "../../Containers/QuickViewPage";
 
 export const ProductOverview = React.memo(({ mainImg, currentCategory, secondaryImg, name, price, handleProductClick }) => {
 
