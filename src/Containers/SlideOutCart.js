@@ -1,10 +1,19 @@
 import { CartProductList } from "../Components/CartProductList"
 
-export const SlideOutCart = ({ productsInCart, showCart, hideCart }) => {
+export const SlideOutCart = ({ productsInCart, showCart, hideCart, deleteItemInCart }) => {
+
+    const totalPriceArray = productsInCart.map(product => product.price * product.quantityInCart);
+    const subtotal = totalPriceArray.length > 0 && totalPriceArray.reduce((accumulator, currentValue) => accumulator + currentValue);
+        
     return (<div 
                 id="slide-out-cart-wrapper"
-                style={{width: showCart ? "100%" : 0}}
+            >
+                <div
+                    className="dimmer"
+                    style={{width: showCart ? "100%" : 0}}
+                    onClick={hideCart}
                 >
+                </div>
                 <div 
                     id="slide-out-cart"
                     className="slide-out-cart"
@@ -23,21 +32,23 @@ export const SlideOutCart = ({ productsInCart, showCart, hideCart }) => {
                     <main>
                         {productsInCart.length > 0 ? productsInCart.map((product, i) => <CartProductList 
                                                                 name={product.name}
+                                                                id={"product-in-cart-" + i}
                                                                 key={"product-in-cart-" + i}
                                                                 price={product.price}
                                                                 image={product.main_image}
                                                                 quantityInCart={product.quantityInCart}
+                                                                deleteItemInCart={deleteItemInCart}
                                                                 />) : <p className="empty-cart">Cart is empty</p>}
                     </main>
-                    <div className="subtotal-container">
+                    {productsInCart.length > 0 && (<div className="subtotal-container">
                         <p>Subtotal</p>
-                        <p>£.00</p>
-                    </div>
-                    <div className="view-cart-container">
+                        <p>£{subtotal}.00</p>
+                    </div>)}
+                   {productsInCart.length > 0 && (<div className="view-cart-container">
                         <button
                             className="view-cart-btn"
                         >View Cart</button>
-                    </div>
+                    </div>)}
                 </div>
             </div>)
 }

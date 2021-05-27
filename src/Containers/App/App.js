@@ -91,7 +91,6 @@ function App() {
     setShowCart(false);
   }
 
-
   const handleQuantityInputChange = ({ target: { value }}) => {
     setQuantityInCart(parseInt(value));
   }
@@ -164,13 +163,24 @@ function App() {
       }
   }
 
+  const deleteItemInCart = ({target}) => {
+    const restOfProducts = productsInCart.filter(product => product.name !== target.id.slice(0, -3));
+    setProductsInCart(restOfProducts);
+  }
+
   return (
     <div className="App">
       <header className="site-header">
         <h1 
           className="site-title"
           onClick={handleSiteLogoClick}
-        >RETRO SECRETS</h1>
+          >RETRO SECRETS
+        </h1>
+        <button
+          className="nav-bar-cart-btn"
+          onClick={() => setShowCart(true)}
+        >{productsInCart.length}
+        </button>
         <nav className="nav-bar">
           <ul className="menu-list">
             <li
@@ -197,7 +207,8 @@ function App() {
           <SlideOutCart
               productsInCart={productsInCart}
               showCart={showCart}
-              hideCart={hideCart} 
+              hideCart={hideCart}
+              deleteItemInCart={deleteItemInCart} 
               />
       </main>
       <footer className="site-footer">

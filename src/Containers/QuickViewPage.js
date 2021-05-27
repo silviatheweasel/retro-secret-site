@@ -15,9 +15,9 @@ export const QuickViewPage = ({
             price, 
             main_image 
         } = currentProduct;
-        
+
     const [displayedImg, setDisplayedImg] = useState(main_image); 
-    useEffect(() => setDisplayedImg(main_image), [currentProduct]); 
+    useEffect(() => setDisplayedImg(currentProduct.main_image), [currentProduct]); 
 
     const switchImg = ({target}) => {
         setDisplayedImg({

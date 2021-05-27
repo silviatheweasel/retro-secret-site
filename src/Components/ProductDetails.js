@@ -19,9 +19,9 @@ export const ProductDetails = React.memo(({
             inner_diameter, 
             height, 
           } = currentProduct;
-          
+
     const [displayImg, setDisplayImg] = useState(main_image);
-    useEffect(() => setDisplayImg(main_image), [currentProduct]);
+    useEffect(() => {setDisplayImg(currentProduct.main_image)}, [currentProduct]);
     const handleClick = ({target}) => {
         setDisplayImg({
                         "src": target.src, 
