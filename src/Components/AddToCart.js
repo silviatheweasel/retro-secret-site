@@ -1,4 +1,4 @@
-export const AddToCart = () => {
+export const AddToCart = ({ addItemToCart, handleQuantityInputChange, quantityInCart }) => {
     return (<>
                 <label>
                     Quantity
@@ -6,8 +6,15 @@ export const AddToCart = () => {
                         type="number"
                         name="quantity"
                         min="1"
+                        autoComplete="off"
+                        onChange={handleQuantityInputChange}
+                        value={quantityInCart}
                         ></input>
                 </label>
-                <button className="add-to-cart-btn">Add to Cart</button>
+                <button 
+                    className="add-to-cart-btn"
+                    onClick={addItemToCart}
+                    >Add to Cart
+                </button>
              </>)
 }

@@ -1,7 +1,19 @@
 import { ProductOverview } from "../Components/ProductOverview/ProductOverview";
 import React from "react";
+import { QuickViewPage } from "./QuickViewPage";
 
-export const ProductGalary = React.memo(({ currentCategory, products, handleProductClick }) => {
+export const ProductGalary = React.memo(({ 
+                                            hideQuickViewPage, 
+                                            showQuickViewPage, 
+                                            currentCategory, 
+                                            products, 
+                                            handleProductClick,
+                                            currentProduct,
+                                            getProductPage,
+                                            addItemToCart,
+                                            handleQuantityInputChange,
+                                            quantityInCart
+                                        }) => {
     return (
         <div 
             className="product-galary"
@@ -18,6 +30,24 @@ export const ProductGalary = React.memo(({ currentCategory, products, handleProd
                     currentCategory={currentCategory}
                 />
                 ))}
+                {showQuickViewPage && 
+                <div className="quick-view-wrapper">
+                    <div className="quick-view-container">
+                        <button 
+                            onClick={hideQuickViewPage}
+                            className="close-btn"
+                            >&times;
+                        </button>
+                        <QuickViewPage 
+                            currentProduct={currentProduct}
+                            getProductPage={getProductPage}
+                            addItemToCart={addItemToCart}
+                            handleQuantityInputChange={handleQuantityInputChange} 
+                            quantityInCart={quantityInCart}
+                        />
+                    </div>
+                </div>
+                }
         </div>
     )
 })

@@ -10,3 +10,34 @@ $OpenSans: 'Open Sans', sans-serif;
     color: $darkgrey;
     line-height: 1.8rem;
 }
+
+%productName {
+    font-weight: 500;
+    font-family: $KoHo;
+    color: $darkgrey;
+}
+
+%productPrice {
+    @extend %text;
+    margin: 20px 0;
+    font-size: 25px;
+}
+
+%moreInfoBtn {
+    border: none;
+    display: block;
+    background-color: transparent;
+    text-decoration: underline;
+    outline: none;
+    cursor: pointer;
+}
+
+%dimmer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    right: 0;
+    bottom: 0;
+}
