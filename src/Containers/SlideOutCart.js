@@ -3,12 +3,11 @@ import { CartProductList } from "../Components/CartProductList"
 export const SlideOutCart = ({ productsInCart, showCart, hideCart }) => {
     return (<div 
                 id="slide-out-cart-wrapper"
-                style={{
-                    backgroundColor: showCart ? "rgba(0, 0, 0, 0.5)" : "transparent",
-                    zIndex: showCart ? "50" : "-20"
-                }}>
+                style={{width: showCart ? "100%" : 0}}
+                >
                 <div 
                     id="slide-out-cart"
+                    className="slide-out-cart"
                     style={{width: showCart ? "370px" : 0}}
                 >
                     <header>

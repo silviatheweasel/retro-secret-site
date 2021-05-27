@@ -31,6 +31,8 @@
   left: 0;
   width: 100%;
   height: 100%;
+  right: 0;
+  bottom: 0;
 }
 
 * {
@@ -483,73 +485,80 @@ label input {
 
 #slide-out-cart-wrapper {
   background-color: rgba(0, 0, 0, 0.4);
+  z-index: 50;
+  overflow-x: hidden;
 }
 
-#slide-out-cart-wrapper #slide-out-cart {
+#slide-out-cart-wrapper .slide-out-cart {
   position: fixed;
   right: 0;
   top: 0;
   z-index: 50;
   background-color: white;
   height: 100vh;
-  -webkit-transition: width 0.75s ease;
-  transition: width 0.75s ease;
+  overflow-x: hidden;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
-#slide-out-cart-wrapper #slide-out-cart header {
+#slide-out-cart-wrapper .slide-out-cart header {
   padding: 35px;
   background-color: black;
   color: white;
+  display: block;
 }
 
-#slide-out-cart-wrapper #slide-out-cart header .slide-right-btn {
-  float: left;
+#slide-out-cart-wrapper .slide-out-cart header .slide-right-btn {
+  position: absolute;
+  left: 35px;
+  top: 30px;
   outline: none;
   border: none;
 }
 
-#slide-out-cart-wrapper #slide-out-cart header .slide-right-btn i {
+#slide-out-cart-wrapper .slide-out-cart header .slide-right-btn i {
   color: white;
   background-color: black;
   font-size: 20px;
+  padding: 10px;
   cursor: pointer;
 }
 
-#slide-out-cart-wrapper #slide-out-cart header h1 {
+#slide-out-cart-wrapper .slide-out-cart header h1 {
   display: inline;
   font-family: "KoHo", sans-serif;
   font-weight: 600;
   font-size: 23px;
 }
 
-#slide-out-cart-wrapper #slide-out-cart main {
+#slide-out-cart-wrapper .slide-out-cart main {
   height: 400px;
   padding: 30px;
   overflow-y: scroll;
 }
 
-#slide-out-cart-wrapper #slide-out-cart main .empty-cart {
+#slide-out-cart-wrapper .slide-out-cart main .empty-cart {
   font-family: "Open Sans", sans-serif;
   font-size: 17px;
   font-weight: 500;
 }
 
-#slide-out-cart-wrapper #slide-out-cart .subtotal-container {
+#slide-out-cart-wrapper .slide-out-cart .subtotal-container {
   padding: 10px 30px;
 }
 
-#slide-out-cart-wrapper #slide-out-cart .subtotal-container p {
+#slide-out-cart-wrapper .slide-out-cart .subtotal-container p {
   text-align: left;
   color: black;
   font-size: 24px;
   margin: 10px 0;
 }
 
-#slide-out-cart-wrapper #slide-out-cart .view-cart-container {
+#slide-out-cart-wrapper .slide-out-cart .view-cart-container {
   padding: 10px 30px;
 }
 
-#slide-out-cart-wrapper #slide-out-cart .view-cart-container .view-cart-btn {
+#slide-out-cart-wrapper .slide-out-cart .view-cart-container .view-cart-btn {
   width: 100%;
   padding: 15px;
   background-color: #9E8765;
@@ -561,7 +570,7 @@ label input {
   cursor: pointer;
 }
 
-#slide-out-cart-wrapper #slide-out-cart .view-cart-container .view-cart-btn:hover, #slide-out-cart-wrapper #slide-out-cart .view-cart-container .view-cart-btn :active, #slide-out-cart-wrapper #slide-out-cart .view-cart-container .view-cart-btn :focus {
+#slide-out-cart-wrapper .slide-out-cart .view-cart-container .view-cart-btn:hover, #slide-out-cart-wrapper .slide-out-cart .view-cart-container .view-cart-btn :active, #slide-out-cart-wrapper .slide-out-cart .view-cart-container .view-cart-btn :focus {
   background-color: rgba(158, 135, 101, 0.7);
 }
 

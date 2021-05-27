@@ -194,12 +194,6 @@ function App() {
       </header>
       <main className="site-body">
         {products && attachPage()}
-        {/* {showCart && <SlideOutCart
-                        productsInCart={productsInCart}
-                        showCart={showCart}
-                        hideCart={hideCart}
-          />} */}
-
           <SlideOutCart
               productsInCart={productsInCart}
               showCart={showCart}
