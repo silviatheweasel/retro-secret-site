@@ -168,6 +168,24 @@ function App() {
     setProductsInCart(restOfProducts);
   }
 
+  const adjustQuantityInCart = ({target}) => {
+    let productsInCartCopy = [...productsInCart];
+    if (target.id.includes("plus")) {
+      const index = target.id.slice(4);
+      productsInCartCopy[index].quantityInCart ++;
+      setProductsInCart(productsInCartCopy);
+    } else {
+        const index = target.id.slice(5);
+        if (productsInCartCopy[index].quantityInCart >= 1) {
+          productsInCartCopy[index].quantityInCart --;
+          setProductsInCart(productsInCartCopy);
+        }
+         productsInCartCopy.splice(index, 1);
+         setProductsInCart(productsInCartCopy);
+    }
+  }
+
+
   return (
     <div className="App">
       <header className="site-header">
@@ -209,6 +227,7 @@ function App() {
               showCart={showCart}
               hideCart={hideCart}
               deleteItemInCart={deleteItemInCart} 
+              adjustQuantityInCart={adjustQuantityInCart}
               />
       </main>
       <footer className="site-footer">

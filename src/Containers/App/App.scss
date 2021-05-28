@@ -422,10 +422,6 @@ label {
 }
 
 #slide-out-cart-wrapper {
-    // @extend %dimmer;
-    // background-color: fade-out($color: #000000, $amount: 0.6);
-    // z-index: 40;
-    // overflow-x: hidden;
     .dimmer {
         @extend %dimmer;
         background-color: fade-out($color: #000000, $amount: 0.6);
@@ -519,6 +515,7 @@ label {
 .cart-product-row {
     padding: 20px 0;
     border-bottom: 1px solid $grey;
+    position: relative;
     display: flex;
     overflow-x: hidden;
     transition: 0.3s;
@@ -534,7 +531,7 @@ label {
         }
     }
     .cart-product-info {
-        width: 200px;
+        width: 180px;
         h2 {
             @extend %text;
             color: gray;
@@ -573,7 +570,8 @@ label {
     }
     .delete-product-in-cart {
         position: absolute;
-        right: 30px;
+        right: 20px;
+        top: 25px;
         height: 20px;
         width: 20px;
         border: 1px solid $grey;

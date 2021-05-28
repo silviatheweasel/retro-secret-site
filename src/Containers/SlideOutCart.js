@@ -1,9 +1,15 @@
-import { CartProductList } from "../Components/CartProductList"
+import { CartProductList } from "../Components/CartProductList";
 
-export const SlideOutCart = ({ productsInCart, showCart, hideCart, deleteItemInCart }) => {
+export const SlideOutCart = ({ 
+                                productsInCart, 
+                                showCart, 
+                                hideCart, 
+                                deleteItemInCart,
+                                adjustQuantityInCart
+                            }) => {
 
-    const totalPriceArray = productsInCart.map(product => product.price * product.quantityInCart);
-    const subtotal = totalPriceArray.length > 0 && totalPriceArray.reduce((accumulator, currentValue) => accumulator + currentValue);
+           const totalPriceArray = productsInCart.map(product => product.price * product.quantityInCart);
+        const subtotal = totalPriceArray.length > 0 && totalPriceArray.reduce((accumulator, currentValue) => accumulator + currentValue);
         
     return (<div 
                 id="slide-out-cart-wrapper"
@@ -38,6 +44,7 @@ export const SlideOutCart = ({ productsInCart, showCart, hideCart, deleteItemInC
                                                                 image={product.main_image}
                                                                 quantityInCart={product.quantityInCart}
                                                                 deleteItemInCart={deleteItemInCart}
+                                                                adjustQuantityInCart={adjustQuantityInCart}
                                                                 />) : <p className="empty-cart">Cart is empty</p>}
                     </main>
                     {productsInCart.length > 0 && (<div className="subtotal-container">

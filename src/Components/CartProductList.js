@@ -1,4 +1,14 @@
-export const CartProductList = ({ name, price, image, quantityInCart, id, deleteItemInCart }) => {
+export const CartProductList = ({ 
+                                    name, 
+                                    price, 
+                                    image, 
+                                    quantityInCart,
+                                    deleteItemInCart,
+                                    adjustQuantityInCart,
+                                    id,
+
+                                 }) => {
+
     return (<div 
                 className="cart-product-row"
                 >
@@ -13,11 +23,19 @@ export const CartProductList = ({ name, price, image, quantityInCart, id, delete
                     <p className="cart-price">£{price}.00</p>
                     <div className="quantityControl">
                         <button className="minus">
-                            <i className="fas fa-minus"></i>
+                            <i 
+                                className="fas fa-minus"
+                                id={"minus" + id.slice(16)}
+                                onClick={adjustQuantityInCart}
+                                ></i>
                         </button>
                         <p className="quantity">{quantityInCart}</p>
                         <button className="plus">
-                            <i className="fas fa-plus"></i>
+                            <i 
+                                className="fas fa-plus"
+                                id={"plus" + id.slice(16)}
+                                onClick={adjustQuantityInCart}
+                                ></i>
                         </button>
                     </div>            
                 </div>
@@ -28,4 +46,6 @@ export const CartProductList = ({ name, price, image, quantityInCart, id, delete
                     >&times; 
                 </button>
             </div>)
+
+
 }

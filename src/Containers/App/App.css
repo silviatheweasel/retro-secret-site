@@ -613,6 +613,7 @@ label input {
 .cart-product-row {
   padding: 20px 0;
   border-bottom: 1px solid #F2F1F0;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -636,7 +637,7 @@ label input {
 }
 
 .cart-product-row .cart-product-info {
-  width: 200px;
+  width: 180px;
 }
 
 .cart-product-row .cart-product-info h2 {
@@ -683,7 +684,8 @@ label input {
 
 .cart-product-row .delete-product-in-cart {
   position: absolute;
-  right: 30px;
+  right: 20px;
+  top: 25px;
   height: 20px;
   width: 20px;
   border: 1px solid #F2F1F0;
