@@ -87,6 +87,7 @@ function App() {
     setShowQuickViewPage(false);
     setShowCart(true);
   }
+  
   const hideCart = () => {
     setShowCart(false);
   }
@@ -172,16 +173,20 @@ function App() {
     let productsInCartCopy = [...productsInCart];
     if (target.id.includes("plus")) {
       const index = target.id.slice(4);
-      productsInCartCopy[index].quantityInCart ++;
-      setProductsInCart(productsInCartCopy);
+      if (productsInCartCopy[index].quantityInCart < productsInCartCopy[index].quantity) {
+        productsInCartCopy[index].quantityInCart ++;
+        setProductsInCart(productsInCartCopy);
+      }
+      return;
     } else {
         const index = target.id.slice(5);
-        if (productsInCartCopy[index].quantityInCart >= 1) {
+        if (productsInCartCopy[index].quantityInCart >= 2) {
           productsInCartCopy[index].quantityInCart --;
           setProductsInCart(productsInCartCopy);
+        } else {
+          productsInCartCopy.splice(index, 1);
+          setProductsInCart(productsInCartCopy);
         }
-         productsInCartCopy.splice(index, 1);
-         setProductsInCart(productsInCartCopy);
     }
   }
 

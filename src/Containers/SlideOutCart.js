@@ -43,6 +43,7 @@ export const SlideOutCart = ({
                                                                 price={product.price}
                                                                 image={product.main_image}
                                                                 quantityInCart={product.quantityInCart}
+                                                                quantity={product.quantity}
                                                                 deleteItemInCart={deleteItemInCart}
                                                                 adjustQuantityInCart={adjustQuantityInCart}
                                                                 />) : <p className="empty-cart">Cart is empty</p>}

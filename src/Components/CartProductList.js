@@ -6,6 +6,7 @@ export const CartProductList = ({
                                     deleteItemInCart,
                                     adjustQuantityInCart,
                                     id,
+                                    quantity
 
                                  }) => {
 
@@ -35,6 +36,10 @@ export const CartProductList = ({
                                 className="fas fa-plus"
                                 id={"plus" + id.slice(16)}
                                 onClick={adjustQuantityInCart}
+                                style={{
+                                    color: quantityInCart === quantity ? "#d3d3d3": "gray",
+                                    cursor: quantityInCart === quantity ? "default" : "pointer"
+                                }}
                                 ></i>
                         </button>
                     </div>            
