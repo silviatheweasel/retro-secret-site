@@ -5,7 +5,8 @@ export const SlideOutCart = ({
                                 showCart, 
                                 hideCart, 
                                 deleteItemInCart,
-                                adjustQuantityInCart
+                                adjustQuantityInCart,
+                                openCart
                             }) => {
 
            const totalPriceArray = productsInCart.map(product => product.price * product.quantityInCart);
@@ -55,6 +56,7 @@ export const SlideOutCart = ({
                    {productsInCart.length > 0 && (<div className="view-cart-container">
                         <button
                             className="view-cart-btn"
+                            onClick={openCart}
                         >View Cart</button>
                     </div>)}
                 </div>

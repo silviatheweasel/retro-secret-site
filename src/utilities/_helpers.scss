@@ -1,6 +1,7 @@
 $gold: #9E8765;
 $grey: #F2F1F0;
 $darkgrey: rgb(71, 71, 71);
+$dividerGrey: rgb(196, 196, 196);
 $KoHo: 'KoHo', sans-serif;
 $OpenSans: 'Open Sans', sans-serif;
 
@@ -40,4 +41,11 @@ $OpenSans: 'Open Sans', sans-serif;
     height: 100%;
     right: 0;
     bottom: 0;
+}
+
+%cartTitles {
+    font-family: $KoHo;
+    color: black;
+    font-size: 22px;
+    font-weight: 600;
 }

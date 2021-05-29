@@ -20,8 +20,10 @@ export const CartProductList = ({
                         ></img>
                 </div>
                 <div className="cart-product-info">
-                    <h2>{name}</h2>
-                    <p className="cart-price">£{price}.00</p>
+                    <div className="cart-product-basics">
+                        <h2>{name}</h2>
+                        <p className="cart-price">£{price}.00</p>
+                    </div>
                     <div className="quantityControl">
                         <button className="minus">
                             <i 

@@ -5,6 +5,7 @@ import { CategoryPage } from "../CategoryPage";
 import { getProductData } from "../../utilities/getProductData";
 import { useState, useEffect } from "react";
 import { SlideOutCart } from '../SlideOutCart';
+import {Cart } from "../Cart";
 
 function App() {
   const categories = ["Necklaces", "Bracelets", "Rings", "Earrings"];
@@ -139,6 +140,12 @@ function App() {
                 handleQuantityInputChange={handleQuantityInputChange}
                 quantityInCart={quantityInCart}
             />
+    } else {
+      return <Cart 
+                productsInCart={productsInCart}
+                deleteItemInCart={deleteItemInCart}
+                adjustQuantityInCart={adjustQuantityInCart}
+      />
     }
   }
 
@@ -190,6 +197,12 @@ function App() {
     }
   }
 
+  const openCart = () => {
+    setDisplayedPage("cart");
+    setShowCart(false);
+    window.scrollTo(0, 0);
+  }
+
 
   return (
     <div className="App">
@@ -233,6 +246,7 @@ function App() {
               hideCart={hideCart}
               deleteItemInCart={deleteItemInCart} 
               adjustQuantityInCart={adjustQuantityInCart}
+              openCart={openCart}
               />
       </main>
       <footer className="site-footer">
