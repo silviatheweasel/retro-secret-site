@@ -145,6 +145,7 @@ function App() {
                 productsInCart={productsInCart}
                 deleteItemInCart={deleteItemInCart}
                 adjustQuantityInCart={adjustQuantityInCart}
+                handleSiteLogoClick={handleSiteLogoClick}
       />
     }
   }
@@ -247,7 +248,7 @@ function App() {
               hideCart={hideCart}
               deleteItemInCart={deleteItemInCart} 
               adjustQuantityInCart={adjustQuantityInCart}
-              openCart={openCart}
+              openCart={openCart}            
               />
       </main>
       <footer className="site-footer">
