@@ -9,8 +9,8 @@ export const SlideOutCart = ({
                                 openCart
                             }) => {
 
-           const totalPriceArray = productsInCart.map(product => product.price * product.quantityInCart);
-        const subtotal = totalPriceArray.length > 0 && totalPriceArray.reduce((accumulator, currentValue) => accumulator + currentValue);
+    const totalPriceArray = productsInCart.map(product => product.price * product.quantityInCart);
+    const subtotal = totalPriceArray.length > 0 && totalPriceArray.reduce((accumulator, currentValue) => accumulator + currentValue);
         
     return (<div 
                 id="slide-out-cart-wrapper"

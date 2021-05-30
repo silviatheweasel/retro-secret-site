@@ -21,14 +21,18 @@ export const ProductDetails = React.memo(({
           } = currentProduct;
 
     const [displayImg, setDisplayImg] = useState(main_image);
+
     useEffect(() => {setDisplayImg(currentProduct.main_image)}, [currentProduct]);
+
     const handleClick = ({target}) => {
         setDisplayImg({
                         "src": target.src, 
                         "alt": target.alt
                         });
     }
+
     const [isShort, setIsShort] = useState(true);
+    
     const handleBtnClick = () => {
         setIsShort(!isShort);
     }

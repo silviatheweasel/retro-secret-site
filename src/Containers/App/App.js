@@ -220,7 +220,8 @@ function App() {
         <nav className="nav-bar">
           <ul className="menu-list">
             <li
-              className="menu-item"   
+              className="menu-item" 
+              key="home"  
               onClick={handleMenuClick}
               style={{color: currentCategory === null ? "#9E8765" : "black"
                     }}
