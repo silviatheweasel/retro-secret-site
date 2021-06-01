@@ -16,7 +16,7 @@
   font-size: 25px;
 }
 
-.product-details-container .content .product-description-container #toggle-content-btn, .quick-view-wrapper .quick-view-container .quick-view-content .quick-view-text-container .more-info-btn {
+.product-details-container .content .product-description-container #toggle-content-btn, .quick-view-wrapper .quick-view-container .quick-view-content .quick-view-text-container .more-info-btn, .cart .cart-right-container .current-country {
   border: none;
   display: block;
   background-color: transparent;
@@ -896,10 +896,15 @@ label input {
   display: inline-block;
 }
 
+.cart .cart-right-container .current-country {
+  font-size: 15px;
+  margin: 5px 0;
+}
+
 .cart .cart-right-container .postage-box {
   padding: 10px 15px;
   border: 1px solid black;
-  margin: 10px 0 0 0;
+  margin: 30px 0 0 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -917,7 +922,10 @@ label input {
 
 .cart .cart-right-container .delivery-options-container {
   border: 1px solid #474747;
-  padding: 10px;
+  position: absolute;
+  padding: 20px 0;
+  background-color: white;
+  width: 294px;
   -webkit-box-shadow: 0px 7px 13px 0px rgba(139, 139, 139, 0.5);
   box-shadow: 0px 7px 13px 0px rgba(139, 139, 139, 0.5);
 }
@@ -925,6 +933,11 @@ label input {
 .cart .cart-right-container .delivery-options-container li {
   list-style-type: none;
   padding: 10px;
+  cursor: pointer;
+}
+
+.cart .cart-right-container .delivery-options-container li:hover, .cart .cart-right-container .delivery-options-container li :active, .cart .cart-right-container .delivery-options-container li :focus {
+  background-color: #F2F1F0;
 }
 
 .cart .cart-right-container .delivery-options-container li .postage-time {

@@ -9,6 +9,7 @@ export const Cart = ({
 
     const [showPromoBox, setShowPromoBox] = useState(false);
     const [showNoteBox, setShowNoteBox] = useState(false);
+    const [showPostOptions, setShowPostOptions] = useState(false);
 
     const totalPriceArray = productsInCart.map(product => product.price * product.quantityInCart);
     const subtotal = totalPriceArray.length > 0 && totalPriceArray.reduce((accumulator, currentValue) => accumulator + currentValue);
@@ -21,6 +22,7 @@ export const Cart = ({
             setShippingFee(2.48)
         }
     }, [subtotal])
+
     return (<div className="cart">
         {productsInCart.length > 0 && (<>
             <div className="cart-left-container">
@@ -139,32 +141,51 @@ export const Cart = ({
                     <span>Shipping</span>
                     <span 
                         className="float-right"
-                        >{shippingFee === 0 ? "FREE" : shippingFee}
+                        >{shippingFee === 0 ? "FREE" : "£" + shippingFee}
                     </span>
                 </div>
-                <button>United Kingdom</button>
+                <button className="current-country">United Kingdom</button>
                 <div className="postage-box">
-                    <span>Standard Delivery - £{shippingFee === 0? "0.00" : "2.48" }</span>
+                    {shippingFee === 4.99 ? <span>Express Delivery - £4.99</span> : <span>Standard Delivery - £{shippingFee === 0? "0.00" : "2.48" }</span>}
                     <button 
                         className="toggle-arrow-btn">
                         <i 
-                            className="fas fa-chevron-down"
+                            className={showPostOptions ? "fas fa-chevron-up" : "fas fa-chevron-down"}
+                            onClick={() => {
+                                setShowPostOptions(!showPostOptions);
+                            }}                           
                         ></i>
                     </button>
                 </div>
-                <ul className="delivery-options-container"> 
-                    <li key="delivery-option-1">
-                    <p>Standard Delivery - £{shippingFee === 0? "0.00" : "2.48" }</p>
+                {showPostOptions && <ul className="delivery-options-container"> 
+                    <li 
+                        key="delivery-option-1"
+                        onClick={() => {
+                            if (subtotal >=25) {
+                                setShippingFee(0);
+                            } else {
+                                setShippingFee(2.48);
+                            }
+                            setShowPostOptions(false);
+                        }}
+                        >
+                    <p>Standard Delivery - £{subtotal > 25 ? "0.00" : "2.48" }</p>
                         <p className="postage-time">3-5 business days</p>
                     </li>
-                    <li key="delivery-option-2">
+                    <li 
+                        key="delivery-option-2"
+                        onClick={() => {
+                            setShippingFee(4.99);
+                            setShowPostOptions(false);
+                        }}
+                        >
                         <p>Express Delivery - £4.99</p>
                         <p className="postage-time">1-2 business days</p>
                     </li>
-                </ul>
+                </ul>}
                 <div className="total-row">
                     <span>Total</span>
-                    <span>£{subtotal + shippingFee}</span>
+                    <span>£{(subtotal + shippingFee).toFixed(2)}</span>
                 </div>
                 <button 
                     className="checkout-btn"
