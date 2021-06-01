@@ -748,13 +748,7 @@ label {
             border: 1px solid black;
             margin: 30px 0 0 0;
             display: flex;
-            justify-content: space-between;  
-            .toggle-arrow-btn {
-                background-color:transparent;
-                border: none;
-                cursor: pointer;
-                outline: none;
-            }          
+            justify-content: space-between;         
         }
         .delivery-options-container {
             border: 1px solid $darkgrey;
@@ -790,21 +784,65 @@ label {
             justify-content: space-between;
         }
         .checkout-btn {
-            padding: 10px;
-            width: 100%;
-            color: white;
+            @extend %submit-btn;
             background-color: black;
-            outline: none;
-            border: none;
-            @extend %text;
-            font-weight: 600;
-            cursor: pointer;
-            display: block;
-            margin-top: 20px;
             i {
                 margin-right: 5px;
             }
         }
+    }
+}
+
+.country-select-container {
+    position: absolute;
+    background-color: white;
+    padding: 80px 90px;
+    h1 {
+        margin-bottom: 30px;
+        border: none;
+        text-align: center;
+    }
+    .country-prompt {
+        @extend %text;
+        color: $darkgrey;
+    }
+    .country-select-box {
+        width: 320px;
+        border: 1px solid $dividerGrey;
+        margin: 10px 0 0 0;
+        padding: 10px 0;
+        &:hover {
+            border: 1px solid black;
+        }
+        .country-input {
+            padding: 10px 25px;
+            width: 85%;
+            font-size: 15px;
+            border-radius: 0;
+            border: none;
+            outline: none;
+        }
+        .toggle-arrow-btn {
+            color: $darkgrey;
+        }
+    }
+    .suggestion-box {
+        max-height: 200px;
+        overflow-y: scroll;
+        border: 1px solid $dividerGrey;
+        position: absolute;
+        background-color: white;
+        width: 320px;
+        .suggestion {
+            @extend %text;
+            padding: 6px 20px;
+            cursor: pointer;
+        }
+    }
+    .update-btn {
+        @extend %submit-btn;
+        background-color: $gold;
+        margin-top: 35px;
     }
 }
 
@@ -815,4 +853,11 @@ label {
     z-index: 40;
     margin: 0;
 }
+
+.toggle-arrow-btn {
+    background-color:transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+} 
 

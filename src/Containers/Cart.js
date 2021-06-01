@@ -1,10 +1,11 @@
 import { CartProductList } from "../Components/CartProductList";
 import { useState, useEffect } from "react";
+import { CountryNameSelect } from "../Components/CountryNameSelect";
 export const Cart = ({ 
                         productsInCart, 
                         deleteItemInCart,
                         adjustQuantityInCart,
-                        handleSiteLogoClick 
+                        handleSiteLogoClick, 
                     }) => {
 
     const [showPromoBox, setShowPromoBox] = useState(false);
@@ -202,5 +203,6 @@ export const Cart = ({
                 <p onClick={handleSiteLogoClick}>Continue shopping</p>
             </div>
         </div>)}
-            </div>)
+        <CountryNameSelect />
+    </div>)
 }

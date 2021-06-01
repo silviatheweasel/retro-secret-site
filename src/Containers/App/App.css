@@ -1,4 +1,4 @@
-.product-details-container .content .product-price, .quick-view-wrapper .quick-view-container .quick-view-content .quick-view-text-container p, .product-page .care-instruction-container .care-text, .product-details-container .content .product-description-container, .cart-product-row .cart-product-info h2, .cart-product-row .cart-product-info .cart-price, .cart-product-row .cart-product-info .quantityControl p, .cart .empty-cart-container .empty-cart-prompt h2, .cart .cart-left-container .cart-products .cart-row-wrapper .cart-product-subtotal, .cart .cart-right-container .checkout-btn {
+.product-details-container .content .product-price, .quick-view-wrapper .quick-view-container .quick-view-content .quick-view-text-container p, .cart .cart-right-container .checkout-btn, .country-select-container .update-btn, .product-page .care-instruction-container .care-text, .product-details-container .content .product-description-container, .cart-product-row .cart-product-info h2, .cart-product-row .cart-product-info .cart-price, .cart-product-row .cart-product-info .quantityControl p, .cart .empty-cart-container .empty-cart-prompt h2, .cart .cart-left-container .cart-products .cart-row-wrapper .cart-product-subtotal, .country-select-container .country-prompt, .country-select-container .suggestion-box .suggestion {
   font-size: 15px;
   font-family: "Open Sans", sans-serif;
   color: #474747;
@@ -43,6 +43,18 @@
   padding-bottom: 10px;
   margin-right: 50px;
   border-bottom: 1px solid #c4c4c4;
+}
+
+.cart .cart-right-container .checkout-btn, .country-select-container .update-btn {
+  padding: 10px;
+  width: 100%;
+  color: white;
+  outline: none;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  display: block;
+  margin-top: 20px;
 }
 
 * {
@@ -913,13 +925,6 @@ label input {
           justify-content: space-between;
 }
 
-.cart .cart-right-container .postage-box .toggle-arrow-btn {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  outline: none;
-}
-
 .cart .cart-right-container .delivery-options-container {
   border: 1px solid #474747;
   position: absolute;
@@ -961,20 +966,70 @@ label input {
 }
 
 .cart .cart-right-container .checkout-btn {
-  padding: 10px;
-  width: 100%;
-  color: white;
   background-color: black;
-  outline: none;
-  border: none;
-  font-weight: 600;
-  cursor: pointer;
-  display: block;
-  margin-top: 20px;
 }
 
 .cart .cart-right-container .checkout-btn i {
   margin-right: 5px;
+}
+
+.country-select-container {
+  position: absolute;
+  background-color: white;
+  padding: 80px 90px;
+}
+
+.country-select-container h1 {
+  margin-bottom: 30px;
+  border: none;
+  text-align: center;
+}
+
+.country-select-container .country-prompt {
+  color: #474747;
+}
+
+.country-select-container .country-select-box {
+  width: 320px;
+  border: 1px solid #c4c4c4;
+  margin: 10px 0 0 0;
+  padding: 10px 0;
+}
+
+.country-select-container .country-select-box:hover {
+  border: 1px solid black;
+}
+
+.country-select-container .country-select-box .country-input {
+  padding: 10px 25px;
+  width: 85%;
+  font-size: 15px;
+  border-radius: 0;
+  border: none;
+  outline: none;
+}
+
+.country-select-container .country-select-box .toggle-arrow-btn {
+  color: #474747;
+}
+
+.country-select-container .suggestion-box {
+  max-height: 200px;
+  overflow-y: scroll;
+  border: 1px solid #c4c4c4;
+  position: absolute;
+  background-color: white;
+  width: 320px;
+}
+
+.country-select-container .suggestion-box .suggestion {
+  padding: 6px 20px;
+  cursor: pointer;
+}
+
+.country-select-container .update-btn {
+  background-color: #9E8765;
+  margin-top: 35px;
 }
 
 .site-footer {
@@ -983,5 +1038,12 @@ label input {
   width: 100%;
   z-index: 40;
   margin: 0;
+}
+
+.toggle-arrow-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
 }
 /*# sourceMappingURL=App.css.map */

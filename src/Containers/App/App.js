@@ -146,6 +146,7 @@ function App() {
                 deleteItemInCart={deleteItemInCart}
                 adjustQuantityInCart={adjustQuantityInCart}
                 handleSiteLogoClick={handleSiteLogoClick}
+                setLocation={setLocation}
       />
     }
   }
@@ -203,6 +204,8 @@ function App() {
     setShowCart(false);
     window.scrollTo(0, 0);
   }
+
+  const [location, setLocation] = useState("United Kingdom");
 
 
   return (
