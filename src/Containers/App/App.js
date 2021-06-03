@@ -146,7 +146,8 @@ function App() {
                 deleteItemInCart={deleteItemInCart}
                 adjustQuantityInCart={adjustQuantityInCart}
                 handleSiteLogoClick={handleSiteLogoClick}
-                setLocation={setLocation}
+                updateLocation={updateLocation}
+                location={location}
       />
     }
   }
@@ -206,6 +207,10 @@ function App() {
   }
 
   const [location, setLocation] = useState("United Kingdom");
+
+  const updateLocation = (event) => {
+    setLocation(event.target.id);
+  }
 
 
   return (

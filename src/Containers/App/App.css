@@ -1,4 +1,4 @@
-.product-details-container .content .product-price, .quick-view-wrapper .quick-view-container .quick-view-content .quick-view-text-container p, .cart .cart-right-container .checkout-btn, .country-select-container .update-btn, .product-page .care-instruction-container .care-text, .product-details-container .content .product-description-container, .cart-product-row .cart-product-info h2, .cart-product-row .cart-product-info .cart-price, .cart-product-row .cart-product-info .quantityControl p, .cart .empty-cart-container .empty-cart-prompt h2, .cart .cart-left-container .cart-products .cart-row-wrapper .cart-product-subtotal, .country-select-container .country-prompt, .country-select-container .suggestion-box .suggestion {
+.product-details-container .content .product-price, .quick-view-wrapper .quick-view-container .quick-view-content .quick-view-text-container p, .cart .cart-right-container .checkout-btn, .country-select-wrapper .country-select-container .update-btn, .product-page .care-instruction-container .care-text, .product-details-container .content .product-description-container, .cart-product-row .cart-product-info h2, .cart-product-row .cart-product-info .cart-price, .cart-product-row .cart-product-info .quantityControl p, .cart .empty-cart-container .empty-cart-prompt h2, .cart .cart-left-container .cart-products .cart-row-wrapper .cart-product-subtotal, .country-select-wrapper .country-select-container .country-prompt, .country-select-wrapper .country-select-container .suggestion-box .suggestion {
   font-size: 15px;
   font-family: "Open Sans", sans-serif;
   color: #474747;
@@ -45,7 +45,7 @@
   border-bottom: 1px solid #c4c4c4;
 }
 
-.cart .cart-right-container .checkout-btn, .country-select-container .update-btn {
+.cart .cart-right-container .checkout-btn, .country-select-wrapper .country-select-container .update-btn {
   padding: 10px;
   width: 100%;
   color: white;
@@ -55,6 +55,16 @@
   cursor: pointer;
   display: block;
   margin-top: 20px;
+}
+
+.quick-view-wrapper .quick-view-container .close-btn, .country-select-wrapper .country-select-container .close-btn {
+  padding: 0 8px;
+  background-color: transparent;
+  font-size: 30px;
+  display: block;
+  margin: 10px;
+  cursor: pointer;
+  border: none;
 }
 
 * {
@@ -470,14 +480,7 @@ label input {
 }
 
 .quick-view-wrapper .quick-view-container .close-btn {
-  padding: 0 8px;
-  background-color: transparent;
-  font-size: 30px;
-  display: block;
   float: right;
-  margin: 10px;
-  cursor: pointer;
-  border: none;
 }
 
 .quick-view-wrapper .quick-view-container .quick-view-content {
@@ -973,35 +976,55 @@ label input {
   margin-right: 5px;
 }
 
-.country-select-container {
-  position: absolute;
-  background-color: white;
-  padding: 80px 90px;
+.country-select-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
-.country-select-container h1 {
+.country-select-wrapper .country-select-container {
+  position: absolute;
+  display: block;
+  width: 500px;
+  background-color: white;
+  padding: 80px 90px;
+  margin: 10% 30%;
+}
+
+.country-select-wrapper .country-select-container h1 {
   margin-bottom: 30px;
   border: none;
   text-align: center;
 }
 
-.country-select-container .country-prompt {
-  color: #474747;
+.country-select-wrapper .country-select-container .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 
-.country-select-container .country-select-box {
+.country-select-wrapper .country-select-container .country-prompt {
+  color: #474747;
+  text-align: left;
+}
+
+.country-select-wrapper .country-select-container .country-select-box {
   width: 320px;
   border: 1px solid #c4c4c4;
   margin: 10px 0 0 0;
   padding: 10px 0;
 }
 
-.country-select-container .country-select-box:hover {
+.country-select-wrapper .country-select-container .country-select-box:hover {
   border: 1px solid black;
 }
 
-.country-select-container .country-select-box .country-input {
-  padding: 10px 25px;
+.country-select-wrapper .country-select-container .country-select-box .country-input {
+  padding: 10px 0;
   width: 85%;
   font-size: 15px;
   border-radius: 0;
@@ -1009,11 +1032,11 @@ label input {
   outline: none;
 }
 
-.country-select-container .country-select-box .toggle-arrow-btn {
+.country-select-wrapper .country-select-container .country-select-box .toggle-arrow-btn {
   color: #474747;
 }
 
-.country-select-container .suggestion-box {
+.country-select-wrapper .country-select-container .suggestion-box {
   max-height: 200px;
   overflow-y: scroll;
   border: 1px solid #c4c4c4;
@@ -1022,12 +1045,17 @@ label input {
   width: 320px;
 }
 
-.country-select-container .suggestion-box .suggestion {
+.country-select-wrapper .country-select-container .suggestion-box .suggestion {
+  text-align: left;
   padding: 6px 20px;
   cursor: pointer;
 }
 
-.country-select-container .update-btn {
+.country-select-wrapper .country-select-container .suggestion-box .suggestion:hover {
+  background-color: #F2F1F0;
+}
+
+.country-select-wrapper .country-select-container .update-btn {
   background-color: #9E8765;
   margin-top: 35px;
 }

@@ -1,7 +1,7 @@
 import { countries } from "../utilities/countryArray";
 import { useState, useEffect } from "react";
 
-export const CountryNameSelect = () => {
+export const CountryNameSelect = ({ updateLocation, setShowCountryBox, location }) => {
     const [input, setInput] = useState("United Kingdom");
     const [suggested, setSuggested] = useState(countries);
     const findMatches = () => {
@@ -14,16 +14,23 @@ export const CountryNameSelect = () => {
     const [showOptions, setShowOptions] = useState(false);
 
     useEffect(() => {
-        setShowOptions(true);
         findMatches();
         return () => {
             setSuggested([]);
-            setShowOptions(false);
         }
     }, [input]);
 
+    useEffect(() => {
+        setInput(location);
+    }, [location]);
+
     return (<form className="country-select-container">
                 <h1>Select Destination</h1>
+                <button 
+                    className="close-btn"
+                    onClick={() => setShowCountryBox(false)}
+                    >&times;
+                </button>
                 <p className="country-prompt">Country</p>
                 <div 
                     className="country-select-box"
@@ -36,6 +43,7 @@ export const CountryNameSelect = () => {
                         value={input}
                         autoFocus
                         onChange={({target}) => {
+                            setShowOptions(true);
                             setInput(target.value);
                         }}
                         onClick={({target}) => {
@@ -65,12 +73,16 @@ export const CountryNameSelect = () => {
                                                         key={country + i}
                                                         onClick={({target}) => setInput(target.innerHTML)}
                                                         className="suggestion"
-                                                        >{country}</p>)}
+                                                        >{country}
+                                                    </p>)}
                 </div>}             
                 <button
                     className="update-btn"
+                    id={input}
                     onClick={(event) => {
                         event.preventDefault();
+                        updateLocation(event);
+                        setShowCountryBox(false);
                     }}
                     >Update
                 </button>
