@@ -737,6 +737,15 @@ label {
             font-size: 15px;
             margin: 5px 0;
         }
+        .postage-eligibility-alert {
+            margin-top: 30px;
+            background-color: rgb(253, 223, 228);
+            padding: 13px;
+            i {
+                color: red;
+                margin-right: 10px;
+            }
+        }
         .postage-box {
             padding: 10px 15px;
             border: 1px solid black;
@@ -877,4 +886,3 @@ label {
     cursor: pointer;
     outline: none;
 } 
-

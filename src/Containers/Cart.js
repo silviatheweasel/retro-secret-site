@@ -155,7 +155,11 @@ export const Cart = ({
                                 onClick={() => setShowCountryBox(true)}
                                 >{location}
                             </button>
-                            <div className="postage-box">
+                            {location !== "United Kingdom" && <p className="postage-eligibility-alert">
+                                <i className="fas fa-exclamation-circle"></i>
+                                Sorry, we don't ship to your area.
+                                </p>}
+                            {location === "United Kingdom" && <div className="postage-box">
                                 {shippingFee === 4.99 ? <span>Express Delivery - £4.99</span> : <span>Standard Delivery - £{shippingFee === 0? "0.00" : "2.48" }</span>}
                                 <button 
                                     className="toggle-arrow-btn">
@@ -166,7 +170,7 @@ export const Cart = ({
                                         }}                           
                                     ></i>
                                 </button>
-                            </div>
+                            </div>}
                             {showPostOptions && <ul className="delivery-options-container"> 
                                 <li 
                                     key="delivery-option-1"

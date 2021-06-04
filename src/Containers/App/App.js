@@ -6,6 +6,7 @@ import { getProductData } from "../../utilities/getProductData";
 import { useState, useEffect } from "react";
 import { SlideOutCart } from '../SlideOutCart';
 import {Cart } from "../Cart";
+import { FooterPages } from "../FooterPages/FooterPages";
 
 function App() {
   const categories = ["Necklaces", "Bracelets", "Rings", "Earrings"];
@@ -203,6 +204,7 @@ function App() {
   const openCart = () => {
     setDisplayedPage("cart");
     setShowCart(false);
+    setCurrentCategory(null)
     window.scrollTo(0, 0);
   }
 
@@ -232,7 +234,7 @@ function App() {
               className="menu-item" 
               key="home"  
               onClick={handleMenuClick}
-              style={{color: currentCategory === null ? "#9E8765" : "black"
+              style={{color: currentCategory === "all" ? "#9E8765" : "black"
                     }}
             >Home
             </li>
@@ -259,7 +261,35 @@ function App() {
               openCart={openCart}            
               />
       </main>
+      <FooterPages />
       <footer className="site-footer">
+        <div className="footer-content">
+          <div className="footer-left">
+                <h2>Quick Links</h2>
+                <ul>SHIPPING INFO</ul>
+                <ul>RETURN & EXCHANGE POLICY</ul>
+                <ul>OUR PRODUCTS AND YOUR HEALTH</ul>
+                <ul>OUR PACKAGING</ul>
+                <ul>CARE INSTRUCTIONS</ul>
+                <ul>ABOUT US</ul>
+                <ul>CONTACT US</ul>
+          </div>
+          <div className="footer-right">
+                <p>Subscribe to learn about the latest arrivals and get exclusive offers! </p>
+                <form>
+                  <input
+                    type="text"
+                    name="email"
+                    placeholder="Enter your email here*"
+                    required
+                  ></input>
+                  <button>
+                    Subscribe
+                  </button>
+                </form>
+          </div>
+
+        </div>
         <p>© {new Date().getFullYear()} by Retro Secrets</p>
       </footer>
     </div>
