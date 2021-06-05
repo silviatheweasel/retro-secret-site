@@ -141,6 +141,10 @@ function App() {
                 handleQuantityInputChange={handleQuantityInputChange}
                 quantityInCart={quantityInCart}
             />
+    } else if (displayedPage === "StaticPage") {
+      return <FooterPages 
+                staticPageTitle={staticPageTitle}
+                />
     } else {
       return <Cart 
                 productsInCart={productsInCart}
@@ -214,6 +218,13 @@ function App() {
     setLocation(event.target.id);
   }
 
+  const [staticPageTitle, setStaticPageTitle] = useState(null);
+  const linkStaticPage = ({target}) => {
+    setStaticPageTitle(target.innerHTML);
+    setDisplayedPage("StaticPage");
+    window.scrollTo(0, 0);
+  }
+
 
   return (
     <div className="App">
@@ -261,29 +272,31 @@ function App() {
               openCart={openCart}            
               />
       </main>
-      <FooterPages />
       <footer className="site-footer">
         <div className="footer-content">
           <div className="footer-left">
                 <h2>Quick Links</h2>
-                <ul>SHIPPING INFO</ul>
-                <ul>RETURN & EXCHANGE POLICY</ul>
-                <ul>OUR PRODUCTS AND YOUR HEALTH</ul>
-                <ul>OUR PACKAGING</ul>
-                <ul>CARE INSTRUCTIONS</ul>
-                <ul>ABOUT US</ul>
-                <ul>CONTACT US</ul>
+                <ul className="quick-link-list">
+                  <li onClick={linkStaticPage}>SHIPPING INFO</li>
+                  <li onClick={linkStaticPage}>RETURN AND EXCHANGE POLICY</li>
+                  <li onClick={linkStaticPage}>OUR PRODUCTS AND YOUR HEALTH</li>
+                  <li onClick={linkStaticPage}>OUR PACKAGING</li>
+                  <li onClick={linkStaticPage}>CARE INSTRUCTIONS</li>
+                  <li onClick={linkStaticPage}>ABOUT US</li>
+                  <li onClick={linkStaticPage}>CONTACT US</li>
+                </ul>
           </div>
           <div className="footer-right">
                 <p>Subscribe to learn about the latest arrivals and get exclusive offers! </p>
                 <form>
                   <input
-                    type="text"
+                    type="email"
                     name="email"
+                    className="email-input"
                     placeholder="Enter your email here*"
                     required
                   ></input>
-                  <button>
+                  <button className="subscribe-btn">
                     Subscribe
                   </button>
                 </form>

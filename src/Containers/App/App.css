@@ -1,11 +1,11 @@
-.product-details-container .content .product-price, .quick-view-wrapper .quick-view-container .quick-view-content .quick-view-text-container p, .cart .cart-right-container .checkout-btn, .country-select-wrapper .country-select-container .update-btn, .product-page .care-instruction-container .care-text, .product-details-container .content .product-description-container, .cart-product-row .cart-product-info h2, .cart-product-row .cart-product-info .cart-price, .cart-product-row .cart-product-info .quantityControl p, .cart .empty-cart-container .empty-cart-prompt h2, .cart .cart-left-container .cart-products .cart-row-wrapper .cart-product-subtotal, .country-select-wrapper .country-select-container .country-prompt, .country-select-wrapper .country-select-container .suggestion-box .suggestion {
+.product-details-container .content .product-price, .quick-view-wrapper .quick-view-container .quick-view-content .quick-view-text-container p, .cart .cart-right-container .checkout-btn, .country-select-wrapper .country-select-container .update-btn, .product-page .care-instruction-container .care-text, .product-details-container .content .product-description-container, .cart-product-row .cart-product-info h2, .cart-product-row .cart-product-info .cart-price, .cart-product-row .cart-product-info .quantityControl p, .cart .empty-cart-container .empty-cart-prompt h2, .cart .cart-left-container .cart-products .cart-row-wrapper .cart-product-subtotal, .country-select-wrapper .country-select-container .country-prompt, .country-select-wrapper .country-select-container .suggestion-box .suggestion, .site-footer .footer-content .footer-left .quick-link-list li {
   font-size: 15px;
   font-family: "Open Sans", sans-serif;
   color: #474747;
   line-height: 1.8rem;
 }
 
-.product-details-container .content .product-name, .quick-view-wrapper .quick-view-container .quick-view-content .quick-view-text-container h1 {
+.product-details-container .content .product-name, .quick-view-wrapper .quick-view-container .quick-view-content .quick-view-text-container h1, .static-page-container h1 {
   font-weight: 500;
   font-family: "KoHo", sans-serif;
   color: #474747;
@@ -35,7 +35,7 @@
   bottom: 0;
 }
 
-.cart h1, .cart .cart-right-container h1, .cart .cart-right-container .total-row {
+.cart h1, .cart .cart-right-container h1, .cart .cart-right-container .total-row, .site-footer .footer-content .footer-left h2 {
   font-family: "KoHo", sans-serif;
   color: black;
   font-size: 22px;
@@ -81,6 +81,7 @@ html, body {
   overflow-x: hidden;
   overflow-y: auto;
   background-color: #F2F1F0;
+  scroll-behavior: smooth;
 }
 
 .App {
@@ -1079,10 +1080,116 @@ label input {
   margin: 0;
 }
 
+.site-footer .footer-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 75%;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.site-footer .footer-content .footer-left {
+  width: 40%;
+}
+
+.site-footer .footer-content .footer-left h2 {
+  border-bottom: none;
+  width: 100%;
+}
+
+.site-footer .footer-content .footer-left .quick-link-list {
+  padding: 20px 0;
+}
+
+.site-footer .footer-content .footer-left .quick-link-list li {
+  list-style-type: none;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.site-footer .footer-content .footer-left .quick-link-list li:hover, .site-footer .footer-content .footer-left .quick-link-list li :active, .site-footer .footer-content .footer-left .quick-link-list li :focus {
+  color: black;
+}
+
+.site-footer .footer-content .footer-right {
+  margin-left: 120px;
+}
+
+.site-footer .footer-content .footer-right p {
+  font-family: "KoHo", sans-serif;
+  font-size: 19px;
+  color: gray;
+  margin-bottom: 30px;
+}
+
+.site-footer .footer-content .footer-right form .email-input {
+  border-radius: 0;
+  border-width: 1px;
+  border-color: black;
+  padding: 15px;
+  width: 320px;
+  outline: none;
+  font-size: 16px;
+}
+
+.site-footer .footer-content .footer-right form .email-input::-webkit-input-placeholder {
+  color: #c4c4c4;
+}
+
+.site-footer .footer-content .footer-right form .email-input:-ms-input-placeholder {
+  color: #c4c4c4;
+}
+
+.site-footer .footer-content .footer-right form .email-input::-ms-input-placeholder {
+  color: #c4c4c4;
+}
+
+.site-footer .footer-content .footer-right form .email-input::placeholder {
+  color: #c4c4c4;
+}
+
+.site-footer .footer-content .footer-right form .subscribe-btn {
+  color: white;
+  background-color: black;
+  display: inline-block;
+  padding: 16px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  outline: none;
+  border: none;
+}
+
 .toggle-arrow-btn {
   background-color: transparent;
   border: none;
   cursor: pointer;
   outline: none;
+}
+
+.static-page-container {
+  background-color: white;
+  margin: 0 80px;
+  padding: 100px;
+  min-height: 100vh;
+}
+
+.static-page-container .brand-logo {
+  margin-bottom: 50px;
+}
+
+.static-page-container h1 {
+  padding-bottom: 20px;
+  width: 60%;
+  margin: 0 auto 20px auto;
+}
+
+.static-page-container .paragraphs {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.static-page-container .paragraphs p {
+  margin: 20px 0;
 }
 /*# sourceMappingURL=App.css.map */
