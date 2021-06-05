@@ -17,13 +17,35 @@ export const Cart = ({
     const totalPriceArray = productsInCart.map(product => product.price * product.quantityInCart);
     const subtotal = totalPriceArray.length > 0 && totalPriceArray.reduce((accumulator, currentValue) => accumulator + currentValue);
 
+    const deliveryOptions = [{
+                                name: "Standard Delivery", 
+                                prices: [0.00, 2.48]
+                            }, {
+                                name: "Express Delivery",
+                                prices: [0.00, 4.99]
+                            }];
+    
     const [shippingFee, setShippingFee] = useState(null);
+    const [shippingOption, setShippingOption] = useState(deliveryOptions[0].name);
+
+    const updateShipment = () => {
+       if (shippingOption === deliveryOptions[0].name) {
+           if (subtotal >= 30) {
+               setShippingFee(deliveryOptions[0].prices[0]);
+           } else {
+               setShippingFee(deliveryOptions[0].prices[1]);
+           }
+       } else if (shippingOption === deliveryOptions[1].name) {
+           if (subtotal >= 55) {
+               setShippingFee(deliveryOptions[1].prices[0]);
+           } else {
+            setShippingFee(deliveryOptions[1].prices[1]);
+           }
+       } 
+    }
+
     useEffect(() => {
-        if (subtotal >=25) {
-            setShippingFee(0);
-        } else {
-            setShippingFee(2.48)
-        }
+        updateShipment();
     }, [subtotal])
 
     const [showCountryBox, setShowCountryBox] = useState(false);
@@ -160,7 +182,8 @@ export const Cart = ({
                                 Sorry, we don't ship to your area.
                                 </p>}
                             {location === "United Kingdom" && <div className="postage-box">
-                                {shippingFee === 4.99 ? <span>Express Delivery - £4.99</span> : <span>Standard Delivery - £{shippingFee === 0? "0.00" : "2.48" }</span>}
+                                {/* {shippingFee === 4.99 ? <span>Express Delivery - £4.99</span> : <span>Standard Delivery - £{shippingFee === 0? "0.00" : "2.48" }</span>} */}
+                                <span>{shippingOption} - £{shippingFee}</span>
                                 <button 
                                     className="toggle-arrow-btn">
                                     <i 
@@ -175,25 +198,31 @@ export const Cart = ({
                                 <li 
                                     key="delivery-option-1"
                                     onClick={() => {
-                                        if (subtotal >=25) {
-                                            setShippingFee(0);
+                                        if (subtotal >=30) {
+                                            setShippingFee(deliveryOptions[0].prices[0]);
                                         } else {
-                                            setShippingFee(2.48);
+                                            setShippingFee(deliveryOptions[0].prices[1]);
                                         }
+                                        setShippingOption(deliveryOptions[0].name);
                                         setShowPostOptions(false);
                                     }}
                                     >
-                                <p>Standard Delivery - £{subtotal > 25 ? "0.00" : "2.48" }</p>
+                                    <p>{deliveryOptions[0].name} - £{subtotal >= 30 ? deliveryOptions[0].prices[0] : deliveryOptions[0].prices[1] }</p>
                                     <p className="postage-time">3-5 business days</p>
                                 </li>
                                 <li 
                                     key="delivery-option-2"
                                     onClick={() => {
-                                        setShippingFee(4.99);
+                                        if (subtotal >=55) {
+                                            setShippingFee(deliveryOptions[1].prices[0]);
+                                        } else {
+                                            setShippingFee(deliveryOptions[1].prices[1]);
+                                        }
+                                        setShippingOption(deliveryOptions[1].name);
                                         setShowPostOptions(false);
                                     }}
                                     >
-                                    <p>Express Delivery - £4.99</p>
+                                    <p>{deliveryOptions[1].name} - £{subtotal >= 55 ? deliveryOptions[1].prices[0] : deliveryOptions[1].prices[1] }</p>
                                     <p className="postage-time">1-2 business days</p>
                                 </li>
                             </ul>}
