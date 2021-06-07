@@ -28,23 +28,22 @@ export const Cart = ({
     const [shippingFee, setShippingFee] = useState(null);
     const [shippingOption, setShippingOption] = useState(deliveryOptions[0].name);
 
-    const updateShipment = () => {
-       if (shippingOption === deliveryOptions[0].name) {
-           if (subtotal >= 30) {
-               setShippingFee(deliveryOptions[0].prices[0]);
-           } else {
-               setShippingFee(deliveryOptions[0].prices[1]);
-           }
-       } else if (shippingOption === deliveryOptions[1].name) {
-           if (subtotal >= 55) {
-               setShippingFee(deliveryOptions[1].prices[0]);
-           } else {
-            setShippingFee(deliveryOptions[1].prices[1]);
-           }
-       } 
-    }
-
     useEffect(() => {
+        const updateShipment = () => {
+            if (shippingOption === deliveryOptions[0].name) {
+                if (subtotal >= 30) {
+                    setShippingFee(deliveryOptions[0].prices[0]);
+                } else {
+                    setShippingFee(deliveryOptions[0].prices[1]);
+                }
+            } else if (shippingOption === deliveryOptions[1].name) {
+                if (subtotal >= 55) {
+                    setShippingFee(deliveryOptions[1].prices[0]);
+                } else {
+                 setShippingFee(deliveryOptions[1].prices[1]);
+                }
+            } 
+         }
         updateShipment();
     }, [subtotal])
 
@@ -181,51 +180,52 @@ export const Cart = ({
                                 <i className="fas fa-exclamation-circle"></i>
                                 Sorry, we don't ship to your area.
                                 </p>}
-                            {location === "United Kingdom" && <div className="postage-box">
-                                {/* {shippingFee === 4.99 ? <span>Express Delivery - £4.99</span> : <span>Standard Delivery - £{shippingFee === 0? "0.00" : "2.48" }</span>} */}
-                                <span>{shippingOption} - £{shippingFee}</span>
-                                <button 
-                                    className="toggle-arrow-btn">
-                                    <i 
-                                        className={showPostOptions ? "fas fa-chevron-up" : "fas fa-chevron-down"}
+                            {location === "United Kingdom" && <div className="postage-wrapper">
+                                <div className="postage-box">
+                                    <span>{shippingOption} - £{shippingFee}</span>
+                                    <button 
+                                        className="toggle-arrow-btn">
+                                        <i 
+                                            className={showPostOptions ? "fas fa-chevron-up" : "fas fa-chevron-down"}
+                                            onClick={() => {
+                                                setShowPostOptions(!showPostOptions);
+                                            }}                           
+                                        ></i>
+                                    </button>
+                                </div>
+                                {showPostOptions && <ul className="delivery-options-container"> 
+                                    <li 
+                                        key="delivery-option-1"
                                         onClick={() => {
-                                            setShowPostOptions(!showPostOptions);
-                                        }}                           
-                                    ></i>
-                                </button>
+                                            if (subtotal >=30) {
+                                                setShippingFee(deliveryOptions[0].prices[0]);
+                                            } else {
+                                                setShippingFee(deliveryOptions[0].prices[1]);
+                                            }
+                                            setShippingOption(deliveryOptions[0].name);
+                                            setShowPostOptions(false);
+                                        }}
+                                        >
+                                        <p>{deliveryOptions[0].name} - £{subtotal >= 30 ? deliveryOptions[0].prices[0] : deliveryOptions[0].prices[1] }</p>
+                                        <p className="postage-time">3-5 business days</p>
+                                    </li>
+                                    <li 
+                                        key="delivery-option-2"
+                                        onClick={() => {
+                                            if (subtotal >=55) {
+                                                setShippingFee(deliveryOptions[1].prices[0]);
+                                            } else {
+                                                setShippingFee(deliveryOptions[1].prices[1]);
+                                            }
+                                            setShippingOption(deliveryOptions[1].name);
+                                            setShowPostOptions(false);
+                                        }}
+                                        >
+                                        <p>{deliveryOptions[1].name} - £{subtotal >= 55 ? deliveryOptions[1].prices[0] : deliveryOptions[1].prices[1] }</p>
+                                        <p className="postage-time">1-2 business days</p>
+                                    </li>
+                                </ul>}
                             </div>}
-                            {showPostOptions && <ul className="delivery-options-container"> 
-                                <li 
-                                    key="delivery-option-1"
-                                    onClick={() => {
-                                        if (subtotal >=30) {
-                                            setShippingFee(deliveryOptions[0].prices[0]);
-                                        } else {
-                                            setShippingFee(deliveryOptions[0].prices[1]);
-                                        }
-                                        setShippingOption(deliveryOptions[0].name);
-                                        setShowPostOptions(false);
-                                    }}
-                                    >
-                                    <p>{deliveryOptions[0].name} - £{subtotal >= 30 ? deliveryOptions[0].prices[0] : deliveryOptions[0].prices[1] }</p>
-                                    <p className="postage-time">3-5 business days</p>
-                                </li>
-                                <li 
-                                    key="delivery-option-2"
-                                    onClick={() => {
-                                        if (subtotal >=55) {
-                                            setShippingFee(deliveryOptions[1].prices[0]);
-                                        } else {
-                                            setShippingFee(deliveryOptions[1].prices[1]);
-                                        }
-                                        setShippingOption(deliveryOptions[1].name);
-                                        setShowPostOptions(false);
-                                    }}
-                                    >
-                                    <p>{deliveryOptions[1].name} - £{subtotal >= 55 ? deliveryOptions[1].prices[0] : deliveryOptions[1].prices[1] }</p>
-                                    <p className="postage-time">1-2 business days</p>
-                                </li>
-                            </ul>}
                             <div className="total-row">
                                 <span>Total</span>
                                 <span>£{(subtotal + shippingFee).toFixed(2)}</span>

@@ -5,8 +5,10 @@ import { CategoryPage } from "../CategoryPage";
 import { getProductData } from "../../utilities/getProductData";
 import { useState, useEffect } from "react";
 import { SlideOutCart } from '../SlideOutCart';
-import {Cart } from "../Cart";
+import { Cart } from "../Cart";
+import { MenuBar } from "../../Components/MenuBar";
 import { FooterPages } from "../FooterPages/FooterPages";
+import { ErrorPage } from "../ErrorPage";
 
 function App() {
   const categories = ["Necklaces", "Bracelets", "Rings", "Earrings"];
@@ -27,10 +29,14 @@ function App() {
     }; 
     getProductData().then(
         (resolvedData) => {
-          if (currentCategory === "all") {
-            setProducts(resolvedData);
+          if (!resolvedData) {
+            setDisplayedPage("Error")
           } else {
-            getProductsByCategory(resolvedData);
+            if (currentCategory === "all") {
+              setProducts(resolvedData);
+            } else {
+              getProductsByCategory(resolvedData);
+            }
           }
     })
   }, [displayedPage]);
@@ -44,6 +50,7 @@ function App() {
         setCurrentCategory("all");  
       }
       setProducts(null);
+      setIsMobileMenuOpen(false);
       window.scrollTo(0, 0);
       setCurrentProduct(null);
     }
@@ -154,7 +161,7 @@ function App() {
                 updateLocation={updateLocation}
                 location={location}
       />
-    }
+    } 
   }
 
   const getCategoryPage = () => {
@@ -206,7 +213,7 @@ function App() {
   }
 
   const openCart = () => {
-    setDisplayedPage("cart");
+    setDisplayedPage("Cart");
     setShowCart(false);
     setCurrentCategory(null)
     window.scrollTo(0, 0);
@@ -221,48 +228,61 @@ function App() {
   const [staticPageTitle, setStaticPageTitle] = useState(null);
   const linkStaticPage = ({target}) => {
     setStaticPageTitle(target.innerHTML);
+    setCurrentCategory(null);
     setDisplayedPage("StaticPage");
     window.scrollTo(0, 0);
   }
 
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  useEffect(()=> {
+    if (window.screen.width <= 600) {
+      if (isMobileMenuOpen) {
+        document.getElementById("menu").classList.remove("mobile-hidden");
+        document.getElementById("site-title").classList.add("mobile-hidden");
+        document.getElementById("burger-nav-icon").classList.add("close-mobile");
+        document.getElementById("nav-bar-cart-btn").classList.replace("desktop", "mobile");
+      } else {
+        document.getElementById("menu").classList.add("mobile-hidden");
+        document.getElementById("site-title").classList.remove("mobile-hidden");
+        document.getElementById("burger-nav-icon").classList.remove("close-mobile");
+        document.getElementById("nav-bar-cart-btn").classList.replace("mobile", "desktop");
+      }
+    }
+  }, [isMobileMenuOpen])
 
   return (
     <div className="App">
       <header className="site-header">
         <h1 
           className="site-title"
+          id="site-title"
           onClick={handleSiteLogoClick}
           >RETRO SECRETS
         </h1>
-        <button
-          className="nav-bar-cart-btn"
-          onClick={() => setShowCart(true)}
-        >{productsInCart.length}
+        <button 
+            className="burger-nav-btn"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} 
+            >
+            <div 
+              className="burger-nav-icon"
+              id="burger-nav-icon"
+              >
+            </div>
         </button>
         <nav className="nav-bar">
-          <ul className="menu-list">
-            <li
-              className="menu-item" 
-              key="home"  
-              onClick={handleMenuClick}
-              style={{color: currentCategory === "all" ? "#9E8765" : "black"
-                    }}
-            >Home
-            </li>
-            {categories.map(
-              (category, i) => (
-                <li 
-                  key={"category" + i}
-                  className="menu-item" 
-                  onClick={handleMenuClick}
-                  style={{color: currentCategory === category.toLowerCase() ? "#9E8765" : "black"}}
-                  >{category}
-                  </li>))}
-          </ul>
+          <MenuBar
+            handleMenuClick={handleMenuClick} 
+            currentCategory={currentCategory}  
+            categories={categories}
+            setShowCart={setShowCart}
+            productsInCart={productsInCart}
+            isMobileMenuOpen={isMobileMenuOpen}
+          />
         </nav>
       </header>
       <main className="site-body">
         {products && attachPage()}
+        {displayedPage === "Error" && <ErrorPage />}
           <SlideOutCart
               productsInCart={productsInCart}
               showCart={showCart}

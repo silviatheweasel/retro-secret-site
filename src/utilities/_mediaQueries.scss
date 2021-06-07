@@ -1,0 +1,94 @@
+@media only screen and (max-width: 1050px) {
+    .menu-item {
+        font-size: 18px !important;
+    }
+    .intro-text {
+        font-size: 18px;
+        width: 70% !important;
+    }
+    .footer-content {
+        width: 100% !important;
+    }
+    .footer-left {
+        width: 50% !important;
+    }
+    .footer-right {
+        margin-left: 60px !important;
+    }
+    .email-input {
+        width: 250px !important;
+    }
+    .category-page {
+        padding: 50px 100px !important;
+    }
+    .site-body {
+        min-height: 60vh !important;
+    }
+    .product-page {
+        padding: 0 100px !important;
+    }
+    .cart {
+        padding: 50px 100px !important;
+        flex-direction: column;
+    }
+    .cart-left-container {
+        width: 100% !important;
+    }
+    .cart-right-container {
+        width: 100% !important;
+        margin-top: 40px;
+    }
+    .cart-products {
+        margin-right: 0 !important;
+    }
+    .postage-box {
+        padding: 15px !important;
+    }
+    .delivery-options-container {
+        li {
+            padding: 10px 20px !important;
+        }
+    }
+    .static-page-container {
+        min-height: 60vh !important;
+        h1 {
+            width: 80% !important;
+        }
+        .paragraphs {
+            width: 80% !important;
+        }
+    }
+    .error-page {
+        min-height: 60vh !important;
+        .error-page-content {
+            width: 90% !important;
+        }
+    }   
+}
+
+@media only screen and (max-width: 600px) {
+    .burger-nav-btn {
+        display: flex !important;
+    }
+    .footer-left {
+        width: 100% !important;
+    }
+    .footer-right {
+        margin-left: 60px !important;
+    }
+    .email-input {
+        width: 250px !important;
+    }
+    .site-header {
+        padding: 50px 20px 30px 20px !important;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .site-title {
+        font-size: 30px !important;
+        position: absolute;
+    }
+    .mobile-hidden {
+        display: none;
+    }
+}

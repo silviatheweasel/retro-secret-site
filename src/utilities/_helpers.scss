@@ -75,3 +75,33 @@ $OpenSans: 'Open Sans', sans-serif;
     cursor: pointer;
     border: none;
 }
+
+%burger-icon {
+    height: 4px;
+    width: 40px;
+    background-color: black;
+    border-radius: 10px;
+    transition: all 0.5s ease-in-out;
+}
+
+%cartBtn {
+    position: absolute; 
+    color: white; 
+    z-index: 20;   
+    border: none;
+    outline: none;
+    font-size: 9px;
+    cursor: pointer;
+}
+
+%cartIcon {
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900; 
+    font-size: 23px;
+    content: "\f07a";
+    position: absolute;
+    color: gray;
+    z-index: -10;
+    right: -8px;
+    top: -4px;  
+}

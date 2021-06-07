@@ -4,16 +4,16 @@ import { useState, useEffect } from "react";
 export const CountryNameSelect = ({ updateLocation, setShowCountryBox, location }) => {
     const [input, setInput] = useState("United Kingdom");
     const [suggested, setSuggested] = useState(countries);
-    const findMatches = () => {
-        for (let i = 0; i < countries.length; i ++) {
-            if (countries[i].toLowerCase().includes(input)) {
-                setSuggested((prev) => [...prev, countries[i]]);
-            }
-        }
-    }
     const [showOptions, setShowOptions] = useState(false);
 
     useEffect(() => {
+        const findMatches = () => {
+            for (let i = 0; i < countries.length; i ++) {
+                if (countries[i].toLowerCase().includes(input)) {
+                    setSuggested((prev) => [...prev, countries[i]]);
+                }
+            }
+        }
         findMatches();
         return () => {
             setSuggested([]);
