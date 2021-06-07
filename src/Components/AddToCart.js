@@ -7,7 +7,7 @@ export const AddToCart = ({ addItemToCart, handleQuantityInputChange, quantityIn
                         name="quantity"
                         min="1"
                         autoComplete="off"
-                        onChange={handleQuantityInputChange}
+                        onChange= {handleQuantityInputChange}
                         value={quantityInCart}
                         ></input>
                 </label>

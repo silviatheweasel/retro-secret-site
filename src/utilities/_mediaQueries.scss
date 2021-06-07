@@ -1,0 +1,175 @@
+@media only screen and (max-width: 1050px) {
+    .menu-item {
+        font-size: 18px !important;
+    }
+    .intro-text {
+        font-size: 18px;
+        width: 70% !important;
+    }
+    .footer-content {
+        width: 100% !important;
+    }
+    .footer-left {
+        width: 50% !important;
+    }
+    .footer-right {
+        margin-left: 60px !important;
+    }
+    .email-input {
+        width: 250px !important;
+    }
+    .category-page {
+        padding: 50px 100px !important;
+    }
+    .site-body {
+        min-height: 60vh !important;
+    }
+    .product-page {
+        padding: 0 100px !important;
+    }
+    .cart {
+        padding: 50px 100px !important;
+        flex-direction: column;
+    }
+    .cart-left-container {
+        width: 100% !important;
+    }
+    .cart-right-container {
+        width: 100% !important;
+        margin-top: 40px;
+    }
+    .cart-products {
+        margin-right: 0 !important;
+    }
+    .postage-box {
+        padding: 15px !important;
+    }
+    .delivery-options-container {
+        li {
+            padding: 10px 20px !important;
+        }
+    }
+    .static-page-container {
+        min-height: 60vh !important;
+        h1 {
+            width: 80% !important;
+        }
+        .paragraphs {
+            width: 80% !important;
+        }
+    }
+    .error-page {
+        min-height: 60vh !important;
+        .error-page-content {
+            width: 90% !important;
+        }
+    }   
+}
+
+@media only screen and (max-width: 600px) {
+    .burger-nav-btn {
+        display: flex !important;
+    }
+    .footer-left {
+        width: 100% !important;
+    }
+    .footer-right {
+        margin-left: 60px !important;
+    }
+    .email-input {
+        width: 250px !important;
+    }
+    .site-header {
+        padding: 50px 25px 30px 25px !important;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .site-title {
+        font-size: 30px !important;
+        position: absolute;
+    }
+    .mobile-hidden {
+        display: none;
+    }
+    .hero {
+        top: 20px;
+        height: 550px !important;
+    }
+    .hero-title {
+        font-size: 40px !important;
+    }
+    .hero-text {
+        padding-bottom: 40px !important;
+    }
+    .intro-text {
+        width: 100% !important;
+    }
+    .galary-container {
+        padding: 0 20px 100px 20px !important;
+    }
+    .product-galary {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 0.5fr)) !important;
+    }
+    .product-overview-container {
+        height: 250px;
+    }
+    .category-page {
+        padding: 50px 30px !important;
+    }
+    .footer-content {
+        flex-direction: column;
+    }
+    .footer-left {
+        width: 100% !important;
+    }
+    .footer-right {
+        width: 100% !important;
+        margin-left: 0 !important;
+    }
+    .email-input {
+        width: 100% !important;
+    }
+    .subscribe-btn {
+        display: block !important;
+        margin: 20px auto;
+        width: 100%;
+    }
+    .static-page-container {
+        margin: 0 !important;
+        padding: 100px 40px !important;
+        h1 {
+            width: 100% !important;
+        }
+        .paragraphs {
+            width: 100% !important;
+        }
+    }
+    .product-details-container {
+        flex-direction: column !important;
+    }
+    .product-page {
+        padding: 0 40px !important;
+    }
+    .breadcrumb-menu {
+        display: none !important;
+    }
+    .product-navigation {
+        display: none !important;
+    }
+    .thumbnails-container {
+        width: 100% !important;
+        display: flex;
+        .thumbnail {
+            width: 40px !important;
+            margin-right: 10px;
+            height: auto !important;
+        }
+    }
+    .large-product-image {
+        width: 100% !important;
+    }
+    .content {
+        width: 100% !important;
+        margin-top: 40px;
+    }
+}

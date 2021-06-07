@@ -1,6 +1,13 @@
-import { CartProductList } from "../Components/CartProductList"
+import { CartProductList } from "../Components/CartProductList";
 
-export const SlideOutCart = ({ productsInCart, showCart, hideCart, deleteItemInCart }) => {
+export const SlideOutCart = ({ 
+                                productsInCart, 
+                                showCart, 
+                                hideCart, 
+                                deleteItemInCart,
+                                adjustQuantityInCart,
+                                openCart
+                            }) => {
 
     const totalPriceArray = productsInCart.map(product => product.price * product.quantityInCart);
     const subtotal = totalPriceArray.length > 0 && totalPriceArray.reduce((accumulator, currentValue) => accumulator + currentValue);
@@ -37,7 +44,9 @@ export const SlideOutCart = ({ productsInCart, showCart, hideCart, deleteItemInC
                                                                 price={product.price}
                                                                 image={product.main_image}
                                                                 quantityInCart={product.quantityInCart}
+                                                                quantity={product.quantity}
                                                                 deleteItemInCart={deleteItemInCart}
+                                                                adjustQuantityInCart={adjustQuantityInCart}
                                                                 />) : <p className="empty-cart">Cart is empty</p>}
                     </main>
                     {productsInCart.length > 0 && (<div className="subtotal-container">
@@ -47,6 +56,7 @@ export const SlideOutCart = ({ productsInCart, showCart, hideCart, deleteItemInC
                    {productsInCart.length > 0 && (<div className="view-cart-container">
                         <button
                             className="view-cart-btn"
+                            onClick={openCart}
                         >View Cart</button>
                     </div>)}
                 </div>
