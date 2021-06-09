@@ -33,7 +33,7 @@ export const CountryNameSelect = ({ updateLocation, setShowCountryBox, location 
         setInput(location);
     }, [location]);
 
-    return (<form className="country-select-container">
+    return (<div className="country-select-container">
                 <h1>Select Destination</h1>
                 <button 
                     className="close-btn"
@@ -41,54 +41,55 @@ export const CountryNameSelect = ({ updateLocation, setShowCountryBox, location 
                     >&times;
                 </button>
                 <p className="country-prompt">Country</p>
-                <div 
-                    className="country-select-box"
+                <div className="country-select-inner-container">
+                    <div 
+                        className="country-select-box"
                     >
-                    <input 
-                        type="text"
-                        name="country-name"
-                        autoComplete="off"
-                        className="country-input"
-                        value={input}
-                        autoFocus
-                        onChange={({target}) => {
-                            setShowOptions(true);
-                            setInput(target.value);
-                        }}
-                        onClick={({target}) => {
-                            setShowOptions(true);
-                            target.focus();
-                            target.select();
-                        }}
-                        >
-                    </input>
-                    <button 
-                        className="toggle-arrow-btn"
-                        >
-                        <i 
-                            className="fas fa-chevron-down"
-                            onClick={(event) => {
-                                event.preventDefault();
+                        <input 
+                            type="text"
+                            name="country-name"
+                            autoComplete="off"
+                            className="country-input"
+                            value={input}
+                            autoFocus
+                            onChange={({target}) => {
+                                setShowOptions(true);
+                                setInput(target.value);
+                            }}
+                            onClick={({target}) => {
+                                setShowOptions(true);
+                                target.focus();
+                                target.select();
+                            }}
+                            >
+                        </input>
+                        <button 
+                            className="toggle-arrow-btn"
+                            onClick={() => {
                                 setShowOptions(!showOptions);
                             }}
                             >
-                        </i>
-                    </button>
-                </div>  
-                {showOptions && <div 
-                                    className="suggestion-box"
-                                    style={{border: suggested.length > 0 ?  "1px solid rgb(196, 196, 196)" : "none" }}
-                                    >
-                    {suggested.map((country, i) => <p 
-                                                        key={country + i}
-                                                        onClick={({target}) => {
-                                                            setInput(target.innerHTML);
-                                                            setShowOptions(false);
-                                                        }}
-                                                        className="suggestion"
-                                                        >{country}
-                                                    </p>)}
-                </div>}             
+                            <i 
+                                className="fas fa-chevron-down"
+                                >
+                            </i>
+                        </button>
+                    </div>  
+                    {showOptions && <div 
+                                        className="suggestion-box"
+                                        style={{border: suggested.length > 0 ?  "1px solid rgb(196, 196, 196)" : "none" }}
+                                        >
+                        {suggested.map((country, i) => <p 
+                                                            key={country + i}
+                                                            onClick={({target}) => {
+                                                                setInput(target.innerHTML);
+                                                                setShowOptions(false);
+                                                            }}
+                                                            className="suggestion"
+                                                            >{country}
+                                                        </p>)}
+                                        </div>}  
+                </div>           
                 <button
                     className="update-btn"
                     id={input}
@@ -99,5 +100,5 @@ export const CountryNameSelect = ({ updateLocation, setShowCountryBox, location 
                     }}
                     >Update
                 </button>
-            </form>)
+            </div>)
 }
