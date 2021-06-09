@@ -11,6 +11,25 @@ export const SlideOutCart = ({
 
     const totalPriceArray = productsInCart.map(product => product.price * product.quantityInCart);
     const subtotal = totalPriceArray.length > 0 && totalPriceArray.reduce((accumulator, currentValue) => accumulator + currentValue);
+
+    // let touchStartX = 0;
+    // let touchEndX = 0;
+    // const handleTouchStart = (event) => {
+    //     touchStartX = event.changedTouches[0].clientX;
+    //     return touchStartX;
+    // }
+    // const handleTouchEnd = (event) => {
+    //     touchEndX = event.changedTouches[0].clientX;
+    //     hideCartBySwipe();
+    // }
+
+    // const hideCartBySwipe = () => {
+    //     if (touchEndX > touchStartX) {
+    //         hideCart();
+    //     } else {
+    //         return;
+    //     }
+    // }
         
     return (<div 
                 id="slide-out-cart-wrapper"
@@ -24,7 +43,9 @@ export const SlideOutCart = ({
                 <div 
                     id="slide-out-cart"
                     className="slide-out-cart"
-                    style={{width: showCart ? "370px" : 0}}
+                    // onTouchStart={handleTouchStart}
+                    // onTouchEnd={handleTouchEnd}
+                    style={{width: showCart ? (window.screen.width <= 600 ? "100%" : "370px") : 0}}
                 >
                     <header>
                         <button className="slide-right-btn">

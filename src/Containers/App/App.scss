@@ -12,7 +12,7 @@
 html, body {
     width: 100%;
     text-align: center;
-    font-size: 15px;
+    font-size: 16px;
     overflow-x: hidden;
     overflow-y: auto;
     background-color: $grey;
@@ -75,17 +75,18 @@ html, body {
             left: 0;
             width: 100%;
             height: 100vh;
+            transition: 0.5s;
             .menu-list {
                 width: 100%;
                 margin: 0 auto;
                 padding: 80px 0;
                 .menu-item {
                     list-style-type: none;
-                    display: inline-block;
+                    display: block;
                     width: 100%;
                     text-align: left;
                     cursor: pointer;
-                    font-size: 20px !important;
+                    font-size: 25px !important;
                     padding: 30px;
 
                 }
@@ -280,6 +281,21 @@ html, body {
             }           
         }
     }
+    .product-mobile-nav {
+        margin-top: 150px;
+        .back-btn {
+            background-color: transparent;
+            border: none;
+            outline: none;
+            width: 100%;
+            text-align: left;
+            font-size: 20px;
+            &:before {
+                content: "<";
+                margin-right: 10px;
+            }
+        }
+    }
     .care-instruction-container {
         padding: 100px 0;
         text-align: left;
@@ -363,7 +379,25 @@ label {
         border-radius: 0;
         border: 1px solid rgb(158, 158, 158);
         outline: none;
-        margin: 10px 0 30px 0;
+        margin: 10px 0 0 0;
+    }
+}
+.error-alert {
+    display: none;
+    @extend %error;
+    font-size: 15px;
+    position: absolute;
+    margin-top: 5px;
+    &::after {
+        content: " ";
+        position: absolute;
+        bottom: 100%; 
+        left: 10%;
+        margin-left: -10px;
+        border-width: 10px;
+        border-style: solid;
+        border-color: transparent transparent rgb(253, 223, 228) transparent;
+
     }
 }
 .add-to-cart-btn {
@@ -374,6 +408,7 @@ label {
     border: none;
     padding: 13px;
     font-size: 17px;
+    margin-top: 50px;
     cursor: pointer;
     &:hover, :active {
         background-color: $darkgrey;
@@ -707,12 +742,14 @@ label {
         .promo-container {
             margin-bottom: 30px;
             .promo-code-box {
+                width: 400px;
+                display: flex;
                 .promo-code-input {
                     border-radius: 0;
                     border-width: 1px 0 1px 1px;
                     border-color: black;
                     padding: 10px;
-                    width: 250px;
+                    width: 80%;
                     outline: none;
                 }
                 input[type=text] {
@@ -720,10 +757,12 @@ label {
                 }
                 .apply-btn {
                     border: 1px solid $gold;
+                    padding: 10px 0;
+                    display: inline-block;
                     border-radius: 0;
                     color: $gold;
                     background-color: transparent;
-                    padding: 10px 20px;
+                    width: 20%;
                     font-size: 16px;
                     cursor: pointer;
                     &:hover, :active, :focus {
@@ -767,13 +806,8 @@ label {
             margin: 5px 0;
         }
         .postage-eligibility-alert {
+            @extend %error;
             margin-top: 30px;
-            background-color: rgb(253, 223, 228);
-            padding: 13px;
-            i {
-                color: red;
-                margin-right: 10px;
-            }
         }
         .postage-wrapper {
             width: 100%;

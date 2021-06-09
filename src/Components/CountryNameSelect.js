@@ -6,20 +6,29 @@ export const CountryNameSelect = ({ updateLocation, setShowCountryBox, location 
     const [suggested, setSuggested] = useState(countries);
     const [showOptions, setShowOptions] = useState(false);
 
+    //updates the suggested countries by checking each item in the array of countries to see if it includes the input text, every time the input changes
+    //if a complete match is found in the country array, the suggestion will be set to all the countries
     useEffect(() => {
         const findMatches = () => {
             for (let i = 0; i < countries.length; i ++) {
-                if (countries[i].toLowerCase().includes(input)) {
+                if (countries[i].toLowerCase().includes(input.toLowerCase())) {
                     setSuggested((prev) => [...prev, countries[i]]);
                 }
             }
         }
-        findMatches();
-        return () => {
-            setSuggested([]);
+        const completeMatches = countries.filter(country => country === input);
+
+        if (completeMatches.length !== 1) {
+            findMatches();
+            return () => {
+                setSuggested([]);
+            }
+        } else {
+            setSuggested(countries);
         }
     }, [input]);
 
+    //updates the default value of the input box to the last selected location
     useEffect(() => {
         setInput(location);
     }, [location]);
@@ -47,6 +56,7 @@ export const CountryNameSelect = ({ updateLocation, setShowCountryBox, location 
                             setInput(target.value);
                         }}
                         onClick={({target}) => {
+                            setShowOptions(true);
                             target.focus();
                             target.select();
                         }}
@@ -71,7 +81,10 @@ export const CountryNameSelect = ({ updateLocation, setShowCountryBox, location 
                                     >
                     {suggested.map((country, i) => <p 
                                                         key={country + i}
-                                                        onClick={({target}) => setInput(target.innerHTML)}
+                                                        onClick={({target}) => {
+                                                            setInput(target.innerHTML);
+                                                            setShowOptions(false);
+                                                        }}
                                                         className="suggestion"
                                                         >{country}
                                                     </p>)}

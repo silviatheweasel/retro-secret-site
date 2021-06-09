@@ -12,7 +12,6 @@ export const ProductDetails = React.memo(({
             images, 
             name, 
             price, 
-            main_image, 
             description, 
             length, 
             materials, 
@@ -20,7 +19,7 @@ export const ProductDetails = React.memo(({
             height, 
           } = currentProduct;
 
-    const [displayImg, setDisplayImg] = useState(main_image);
+    const [displayImg, setDisplayImg] = useState(images[0]);
 
     useEffect(() => {setDisplayImg(currentProduct.main_image)}, [currentProduct]);
 
@@ -35,6 +34,51 @@ export const ProductDetails = React.memo(({
     
     const handleBtnClick = () => {
         setIsShort(!isShort);
+    }
+
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const handleTouchStart = (event) => {
+        touchStartX = event.changedTouches[0].clientX;
+        return touchStartX;
+    }
+    const handleTouchEnd = (event) => {
+        touchEndX = event.changedTouches[0].clientX;
+        locationDifference();
+    }
+
+    const showNextImg = () => {
+        for (let i = 0; i < images.length; i++) {
+            if (displayImg.src === images[i].src) {
+                if (i<=images.length -2) {
+                    setDisplayImg(images[i+1]);
+                } else {
+                    setDisplayImg(images[0]);
+                }
+            }
+        }
+    }
+
+    const showPrevImage = () => {
+        for (let i = 0; i < images.length; i++) {
+            if (displayImg.src === images[i].src) {
+                if (i>=1) {
+                    setDisplayImg(images[i-1]);
+                } else {
+                    setDisplayImg(images[images.length-1]);
+                }
+            }
+        }
+    }
+
+    const locationDifference = () => {
+        if (touchEndX > touchStartX) {
+            showNextImg();
+        } else if (touchEndX < touchStartX) {
+            showPrevImage();
+        } else {
+            return;
+        }
     }
    
     return (
@@ -52,7 +96,11 @@ export const ProductDetails = React.memo(({
                         onClick={handleClick}
                         ></img>)}
             </div>
-            <div className="large-product-image">
+            <div 
+                className="large-product-image"
+                onTouchStart={handleTouchStart}
+                onTouchEnd={handleTouchEnd}
+                >
                 <img 
                     src={displayImg.src} 
                     alt={displayImg.alt}
@@ -85,6 +133,7 @@ export const ProductDetails = React.memo(({
                     addItemToCart={addItemToCart}
                     handleQuantityInputChange={handleQuantityInputChange}
                     quantityInCart={quantityInCart}
+                    currentProduct={currentProduct}
                     />
             </div>
         </div>

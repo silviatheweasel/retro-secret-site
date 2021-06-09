@@ -25,8 +25,12 @@ export const ProductPage = ({
                     {currentCategory !== "all" && <li 
                         className="breadcrumb-prev"
                         onClick={getCategoryPage}
-                        >{categoryName}</li>}
-                    <li className="breadcrumb-current">{currentProduct.name}</li>
+                        >{categoryName}
+                    </li>}
+                    <li 
+                        className="breadcrumb-current"
+                        >{currentProduct.name}
+                    </li>
                 </ul>
                 <ul className="product-navigation">
                     <li 
@@ -46,6 +50,21 @@ export const ProductPage = ({
                                 }}
                         >Next</li>
                 </ul>
+            </nav>
+            <nav 
+                className="product-mobile-nav"
+                style={{display: window.screen.width <= 600? "block" : "none"}}
+                >
+                {currentCategory === "all" ? 
+                <button
+                    onClick={handleSiteLogoClick}
+                    className="back-btn"
+                    >Back to Home
+                </button> : <button
+                                onClick={getCategoryPage}
+                                className="back-btn"
+                                >Back to {categoryName}
+                            </button>}
             </nav>
             <ProductDetails 
                 currentProduct={currentProduct} 
