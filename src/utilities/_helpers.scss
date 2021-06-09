@@ -6,7 +6,7 @@ $KoHo: 'KoHo', sans-serif;
 $OpenSans: 'Open Sans', sans-serif;
 
 %text {
-    font-size: 15px;
+    font-size: 16px;
     font-family: $OpenSans;
     color: $darkgrey;
     line-height: 1.8rem;
@@ -31,6 +31,7 @@ $OpenSans: 'Open Sans', sans-serif;
     text-decoration: underline;
     outline: none;
     cursor: pointer;
+    font-size: 16px;
 }
 
 %dimmer {
@@ -104,4 +105,13 @@ $OpenSans: 'Open Sans', sans-serif;
     z-index: -10;
     right: -8px;
     top: -4px;  
+}
+
+%error {
+    background-color: rgb(253, 223, 228);
+    padding: 13px;
+    i {
+        color: red;
+        margin-right: 10px;
+    }
 }

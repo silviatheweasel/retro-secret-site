@@ -3,7 +3,8 @@ export const MenuBar = ({
                             currentCategory, 
                             categories,
                             setShowCart,
-                            productsInCart
+                            productsInCart,
+                            openCart
                         }) => {
     
     return (<>
@@ -14,7 +15,14 @@ export const MenuBar = ({
                     <button
                         className="nav-bar-cart-btn desktop"
                         id="nav-bar-cart-btn"
-                        onClick={() => setShowCart(true)}
+                        onClick={() => {
+                            if (window.screen.width <= 600) {
+                                openCart();
+                                
+                            } else {
+                                setShowCart(true);
+                            }
+                        }}
                         >{productsInCart.length}
                     </button>
                     <ul className="menu-list">

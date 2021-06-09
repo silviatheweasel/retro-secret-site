@@ -49,6 +49,7 @@ export const QuickViewPage = ({
                             addItemToCart={addItemToCart}
                             handleQuantityInputChange={handleQuantityInputChange}
                             quantityInCart={quantityInCart}
+                            currentProduct={currentProduct}
                         />
                         <button
                             onClick={getProductPage}

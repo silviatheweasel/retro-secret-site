@@ -69,7 +69,7 @@ function App() {
     const productName = target.id.slice(0, -1);
     const filtededProduct = products.filter(product => product.name === productName)[0];
     setCurrentProduct(filtededProduct);
-    if (target.id.slice(-1) !== "6") {
+    if (target.id.slice(-1) !== "2") {
       setDisplayedPage("ProductPage");
       window.scrollTo(0, 0);
     } else {
@@ -85,16 +85,27 @@ function App() {
   const [quantityInCart, setQuantityInCart] = useState(1);
   const [showCart, setShowCart] = useState(false);
   const addItemToCart = () => {
-    setProductsInCart((prev) => {
-      if (!productsInCart.find(product => product.name === currentProduct.name)) {
-        return [...prev, {...currentProduct, quantityInCart: quantityInCart}]
+    if (quantityInCart) {
+      if (quantityInCart <= currentProduct.quantity) {
+        setProductsInCart((prev) => {
+          if (!productsInCart.find(product => product.name === currentProduct.name)) {
+            return [...prev, {...currentProduct, quantityInCart: quantityInCart}]
+        } else {
+            const filtered = prev.filter(product => product.name !== currentProduct.name);
+            return [...filtered, {...currentProduct, quantityInCart: quantityInCart}]
+          }
+        })
+        setShowQuickViewPage(false);
+        setShowCart(true);
+      } else {
+        // document.getElementById("over-limit-warning").style.display = "block";
+        return;
+      }     
     } else {
-        const filtered = prev.filter(product => product.name !== currentProduct.name);
-        return [...filtered, {...currentProduct, quantityInCart: quantityInCart}]
-      }
-    })
-    setShowQuickViewPage(false);
-    setShowCart(true);
+      // document.getElementById("not-valid-warning").style.display = "block";
+      return;
+    }
+    
   }
   
   const hideCart = () => {
@@ -102,11 +113,11 @@ function App() {
   }
 
   const handleQuantityInputChange = ({ target: { value }}) => {
-    setQuantityInCart(parseInt(value));
+    setQuantityInCart(value && parseInt(value));    
   }
 
   useEffect(() => {
-    setQuantityInCart(1)
+    setQuantityInCart(1);
   }, [currentProduct]);
 
   const attachPage = () => {
@@ -217,6 +228,7 @@ function App() {
     setShowCart(false);
     setCurrentCategory(null)
     window.scrollTo(0, 0);
+    setIsMobileMenuOpen(false);
   }
 
   const [location, setLocation] = useState("United Kingdom");
@@ -277,6 +289,7 @@ function App() {
             setShowCart={setShowCart}
             productsInCart={productsInCart}
             isMobileMenuOpen={isMobileMenuOpen}
+            openCart={openCart}
           />
         </nav>
       </header>

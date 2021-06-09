@@ -48,7 +48,7 @@ export const ProductOverview = React.memo(({ mainImg, currentCategory, secondary
                       }}
                 ></img>
                 <div 
-                    id={name + "6"}
+                    id={name + "2"}
                     className="quick-view-btn"
                 >Quick View
                 </div>
