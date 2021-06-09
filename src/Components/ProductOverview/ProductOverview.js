@@ -47,11 +47,11 @@ export const ProductOverview = React.memo(({ mainImg, currentCategory, secondary
                         transition: "opacity .15s linear"
                       }}
                 ></img>
-                <div 
+                {window.screen.width >= 600 && <div 
                     id={name + "2"}
                     className="quick-view-btn"
                 >Quick View
-                </div>
+                </div>}
             </div>
             <h3 
                 id={name + "3"}

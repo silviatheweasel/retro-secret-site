@@ -152,6 +152,7 @@ export const Cart = ({
                             <textarea
                                 name="note"
                                 className="note-textarea"
+                                maxLength="200"
                                 style={{ display: showNoteBox ? "block" : "none" }}
                                 placeholder="Instructions? Specil requests? Add them here."
                             ></textarea>

@@ -56,6 +56,7 @@
         }
         .paragraphs {
             width: 80% !important;
+            font-size: 17px !important;
         }
     }
     .error-page {
@@ -165,6 +166,7 @@
     }
     .large-product-image {
         width: 100% !important;
+        margin-top: 20px;
     }
     .content {
         width: 100% !important;
@@ -225,5 +227,20 @@
         text-align: center !important;
         padding: 10px auto !important;
     }
-
+    .promo-code-box {
+        width: 100% !important;
+    }
+    .note-textarea {
+        width: 100% !important;
+    }
+    .country-select-container {
+        width: 90% !important;
+        padding: 80px 20px !important;
+    }
+    .country-select-box {
+        width: 100% !important;
+    }
+    .suggestion-box {
+        width: 100% !important;
+    }
 }
