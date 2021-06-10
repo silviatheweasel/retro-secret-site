@@ -1,70 +1,24 @@
-# Getting Started with Create React App
+# About the Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a responsive front-end project of an e-commerce jewelry website modelled on my own website built on a commercial plarform. It is built with React JS and loads data from a mock API service. 
+- It allows users to browse throught the products by category and add them to the cart. 
+- It allows users to adjust the quantity in the cart or delete the products.
+- It calculates the shipping cost based on which shipping service is chosen and whether the free shipping limit is reached.
 
-## Available Scripts
+## Built with
+The project is built with React JS and styled with SASS. An external mock API service mockapi.io is used to store the data.
 
-In the project directory, you can run:
+## Website Structure
 
-### `npm start`
+![retro-secrets-structure](https://user-images.githubusercontent.com/73400959/121575069-d9fd0700-ca1e-11eb-90c9-302d4a6d1b90.jpg)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Screenshots
+![Screen Shot 2021-06-10 at 19 14 18](https://user-images.githubusercontent.com/73400959/121576354-33b20100-ca20-11eb-99f0-515da57e2995.png)
+![Screen Shot 2021-06-10 at 19 11 47](https://user-images.githubusercontent.com/73400959/121576038-e9c91b00-ca1f-11eb-8a3f-8d92b598bbb0.png)
+![Screen Shot 2021-06-10 at 19 12 08](https://user-images.githubusercontent.com/73400959/121576044-ec2b7500-ca1f-11eb-944f-6268c02a38f6.png)
+![Screen Shot 2021-06-10 at 19 12 20](https://user-images.githubusercontent.com/73400959/121576053-edf53880-ca1f-11eb-8f51-2380225dc213.png)
+![Screen Shot 2021-06-10 at 19 12 35](https://user-images.githubusercontent.com/73400959/121576056-ef266580-ca1f-11eb-9bed-d8decbb7ae4c.png)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Live Demo
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The project is live on https://retro-secrets.herokuapp.com/.
