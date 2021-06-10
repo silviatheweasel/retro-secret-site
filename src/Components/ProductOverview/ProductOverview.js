@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Placeholder from "./product-image-placeholder.jpg";
 
-export const ProductOverview = React.memo(({ mainImg, currentCategory, secondaryImg, name, price, handleProductClick }) => {
+export const ProductOverview = React.memo(({ 
+                                            mainImg, 
+                                            currentCategory, 
+                                            secondaryImg, 
+                                            name, 
+                                            price, 
+                                            handleProductClick 
+                                        }) => {
 
     const [displayImg, setDisplayImg] = useState({
         src: {Placeholder},

@@ -98,14 +98,11 @@ function App() {
         setShowQuickViewPage(false);
         setShowCart(true);
       } else {
-        // document.getElementById("over-limit-warning").style.display = "block";
         return;
       }     
     } else {
-      // document.getElementById("not-valid-warning").style.display = "block";
       return;
-    }
-    
+    }  
   }
   
   const hideCart = () => {
@@ -171,6 +168,7 @@ function App() {
                 handleSiteLogoClick={handleSiteLogoClick}
                 updateLocation={updateLocation}
                 location={location}
+                handleCartProductClick={handleCartProductClick}
       />
     } 
   }
@@ -183,6 +181,15 @@ function App() {
     setDisplayedPage("ProductPage");
     setShowQuickViewPage(false);
     window.scrollTo(0, 0);
+  }
+
+  const handleCartProductClick = ({target}) => {
+    getProductPage();
+    const productName = target.id.slice(0,-3);
+    const filteredProduct = productsInCart.filter(product => product.name === productName)[0];
+    setCurrentProduct(filteredProduct);
+    setCurrentCategory("all");
+    hideCart();
   }
 
   const navigateProducts = ({target}) => {
@@ -302,7 +309,8 @@ function App() {
               hideCart={hideCart}
               deleteItemInCart={deleteItemInCart} 
               adjustQuantityInCart={adjustQuantityInCart}
-              openCart={openCart}            
+              openCart={openCart}     
+              handleCartProductClick={handleCartProductClick}       
               />
       </main>
       <footer className="site-footer">

@@ -7,7 +7,8 @@ export const Cart = ({
                         adjustQuantityInCart,
                         handleSiteLogoClick, 
                         updateLocation,
-                        location
+                        location,
+                        handleCartProductClick
                     }) => {
 
     const [showPromoBox, setShowPromoBox] = useState(false);
@@ -69,6 +70,7 @@ export const Cart = ({
                                                                             quantity={product.quantity}
                                                                             deleteItemInCart={deleteItemInCart}
                                                                             adjustQuantityInCart={adjustQuantityInCart}
+                                                                            handleCartProductClick={handleCartProductClick}
                                                                             />
                                                                         <p 
                                                                             className="cart-product-subtotal"
@@ -154,7 +156,7 @@ export const Cart = ({
                                 className="note-textarea"
                                 maxLength="200"
                                 style={{ display: showNoteBox ? "block" : "none" }}
-                                placeholder="Instructions? Specil requests? Add them here."
+                                placeholder="Instructions? Special requests? Add them here."
                             ></textarea>
                         </div>
                         <div className="cart-right-container">

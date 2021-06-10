@@ -115,3 +115,22 @@ $OpenSans: 'Open Sans', sans-serif;
         margin-right: 10px;
     }
 }
+
+%controlBtn {
+    border: 0;
+    padding: 50px 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: absolute;
+    color: gray;
+    background-color: fade-out($color: white, $amount: 0.4);
+    opacity: 0;
+    transition: opacity 0.5s;
+    &:hover, :active, :focus i {
+        color: black;
+    }
+    i {
+        font-size: 25px;
+    }
+}
