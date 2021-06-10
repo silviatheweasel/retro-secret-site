@@ -12,16 +12,14 @@ import { ErrorPage } from "../ErrorPage";
 
 function App() {
   const categories = ["Necklaces", "Bracelets", "Rings", "Earrings"];
-
   const [currentCategory, setCurrentCategory] = useState("all");
-
   const [currentProduct, setCurrentProduct] = useState(null);
-
-  //retrieves data and saves product data in the state
-  const [products, setProducts] = useState(null);
-
   const [displayedPage, setDisplayedPage] = useState("Home");
 
+  //retrieves data, sets the display page to the error page if resolved data is falsy, 
+  //saves the resolved data to the "products" state if the current category is "all"
+  //or saves the data of a certain category to "products" if the current category is not "all"
+  const [products, setProducts] = useState(null);
   useEffect(() => {
     const getProductsByCategory = (productData) => {
       const productsByCategory = productData.filter(product => product.category  === currentCategory);
@@ -41,14 +39,18 @@ function App() {
     })
   }, [displayedPage]);
 
+
   const handleMenuClick = ({target}) => {
+      //updates the display page state with the inner HTML of the event target
     if (target.innerHTML !== displayedPage) {
       setDisplayedPage(`${target.innerHTML}`);
+      //sets the current category to either "all" or a specific category based on the inner HTML of event target
       if (categories.includes(target.innerHTML)) {
         setCurrentCategory(target.innerHTML.toLowerCase());
       } else {
         setCurrentCategory("all");  
       }
+      //resets states
       setProducts(null);
       setIsMobileMenuOpen(false);
       window.scrollTo(0, 0);
@@ -57,6 +59,7 @@ function App() {
     return;
   }
 
+  //sets display page to "Home" and resets states
   const handleSiteLogoClick = () => {
     setDisplayedPage("Home");
     setCurrentCategory("all");
@@ -66,9 +69,13 @@ function App() {
 
   const [showQuickViewPage, setShowQuickViewPage] = useState(false);
   const handleProductClick = ({target}) => {
+    //gets the name of the product from the id of the event target, and finds the product object with the same name
     const productName = target.id.slice(0, -1);
     const filtededProduct = products.filter(product => product.name === productName)[0];
     setCurrentProduct(filtededProduct);
+    //if the id of the event target ends with "2", it is a button that opens the quick view page
+    //sets the setShowQuickViewPage state to "true" to show the quick view page
+    //otherwise, sets the display page to "ProductPage" to show the product page otherwise
     if (target.id.slice(-1) !== "2") {
       setDisplayedPage("ProductPage");
       window.scrollTo(0, 0);
@@ -86,11 +93,14 @@ function App() {
   const [showCart, setShowCart] = useState(false);
   const addItemToCart = () => {
     if (quantityInCart) {
+      //if the quantity added to the cart is less than the stock quantity, checkes if this product is alread in the cart 
       if (quantityInCart <= currentProduct.quantity) {
         setProductsInCart((prev) => {
+          //if the product is not in the cart, adds the product and an addition pair of key and value "quantityInCart: quantityInCart" to the productsInCarts state
           if (!productsInCart.find(product => product.name === currentProduct.name)) {
             return [...prev, {...currentProduct, quantityInCart: quantityInCart}]
         } else {
+          //if the product is already in the cart, filters out the product, and adds it back with an updated "quantityInCart" value
             const filtered = prev.filter(product => product.name !== currentProduct.name);
             return [...filtered, {...currentProduct, quantityInCart: quantityInCart}]
           }
@@ -109,14 +119,17 @@ function App() {
     setShowCart(false);
   }
 
+  //if the target value is truthy, updates the quantity in the cart
   const handleQuantityInputChange = ({ target: { value }}) => {
     setQuantityInCart(value && parseInt(value));    
   }
 
+  //resets the quantity in cart every time a product page is loaded
   useEffect(() => {
     setQuantityInCart(1);
   }, [currentProduct]);
 
+  //attaches pages when the "displayedPage" state changes;
   const attachPage = () => {
     if (displayedPage === "Home") {
       return <Home 
@@ -173,16 +186,20 @@ function App() {
     } 
   }
 
+  //sets the display page with the name of the current category
   const getCategoryPage = () => {
     setDisplayedPage(currentCategory);
   }
 
+  //sets the display page to the product page
   const getProductPage = () => {
     setDisplayedPage("ProductPage");
     setShowQuickViewPage(false);
     window.scrollTo(0, 0);
   }
 
+  //gets the name of the product from the id of the event target and finds the product that has the same name
+  //sets the display page to the product page of this product 
   const handleCartProductClick = ({target}) => {
     getProductPage();
     const productName = target.id.slice(0,-3);
@@ -192,27 +209,32 @@ function App() {
     hideCart();
   }
 
+  //finds the index of the product in the array and sets the current product to the product before or after it in the array
   const navigateProducts = ({target}) => {
     const currentProductName = currentProduct.name;
     let index = products.findIndex(product => product.name === currentProductName);
       if (index < products.length - 1 && target.id==="next-btn") {
-        setCurrentProduct(products[index +1]);
+        setCurrentProduct(products[index + 1]);
       } else if (index > 0 && target.id==="prev-btn") {
-          setCurrentProduct(products[index -1]);
+          setCurrentProduct(products[index - 1]);
       } else {
         return;
       }
   }
 
+  //filters out the product with a matching name
   const deleteItemInCart = ({target}) => {
     const restOfProducts = productsInCart.filter(product => product.name !== target.id.slice(0, -3));
     setProductsInCart(restOfProducts);
   }
 
   const adjustQuantityInCart = ({target}) => {
+    //creates a copy of the state
     let productsInCartCopy = [...productsInCart];
+    //if the event target is a "plus" button, finds the index of the event target, which is also the index of the product
     if (target.id.includes("plus")) {
       const index = target.id.slice(4);
+      //if the quantity in the cart is less than the stock quantity, adds 1 to the quantity in the cart
       if (productsInCartCopy[index].quantityInCart < productsInCartCopy[index].quantity) {
         productsInCartCopy[index].quantityInCart ++;
         setProductsInCart(productsInCartCopy);
@@ -220,9 +242,11 @@ function App() {
       return;
     } else {
         const index = target.id.slice(5);
+        //if the quantity in the cart is larger or even to 2, subtracts 1 from it
         if (productsInCartCopy[index].quantityInCart >= 2) {
           productsInCartCopy[index].quantityInCart --;
           setProductsInCart(productsInCartCopy);
+        //otherwise deletes the product from the array
         } else {
           productsInCartCopy.splice(index, 1);
           setProductsInCart(productsInCartCopy);
@@ -238,8 +262,8 @@ function App() {
     setIsMobileMenuOpen(false);
   }
 
+  //updates the customer's country with the id of event target
   const [location, setLocation] = useState("United Kingdom");
-
   const updateLocation = (event) => {
     setLocation(event.target.id);
   }
@@ -253,6 +277,7 @@ function App() {
   }
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  //if the screen is narrower or equal to 600px, updates the class names
   useEffect(()=> {
     if (window.screen.width <= 600) {
       if (isMobileMenuOpen) {

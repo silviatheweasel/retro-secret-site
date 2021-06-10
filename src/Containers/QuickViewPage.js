@@ -17,6 +17,7 @@ export const QuickViewPage = ({
         } = currentProduct;
 
     const [displayedImg, setDisplayedImg] = useState(main_image); 
+    //re-renders the displayed image when the current product changes
     useEffect(() => setDisplayedImg(currentProduct.main_image), [currentProduct]); 
 
     const switchImg = ({target}) => {

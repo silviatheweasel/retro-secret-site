@@ -6,7 +6,7 @@ export const AddToCart = ({
                             quantityInCart,
                             currentProduct 
                         }) => {
-
+    //toggles the visibility of warning messages
     useEffect(() => {
         if (!quantityInCart) {
             document.getElementById("not-valid-warning").style.display = "block";

@@ -13,6 +13,7 @@ export const SlideOutCart = ({
     const totalPriceArray = productsInCart.map(product => product.price * product.quantityInCart);
     const subtotal = totalPriceArray.length > 0 && totalPriceArray.reduce((accumulator, currentValue) => accumulator + currentValue);
 
+    //checks if the X value of the start of the touch event is smaller than the end, to determing whether the user swipped right
     let touchStartX = 0;
     let touchEndX = 0;
     const handleTouchStart = (event) => {
