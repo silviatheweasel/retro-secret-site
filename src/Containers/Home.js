@@ -1,5 +1,5 @@
 import { ProductGalary } from "./ProductGalary";
-import heroImg from "../media/hero-img.webp";
+import heroImg from "../media/hero-img.img";
 
 const Home = ({     
                 hideQuickViewPage, 
