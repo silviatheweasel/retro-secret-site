@@ -436,10 +436,28 @@ label {
             display: flex;
             .quick-view-image-container {
                 width: 50%;
+                position: relative;
+                &:hover .prev-btn {
+                    opacity: 1;
+                }
+                &:hover .next-btn {
+                    opacity: 1;
+                }
                 img {
                     width: 100%;
                     display: block;
                 }
+                .prev-btn {
+                    @extend %controlBtn;
+                    left: 0;
+                    top: 30%;
+                }
+                .next-btn {
+                    @extend %controlBtn;
+                    right: 0;
+                    top: 30%;
+                }
+
             }
             .quick-view-text-container {
                 width: 40%;
@@ -589,6 +607,7 @@ label {
         img {
             width: 100%;
             display: block;
+            cursor: pointer;
         }
     }
     .cart-product-info {

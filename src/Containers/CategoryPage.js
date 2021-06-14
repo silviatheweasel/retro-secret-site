@@ -11,7 +11,7 @@ export const CategoryPage = React.memo(({
                                             getProductPage,
                                             addItemToCart,
                                             quantityInCart,
-                                            handleQuantityInputChange
+                                            handleQuantityInputChange,
                                         }) => {
     const header = currentCategory[0].toUpperCase() + currentCategory.substring(1)
 

@@ -6,8 +6,8 @@ export const CartProductList = ({
                                     deleteItemInCart,
                                     adjustQuantityInCart,
                                     id,
-                                    quantity
-
+                                    quantity,
+                                    handleCartProductClick
                                  }) => {
 
     return (<div 
@@ -17,7 +17,10 @@ export const CartProductList = ({
                     <img 
                         src={image.src}
                         alt={image.alt}
-                        ></img>
+                        id={name + "img"}
+                        onClick={handleCartProductClick}
+                        >
+                    </img>
                 </div>
                 <div className="cart-product-info">
                     <div className="cart-product-basics">

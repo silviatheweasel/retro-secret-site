@@ -109,6 +109,28 @@
   margin-right: 10px;
 }
 
+.quick-view-wrapper .quick-view-container .quick-view-content .quick-view-image-container .prev-btn, .quick-view-wrapper .quick-view-container .quick-view-content .quick-view-image-container .next-btn {
+  border: 0;
+  padding: 50px 10px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: absolute;
+  color: gray;
+  background-color: rgba(255, 255, 255, 0.6);
+  opacity: 0;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+
+.quick-view-wrapper .quick-view-container .quick-view-content .quick-view-image-container .prev-btn:hover, .quick-view-wrapper .quick-view-container .quick-view-content .quick-view-image-container .next-btn:hover, .quick-view-wrapper .quick-view-container .quick-view-content .quick-view-image-container .prev-btn :active, .quick-view-wrapper .quick-view-container .quick-view-content .quick-view-image-container .next-btn :active, .quick-view-wrapper .quick-view-container .quick-view-content .quick-view-image-container .prev-btn :focus i, .quick-view-wrapper .quick-view-container .quick-view-content .quick-view-image-container .next-btn :focus i {
+  color: black;
+}
+
+.quick-view-wrapper .quick-view-container .quick-view-content .quick-view-image-container .prev-btn i, .quick-view-wrapper .quick-view-container .quick-view-content .quick-view-image-container .next-btn i {
+  font-size: 25px;
+}
+
 @media only screen and (max-width: 1050px) {
   .menu-item {
     font-size: 18px !important;
@@ -344,7 +366,7 @@
     margin-top: 10px;
   }
   .cart-product-basics {
-    width: 100% !important;
+    width: 80% !important;
   }
   .quantityControl {
     margin: 20px 0 !important;
@@ -880,11 +902,30 @@ label input {
 
 .quick-view-wrapper .quick-view-container .quick-view-content .quick-view-image-container {
   width: 50%;
+  position: relative;
+}
+
+.quick-view-wrapper .quick-view-container .quick-view-content .quick-view-image-container:hover .prev-btn {
+  opacity: 1;
+}
+
+.quick-view-wrapper .quick-view-container .quick-view-content .quick-view-image-container:hover .next-btn {
+  opacity: 1;
 }
 
 .quick-view-wrapper .quick-view-container .quick-view-content .quick-view-image-container img {
   width: 100%;
   display: block;
+}
+
+.quick-view-wrapper .quick-view-container .quick-view-content .quick-view-image-container .prev-btn {
+  left: 0;
+  top: 30%;
+}
+
+.quick-view-wrapper .quick-view-container .quick-view-content .quick-view-image-container .next-btn {
+  right: 0;
+  top: 30%;
 }
 
 .quick-view-wrapper .quick-view-container .quick-view-content .quick-view-text-container {
@@ -1051,6 +1092,7 @@ label input {
 .cart-product-row .cart-product-image img {
   width: 100%;
   display: block;
+  cursor: pointer;
 }
 
 .cart-product-row .cart-product-info {

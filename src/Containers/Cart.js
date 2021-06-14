@@ -7,13 +7,15 @@ export const Cart = ({
                         adjustQuantityInCart,
                         handleSiteLogoClick, 
                         updateLocation,
-                        location
+                        location,
+                        handleCartProductClick
                     }) => {
 
     const [showPromoBox, setShowPromoBox] = useState(false);
     const [showNoteBox, setShowNoteBox] = useState(false);
     const [showPostOptions, setShowPostOptions] = useState(false);
-
+    
+    //calcutes the total price of each product in the array
     const totalPriceArray = productsInCart.map(product => product.price * product.quantityInCart);
     const subtotal = totalPriceArray.length > 0 && totalPriceArray.reduce((accumulator, currentValue) => accumulator + currentValue);
 
@@ -28,6 +30,7 @@ export const Cart = ({
     const [shippingFee, setShippingFee] = useState(null);
     const [shippingOption, setShippingOption] = useState(deliveryOptions[0].name);
 
+    //checks the shipment option and weather a threshold of free shipping is reached
     useEffect(() => {
         const updateShipment = () => {
             if (shippingOption === deliveryOptions[0].name) {
@@ -69,6 +72,7 @@ export const Cart = ({
                                                                             quantity={product.quantity}
                                                                             deleteItemInCart={deleteItemInCart}
                                                                             adjustQuantityInCart={adjustQuantityInCart}
+                                                                            handleCartProductClick={handleCartProductClick}
                                                                             />
                                                                         <p 
                                                                             className="cart-product-subtotal"
@@ -154,7 +158,7 @@ export const Cart = ({
                                 className="note-textarea"
                                 maxLength="200"
                                 style={{ display: showNoteBox ? "block" : "none" }}
-                                placeholder="Instructions? Specil requests? Add them here."
+                                placeholder="Instructions? Special requests? Add them here."
                             ></textarea>
                         </div>
                         <div className="cart-right-container">

@@ -17,6 +17,7 @@ export const QuickViewPage = ({
         } = currentProduct;
 
     const [displayedImg, setDisplayedImg] = useState(main_image); 
+    //re-renders the displayed image when the current product changes
     useEffect(() => setDisplayedImg(currentProduct.main_image), [currentProduct]); 
 
     const switchImg = ({target}) => {
@@ -26,16 +27,48 @@ export const QuickViewPage = ({
                         });
     }
 
+    const showNextImg = () => {
+        for (let i = 0; i < images.length; i++) {
+            if (displayedImg.src === images[i].src) {
+                if (i<=images.length -2) {
+                    setDisplayedImg(images[i+1]);
+                } else {
+                    setDisplayedImg(images[0]);
+                }
+            }
+        }
+    }
+
+    const showPrevImage = () => {
+        for (let i = 0; i < images.length; i++) {
+            if (displayedImg.src === images[i].src) {
+                if (i>=1) {
+                    setDisplayedImg(images[i-1]);
+                } else {
+                    setDisplayedImg(images[images.length-1]);
+                }
+            }
+        }
+    }
+
     return (<>
                 <div 
                     className="quick-view-content"
                 >
                     <div className="quick-view-image-container">
+                        <button
+                            onClick={showPrevImage}
+                            className="prev-btn"
+                        ><i className="fas fa-chevron-left"></i></button>
                         <img 
                             src={displayedImg.src}
                             alt={displayedImg.alt}
                             >
                         </img>
+                        <button
+                            onClick={showNextImg}
+                            className="next-btn"
+                        ><i className="fas fa-chevron-right"></i></button>
                         <ImageControlDots 
                             images={images}
                             switchImg={switchImg}
