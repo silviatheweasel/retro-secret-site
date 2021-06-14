@@ -1,5 +1,5 @@
 import './App.css';
-import Home from "../Home";
+import Home from "../Home/Home";
 import { ProductPage } from "../ProductPage";
 import { CategoryPage } from "../CategoryPage";
 import { getProductData } from "../../utilities/getProductData";

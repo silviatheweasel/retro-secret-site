@@ -1,5 +1,5 @@
-import { ProductGalary } from "./ProductGalary";
-import heroImg from "../media/hero-img.img";
+import { ProductGalary } from "../ProductGalary";
+import heroImg from "./hero-img.jpg";
 
 const Home = ({     
                 hideQuickViewPage, 
