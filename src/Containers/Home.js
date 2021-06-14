@@ -1,4 +1,5 @@
 import { ProductGalary } from "./ProductGalary";
+import heroImg from "../media/hero-img.webp";
 
 const Home = ({     
                 hideQuickViewPage, 
@@ -15,7 +16,7 @@ const Home = ({
     return (<>
                 <div className="hero">
                     <img 
-                        src="https://static.wixstatic.com/media/01a936_d977a5241bb844e19ab90ff30a9fb078~mv2.jpg/v1/fill/w_1280,h_744,al_c,q_90/01a936_d977a5241bb844e19ab90ff30a9fb078~mv2.webp"
+                        src={heroImg}
                         alt="girl wearing red earrings"
                         className="hero-image"
                     ></img>
