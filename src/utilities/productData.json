@@ -3,19 +3,27 @@
       "id": "1",
       "images": [
         { 
-          "src": "https://static.wixstatic.com/media/01a936_68fe7ba344df450aaa93a489b431a972~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_68fe7ba344df450aaa93a489b431a972~mv2.webp",
+          "src": "https://i.ibb.co/nrMDTVP/Untitled-1.jpg",
           "alt": ""
         }, 
         { 
-          "src": "https://static.wixstatic.com/media/01a936_6751a4de0bc0478ea035c78f5b9f25f6~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_6751a4de0bc0478ea035c78f5b9f25f6~mv2.webp",
+          "src": "https://i.ibb.co/fHJ23nY/Untitled-2.jpg",
           "alt": ""
         }, 
         { 
-          "src": "https://static.wixstatic.com/media/01a936_86e289e243054bcea740ff3183efcf65~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_86e289e243054bcea740ff3183efcf65~mv2.webp",
+          "src": "https://i.ibb.co/q9Fb6KL/Untitled-3.jpg",
           "alt": ""
         }, 
         { 
-          "src": "https://static.wixstatic.com/media/01a936_673e4ab5fde34b7d803b818398fa94cf~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_673e4ab5fde34b7d803b818398fa94cf~mv2.webp",
+          "src": "https://i.ibb.co/xsvZnwY/Untitled-4.jpg",
+          "alt": ""
+        }, 
+        { 
+          "src": "https://i.ibb.co/z8mf0bV/Untitled-5.jpg",
+          "alt": ""
+        }, 
+        { 
+          "src": "https://i.ibb.co/cDkc7kn/Untitled-6.jpg",
           "alt": ""
         }
       ],
@@ -24,11 +32,11 @@
       "category": "earrings",
       "description": "These exquisite classical crystal studs are true art pieces. Gleaming radiantly, they give out a mesmerizing ladylike vibe. Their rich and vibrant scarlet colour makes them a perfect companion to scarlet lips and nails, promising ultimate feminine attraction.",
       "main_image": { 
-        "src": "https://static.wixstatic.com/media/01a936_6751a4de0bc0478ea035c78f5b9f25f6~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_6751a4de0bc0478ea035c78f5b9f25f6~mv2.webp",
+        "src": "https://i.ibb.co/nrMDTVP/Untitled-1.jpg",
         "alt": ""
       },
-      "secondary_image": { 
-        "src": "https://static.wixstatic.com/media/01a936_68fe7ba344df450aaa93a489b431a972~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_68fe7ba344df450aaa93a489b431a972~mv2.webp",
+      "secondary_image": {
+        "src": "https://i.ibb.co/fHJ23nY/Untitled-2.jpg", 
         "alt": ""
       },
       "length": 2.9,
@@ -39,19 +47,23 @@
       "id": "2",
       "images": [        
       { 
-        "src": "https://static.wixstatic.com/media/01a936_cb68d151d6b146fab6d56c6cf4aa97e8~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_cb68d151d6b146fab6d56c6cf4aa97e8~mv2.webp",
+        "src": "https://i.ibb.co/JpKNh8n/golden-spikes-necklace-front.jpg",
         "alt": ""
       }, 
       { 
-        "src": "https://static.wixstatic.com/media/01a936_4c8b3849f71e446a9afbf39f3fbb3aa5~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_4c8b3849f71e446a9afbf39f3fbb3aa5~mv2.webp",
+        "src": "https://i.ibb.co/tBvjCjL/golden-spikes-necklace-1.jpg",
         "alt": ""
       }, 
       { 
-        "src": "https://static.wixstatic.com/media/01a936_6376225e74444861b9bc1f48f6cf715d~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_6376225e74444861b9bc1f48f6cf715d~mv2.webp",
+        "src": "https://i.ibb.co/bgBqf03/golden-spikes-necklace-2.jpg",
         "alt": ""
       }, 
       { 
-        "src": "https://static.wixstatic.com/media/01a936_7d9e73fd65664db68f926d44a66692bd~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_7d9e73fd65664db68f926d44a66692bd~mv2.webp",
+        "src": "https://i.ibb.co/v4VTPsj/golden-spikes-necklace-3.jpg",
+        "alt": ""
+      },
+      { 
+        "src": "https://i.ibb.co/Pgg3Y3n/golden-spikes-necklace-4.jpg",
         "alt": ""
       }
       ],
@@ -60,11 +72,11 @@
       "category": "necklaces",
       "description": "This punk-inspired short golden coloured necklace captures the spirit of strong, rebellious, yet elegant modern women in its design with vintage gold finish and abundant punk elements. Despite the heavy and armored look, this necklace is surprisingly light thanks to its thoughtful design, posing no burden to the wearer’s delicate neck.",
       "main_image": {
-        "src": "https://static.wixstatic.com/media/01a936_cb68d151d6b146fab6d56c6cf4aa97e8~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_cb68d151d6b146fab6d56c6cf4aa97e8~mv2.webp",
+        "src": "https://i.ibb.co/JpKNh8n/golden-spikes-necklace-front.jpg",
         "alt": ""
       },
       "secondary_image": {
-        "src": "https://static.wixstatic.com/media/01a936_4c8b3849f71e446a9afbf39f3fbb3aa5~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_4c8b3849f71e446a9afbf39f3fbb3aa5~mv2.webp",
+        "src": "https://i.ibb.co/tBvjCjL/golden-spikes-necklace-1.jpg",
         "alt": ""
       },
       "length": 42,
@@ -75,19 +87,19 @@
       "id": "3",
       "images": [        
       { 
-        "src": "https://static.wixstatic.com/media/01a936_6282d59a29664a04be16b795b522a26b~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_6282d59a29664a04be16b795b522a26b~mv2.webp",
+        "src": "https://i.ibb.co/sQsNdns/Egytian-bracelate-front.jpg",
         "alt": ""
       }, 
       { 
-        "src": "https://static.wixstatic.com/media/01a936_5c6ca3dc35904e4baabcbbd1d79ee43b~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_5c6ca3dc35904e4baabcbbd1d79ee43b~mv2.webp",
+        "src": "https://i.ibb.co/1RZ7b63/Egytian-bracelate-1.jpg",
         "alt": ""
       }, 
       { 
-        "src": "https://static.wixstatic.com/media/01a936_7b55ce8a099046ab8ebdcb6a6092372a~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_7b55ce8a099046ab8ebdcb6a6092372a~mv2.webp",
+        "src": "https://i.ibb.co/FYf0MnP/Egytian-bracelate-2.jpg",
         "alt": ""
       }, 
       { 
-        "src": "https://static.wixstatic.com/media/01a936_0ef5ccd773f54060a96051959632048f~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_0ef5ccd773f54060a96051959632048f~mv2.webp",
+        "src": "https://i.ibb.co/5K6cqBg/Egytian-bracelate-3.jpg",
         "alt": ""
       }],
       "price": 10,
@@ -95,11 +107,11 @@
       "category": "bracelets",
       "description": "This quaint vintage bracelet features the iconic patterns and colours of the mysterious ancient Egyptian culture. Completed with a weathered look, this piece is bound to bring you back to the enigmatic ancient times where Pharaohs ruled and cats were worshipped.",
       "main_image": {
-        "src": "https://static.wixstatic.com/media/01a936_6282d59a29664a04be16b795b522a26b~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_6282d59a29664a04be16b795b522a26b~mv2.webp",
+        "src": "https://i.ibb.co/sQsNdns/Egytian-bracelate-front.jpg",
         "alt": ""
       },
       "secondary_image": {
-        "src": "https://static.wixstatic.com/media/01a936_5c6ca3dc35904e4baabcbbd1d79ee43b~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_5c6ca3dc35904e4baabcbbd1d79ee43b~mv2.webp",
+        "src": "https://i.ibb.co/1RZ7b63/Egytian-bracelate-1.jpg",
         "alt": ""
       },
       "inner_diameter": 6.2,
@@ -110,19 +122,23 @@
       "id": "4",
       "images": [        
       { 
-        "src": "https://static.wixstatic.com/media/01a936_59056b8afb3c405f828a31d758a37a96~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_59056b8afb3c405f828a31d758a37a96~mv2.webp",
+        "src": "https://i.ibb.co/SJwhDwJ/shell-ring-1.jpg",
         "alt": ""
       }, 
       { 
-        "src": "https://static.wixstatic.com/media/01a936_649f3b384ce049f5bdc411b8ed88c58f~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_649f3b384ce049f5bdc411b8ed88c58f~mv2.webp",
+        "src": "https://i.ibb.co/tqrKPfK/shell-ring-2.jpg",
         "alt": ""
       }, 
       { 
-        "src": "https://static.wixstatic.com/media/01a936_a988b99ea2ed46aab4569dce7676d2de~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_a988b99ea2ed46aab4569dce7676d2de~mv2.webp",
+        "src": "https://i.ibb.co/Zf17jj8/shell-ring-3.jpg",
         "alt": ""
       }, 
       { 
-        "src": "https://static.wixstatic.com/media/01a936_b93490f2bf9041babb2343232acb006a~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_b93490f2bf9041babb2343232acb006a~mv2.webp",
+        "src": "https://i.ibb.co/ZT7HqBD/shell-ring-4.jpg",
+        "alt": ""
+      },
+        { 
+        "src": "https://i.ibb.co/mS7wHCj/shell-ring-5.jpg",
         "alt": ""
       }],
       "price": 5,
@@ -130,11 +146,11 @@
       "category": "rings",
       "description": "This daring and lustrious seashell ring is a bold statement. It is for you if you are looking to add a bit of personality and cheek to your look. As the the surface is made from natural seashells, allow for the perfect imperfection.",
       "main_image": {
-        "src": "https://static.wixstatic.com/media/01a936_59056b8afb3c405f828a31d758a37a96~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_59056b8afb3c405f828a31d758a37a96~mv2.webp",
+        "src": "https://i.ibb.co/SJwhDwJ/shell-ring-1.jpg",
         "alt": ""
       },
       "secondary_image": {
-        "src": "https://static.wixstatic.com/media/01a936_649f3b384ce049f5bdc411b8ed88c58f~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_649f3b384ce049f5bdc411b8ed88c58f~mv2.webp",
+        "src": "https://i.ibb.co/tqrKPfK/shell-ring-2.jpg",
         "alt": ""
       },
       "inner_diameter": 1.7,
@@ -146,19 +162,23 @@
       "id": "5",
       "images": [        
       { 
-        "src": "https://static.wixstatic.com/media/01a936_680905c48b40427a9d4483e7f056add5~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_680905c48b40427a9d4483e7f056add5~mv2.webp",
+        "src": "https://i.ibb.co/vs3TW24/portrait-earrings-1.jpg",
         "alt": ""
       }, 
       { 
-        "src": "https://static.wixstatic.com/media/01a936_8d332fcc2afc4c16823c570c6547c96b~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_8d332fcc2afc4c16823c570c6547c96b~mv2.webp",
+        "src": "https://i.ibb.co/p03523z/portrait-earrings-2.png",
         "alt": ""
       }, 
       { 
-        "src": "https://static.wixstatic.com/media/01a936_ccb97da7a9f24a9e8f421c23d27d9372~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_ccb97da7a9f24a9e8f421c23d27d9372~mv2.webp",
+        "src": "https://i.ibb.co/rd861F2/portrait-earrings-3.jpg",
         "alt": ""
       }, 
       { 
-        "src": "https://static.wixstatic.com/media/01a936_e23ab9f07121457eaa6b5d9b633500de~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_e23ab9f07121457eaa6b5d9b633500de~mv2.webp",
+        "src": "https://i.ibb.co/S3th5tV/portrait-earrings-4.jpg",
+        "alt": ""
+      }, 
+      { 
+        "src": "https://i.ibb.co/Tks2F79/portrait-earrings-5.jpg",
         "alt": ""
       }],
       "price": 13,
@@ -166,11 +186,11 @@
       "category": "earrings",
       "description": "Each of these unique vintage earrings features a shallowly engraved Roman portrait on an old-coin-coloured translucent resin gem, complemented with a clasp of elegant matte gold finish, giving out a warm and chic vibe. They are a quaint and graceful addition to your daily wear.",
       "main_image": {
-        "src": "https://static.wixstatic.com/media/01a936_680905c48b40427a9d4483e7f056add5~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_680905c48b40427a9d4483e7f056add5~mv2.webp",
+        "src": "https://i.ibb.co/vs3TW24/portrait-earrings-1.jpg",
         "alt": ""
       },
       "secondary_image": {
-        "src": "https://static.wixstatic.com/media/01a936_8d332fcc2afc4c16823c570c6547c96b~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_8d332fcc2afc4c16823c570c6547c96b~mv2.webp",
+        "src": "https://i.ibb.co/p03523z/portrait-earrings-2.png",
         "alt": ""
       },
       "length": 3.9,
@@ -224,19 +244,19 @@
       "id": "7",
       "images": [        
       { 
-        "src": "https://static.wixstatic.com/media/01a936_2e2703f2e7dc4747814b16c329eaf7bf~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_2e2703f2e7dc4747814b16c329eaf7bf~mv2.webp",
+        "src": "https://i.ibb.co/XDQgjY0/bracelete-1.jpg",
         "alt": ""
       }, 
       { 
-        "src": "https://static.wixstatic.com/media/01a936_2956a23d7aae4283a37493aaa3170934~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_2956a23d7aae4283a37493aaa3170934~mv2.webp",
+        "src": "https://i.ibb.co/V9pnL8Z/bracelete-2.jpg",
         "alt": ""
       }, 
       { 
-        "src": "https://static.wixstatic.com/media/01a936_458135e1dede4228ae1869b4897c56dc~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_458135e1dede4228ae1869b4897c56dc~mv2.webp",
+        "src": "https://i.ibb.co/zZG3HGD/bracelete-3.jpg",
         "alt": ""
       }, 
       { 
-        "src": "https://static.wixstatic.com/media/01a936_1d1f06d992f246b1815274a5485e4f8d~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_1d1f06d992f246b1815274a5485e4f8d~mv2.webp",
+        "src": "https://i.ibb.co/6FDXFLW/bracelete-4.jpg",
         "alt": ""
       }],
       "price": 14,
@@ -244,11 +264,11 @@
       "category": "bracelets",
       "description": "Lodged in elegant and intricate golden discs, the mysterious, shimmering seashell fragments embedded in the amber resin gems shine like twinkling stars in the sky, ushering you into a timeless magical world.",
       "main_image": {
-        "src": "https://static.wixstatic.com/media/01a936_2e2703f2e7dc4747814b16c329eaf7bf~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_2e2703f2e7dc4747814b16c329eaf7bf~mv2.webp",
+        "src": "https://i.ibb.co/XDQgjY0/bracelete-1.jpg",
         "alt": ""
       },
       "secondary_image": {
-        "src": "https://static.wixstatic.com/media/01a936_2956a23d7aae4283a37493aaa3170934~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_2956a23d7aae4283a37493aaa3170934~mv2.webp",
+        "src": "https://i.ibb.co/V9pnL8Z/bracelete-2.jpg",
         "alt": ""
       },
       "length": 16,
@@ -257,33 +277,38 @@
     },
     {
       "id": "8",
-      "images": [        
+      "images": [
       { 
-        "src": "https://static.wixstatic.com/media/01a936_05f62f6026544014854793cce9f783fa~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_05f62f6026544014854793cce9f783fa~mv2.webp",
+        "src": "https://i.ibb.co/9bGd8Wz/disk-necklace-front.jpg",
         "alt": ""
       }, 
       { 
-        "src": "https://static.wixstatic.com/media/01a936_d6ef2d0b6aff4a6791e25a3c777f9a48~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_d6ef2d0b6aff4a6791e25a3c777f9a48~mv2.webp",
+        "src": "https://i.ibb.co/SwpkTR3/disk-necklace-2.jpg",
         "alt": ""
       }, 
       { 
-        "src": "https://static.wixstatic.com/media/01a936_7565352ea89143b1aa867ca0910ba988~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_7565352ea89143b1aa867ca0910ba988~mv2.webp",
+        "src": "https://i.ibb.co/kxP4F4T/disk-necklace-1.jpg",
         "alt": ""
       }, 
       { 
-        "src": "https://static.wixstatic.com/media/01a936_1bba0c3438184e3d9e33b2d21d2daf15~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_1bba0c3438184e3d9e33b2d21d2daf15~mv2.webp",
+        "src": "https://i.ibb.co/R3BFfBH/disk-necklace-3.jpg",
         "alt": ""
-      }],
+      },
+      { 
+        "src": "https://i.ibb.co/s9WGkVj/disk-necklace-4.jpg",
+        "alt": ""
+      }
+    ],
       "price": 28,
       "name": "Gold Discs Necklace",
       "category": "necklaces",
       "description": "Lodged in elegant and intricate golden discs, the mysterious, shimmering seashell fragments embedded in the dark resin gems shine like twinkling stars in the sky, ushering you into a timeless magical world.",
       "main_image": {
-        "src": "https://static.wixstatic.com/media/01a936_05f62f6026544014854793cce9f783fa~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_05f62f6026544014854793cce9f783fa~mv2.webp",
+        "src": "https://i.ibb.co/9bGd8Wz/disk-necklace-front.jpg",
         "alt": ""
       },
       "secondary_image": {
-        "src": "https://static.wixstatic.com/media/01a936_d6ef2d0b6aff4a6791e25a3c777f9a48~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_d6ef2d0b6aff4a6791e25a3c777f9a48~mv2.webp",
+        "src": "https://i.ibb.co/SwpkTR3/disk-necklace-2.jpg",
         "alt": ""
       },
       "length": 37,
@@ -292,29 +317,29 @@
     },
     {
       "id": "9",
-      "images": [        
+      "images": [ 
       { 
-        "src": "https://static.wixstatic.com/media/01a936_606e942b3aca4206805a354084986de0~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_606e942b3aca4206805a354084986de0~mv2.webp",
+        "src": "https://i.ibb.co/SPVb4FY/shell-pendant-front.jpg",
         "alt": ""
       }, 
       {
-        "src": "https://static.wixstatic.com/media/01a936_c5c01a0d74234353982e6723f7ba275c~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_c5c01a0d74234353982e6723f7ba275c~mv2.webp",
+        "src": "https://i.ibb.co/HBQjKLT/shell-pendant-1.jpg",
         "alt": ""
       },
       {
-        "src": "https://static.wixstatic.com/media/01a936_fcf6d89364e044dd891ad61951751cf0~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_fcf6d89364e044dd891ad61951751cf0~mv2.webp",
+        "src": "https://i.ibb.co/S5rvD1B/shell-pendant-2.jpg",
         "alt": ""
       },
       {
-        "src": "https://static.wixstatic.com/media/01a936_d2db123f4e78418bb3f6b4865994b53c~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_d2db123f4e78418bb3f6b4865994b53c~mv2.webp",
+        "src": "https://i.ibb.co/58qK17C/shell-pendant-3.jpg",
         "alt": ""
       },
       {
-        "src": "https://static.wixstatic.com/media/01a936_f01e15321bfd452dabc321bf6c4badb7~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_f01e15321bfd452dabc321bf6c4badb7~mv2.webp",
+        "src": "https://i.ibb.co/6vjmz85/shell-pendant-4.jpg",
         "alt": ""
       },
       {
-        "src": "https://static.wixstatic.com/media/01a936_d2c427fb6d3546dba62bd41ba4cbf67a~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_d2c427fb6d3546dba62bd41ba4cbf67a~mv2.webp",
+        "src": "https://i.ibb.co/FDHZCFN/shell-pendant-5.jpg",
         "alt": ""
       }
     ],
@@ -323,11 +348,11 @@
       "category": "earrings",
       "description": "The lustrous and mysterious seashells embedded in the resin gems shimmer in the sunlight, releasing a thousand colours, as if murmuring in their dreams about the ocean, taking you into a world of enchantment and wonder.",
       "main_image": {
-        "src": "https://static.wixstatic.com/media/01a936_606e942b3aca4206805a354084986de0~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_606e942b3aca4206805a354084986de0~mv2.webp",
+        "src": "https://i.ibb.co/SPVb4FY/shell-pendant-front.jpg",
         "alt": ""
       },
       "secondary_image": {
-        "src": "https://static.wixstatic.com/media/01a936_c5c01a0d74234353982e6723f7ba275c~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_c5c01a0d74234353982e6723f7ba275c~mv2.webp",
+        "src": "https://i.ibb.co/HBQjKLT/shell-pendant-1.jpg",
         "alt": ""
       },
       "length": 6.8,
@@ -336,21 +361,21 @@
     },
     {
       "id": "10",
-      "images": [        
+      "images": [
       { 
-        "src": "https://static.wixstatic.com/media/01a936_ac0a7348e83748e1ab65bf4dd0945165~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_ac0a7348e83748e1ab65bf4dd0945165~mv2.webp",
+        "src": "https://i.ibb.co/0YqMsRp/white-gold-ring-front.jpg",
         "alt": ""
       }, 
       { 
-        "src": "https://static.wixstatic.com/media/01a936_f915336c92de43308e074baa2044d679~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_f915336c92de43308e074baa2044d679~mv2.webp",
+        "src": "https://i.ibb.co/87FBx2J/white-gold-ring-1.jpg",
         "alt": ""
       }, 
       { 
-        "src": "https://static.wixstatic.com/media/01a936_a0369962d7da43e89ca6835e68422be3~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_a0369962d7da43e89ca6835e68422be3~mv2.webp",
+        "src": "https://i.ibb.co/TMJRt7F/white-gold-ring-3.jpg",
         "alt": ""
       }, 
       { 
-        "src": "https://static.wixstatic.com/media/01a936_e468ef5ba43542c9895361df374b3ae9~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_e468ef5ba43542c9895361df374b3ae9~mv2.webp",
+        "src": "https://i.ibb.co/WGS3b9M/white-gold-ring-4.jpg",
         "alt": ""
       }],
       "price": 22,
@@ -358,11 +383,11 @@
       "category": "rings",
       "description": "This delicate and elegant one-size minimalist gold plated ring is charming and unique, promising an offhand display of class and luxury. ",
       "main_image": {
-        "src": "https://static.wixstatic.com/media/01a936_ac0a7348e83748e1ab65bf4dd0945165~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_ac0a7348e83748e1ab65bf4dd0945165~mv2.webp",
+        "src": "https://i.ibb.co/0YqMsRp/white-gold-ring-front.jpg",
         "alt": ""
       },
       "secondary_image": {
-        "src": "https://static.wixstatic.com/media/01a936_f915336c92de43308e074baa2044d679~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_f915336c92de43308e074baa2044d679~mv2.webp",
+        "src": "https://i.ibb.co/87FBx2J/white-gold-ring-1.jpg",
         "alt": ""
       },
       "length": 1.7,
@@ -565,23 +590,23 @@
       "id": "16",
       "images": [        
       { 
-        "src": "https://static.wixstatic.com/media/01a936_ce2456386ccf420d85b8ef236fded7c1~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_ce2456386ccf420d85b8ef236fded7c1~mv2.webp",
+        "src": "https://i.ibb.co/7j5qXKG/1.jpg",
         "alt": ""
       }, 
       { 
-        "src": "https://static.wixstatic.com/media/01a936_33f4ba585e9743c1925420b525078a7a~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_33f4ba585e9743c1925420b525078a7a~mv2.webp",
+        "src": "https://i.ibb.co/WVy5cyG/2.jpg",
         "alt": ""
       }, 
       { 
-        "src": "https://static.wixstatic.com/media/01a936_5aa42039126b4ecf8e8158045bcbdc02~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_5aa42039126b4ecf8e8158045bcbdc02~mv2.webp",
+        "src": "https://i.ibb.co/qR5qMJs/4.jpg",
         "alt": ""
       }, 
       { 
-        "src": "https://static.wixstatic.com/media/01a936_1bd6746eff064740a8d9b68f44302d2e~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_1bd6746eff064740a8d9b68f44302d2e~mv2.webp",
+        "src": "https://i.ibb.co/j8n09WC/5.jpg",
         "alt": ""
       },
       { 
-        "src": "https://static.wixstatic.com/media/01a936_09e228de31ff4b74883ec6a1739c8bba~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_09e228de31ff4b74883ec6a1739c8bba~mv2.webp",
+        "src": "https://i.ibb.co/k9XcXbT/6.jpg",
         "alt": ""
       }],
       "price": 13,
@@ -589,11 +614,11 @@
       "category": "earrings",
       "description": "These unique rosebud-shaped studs usher you into a romantic and whimsical fantasy world. Their vibrant bright red colour makes them a perfect companion to scarlet lips and nails. A tip for wearing these studs: disregard the back stoppers and wear the studs with the tip of the rosebuds pointing down so they look more like earrings than studs sticking out of your lobes.",
       "main_image": {
-        "src": "https://static.wixstatic.com/media/01a936_ce2456386ccf420d85b8ef236fded7c1~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_ce2456386ccf420d85b8ef236fded7c1~mv2.webp",
+        "src": "https://i.ibb.co/7j5qXKG/1.jpg",
         "alt": ""
       },
       "secondary_image": {
-        "src": "https://static.wixstatic.com/media/01a936_33f4ba585e9743c1925420b525078a7a~mv2.jpg/v1/fill/w_420,h_420,al_c,q_85,usm_0.66_1.00_0.01/01a936_33f4ba585e9743c1925420b525078a7a~mv2.webp",
+        "src": "https://i.ibb.co/WVy5cyG/2.jpg",
         "alt": ""
       },
       "length": 1.8,
