@@ -244,3 +244,70 @@
         width: 100% !important;
     }
 }
+
+@media only screen and (max-width: 350px) {
+    .site-header {
+        padding: 15px !important;
+    }
+    .site-title {
+        font-size: 20px !important;
+        width: 70%;
+        margin-top: 10px;
+        text-align: left !important;
+    }
+    .site-body {
+        margin-top: 40px !important;
+    }
+    .burger-nav-icon {
+        width: 30px !important;
+        &::before {
+            width: 30px !important;
+            left: 10px !important;
+            transform: translateY(10px) !important;
+        }
+        &::after {
+            width: 30px !important;
+            left: 10px !important;
+            transform: translateY(-10px) !important;
+        }
+        &.close-mobile {
+            transform: translateX(-30px) !important;
+            &::before {
+                transform: rotate(45deg) translate(15px, -15px) !important;
+            }
+            &::after {
+                transform: rotate(-45deg) translate(15px, 15px) !important;
+            }
+        }
+    }
+    .hero-title {
+        font-size: 30px !important;
+    }
+    .site-intro {
+        padding: 80px 15px !important;
+    }
+    .galary-container {
+        padding: 0 15px 50px 15px !important;
+    }
+    .product-galary {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)) !important;
+    }
+    .static-page-container {
+        padding: 80px 15px 50px 15px !important;
+    }
+    .brand-logo {
+        width: 50%;
+        height: auto;
+    }
+    .menu-list {
+        padding: 90px 0 !important;
+    }
+    .menu-item {
+        font-size: 20px !important;
+        padding: 20px !important;
+    }
+    .nav-bar-cart-btn {
+        left: 50px !important;
+    }
+
+}
