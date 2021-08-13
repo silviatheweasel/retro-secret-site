@@ -6,9 +6,12 @@ import { getProductData } from "../../utilities/getProductData";
 import { useState, useEffect } from "react";
 import { SlideOutCart } from '../SlideOutCart';
 import { Cart } from "../Cart";
-import { MenuBar } from "../../Components/MenuBar";
 import { FooterPages } from "../FooterPages/FooterPages";
 import { ErrorPage } from "../ErrorPage";
+import { Header } from "../Header";
+import { Footer } from "../Footer";
+
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   const categories = ["Necklaces", "Bracelets", "Rings", "Earrings"];
@@ -57,14 +60,6 @@ function App() {
       setCurrentProduct(null);
     }
     return;
-  }
-
-  //sets display page to "Home" and resets states
-  const handleSiteLogoClick = () => {
-    setDisplayedPage("Home");
-    setCurrentCategory("all");
-    window.scrollTo(0, 0);
-    setCurrentProduct(null);
   }
 
   const [showQuickViewPage, setShowQuickViewPage] = useState(false);
@@ -130,61 +125,59 @@ function App() {
   }, [currentProduct]);
 
   //attaches pages when the "displayedPage" state changes;
-  const attachPage = () => {
-    if (displayedPage === "Home") {
-      return <Home 
-                products={products}
-                currentCategory={currentCategory}
-                handleProductClick={handleProductClick} 
-                showQuickViewPage={showQuickViewPage}
-                hideQuickViewPage={hideQuickViewPage}
-                currentProduct={currentProduct}
-                getProductPage={getProductPage} 
-                addItemToCart={addItemToCart}
-                handleQuantityInputChange={handleQuantityInputChange}
-                quantityInCart={quantityInCart}
-                />
-    } else if (displayedPage === "ProductPage") {
-      return <ProductPage
-                currentProduct={currentProduct} 
-                getCategoryPage={getCategoryPage}
-                handleSiteLogoClick={handleSiteLogoClick}
-                navigateProducts={navigateProducts}
-                currentCategory={currentCategory}
-                products={products}
-                addItemToCart={addItemToCart}
-                handleQuantityInputChange={handleQuantityInputChange}
-                quantityInCart={quantityInCart}
-              />
-    } else if (displayedPage.toLocaleLowerCase() === currentCategory) {
-      return <CategoryPage
-                products={products}
-                handleProductClick={handleProductClick}
-                currentCategory={currentCategory}
-                showQuickViewPage={showQuickViewPage}
-                hideQuickViewPage={hideQuickViewPage}
-                currentProduct={currentProduct} 
-                getProductPage={getProductPage} 
-                addItemToCart={addItemToCart}
-                handleQuantityInputChange={handleQuantityInputChange}
-                quantityInCart={quantityInCart}
-            />
-    } else if (displayedPage === "StaticPage") {
-      return <FooterPages 
-                staticPageTitle={staticPageTitle}
-                />
-    } else {
-      return <Cart 
-                productsInCart={productsInCart}
-                deleteItemInCart={deleteItemInCart}
-                adjustQuantityInCart={adjustQuantityInCart}
-                handleSiteLogoClick={handleSiteLogoClick}
-                updateLocation={updateLocation}
-                location={location}
-                handleCartProductClick={handleCartProductClick}
-      />
-    } 
-  }
+  // const attachPage = () => {
+  //   if (displayedPage === "Home") {
+  //     return <Home 
+  //               products={products}
+  //               currentCategory={currentCategory}
+  //               handleProductClick={handleProductClick} 
+  //               showQuickViewPage={showQuickViewPage}
+  //               hideQuickViewPage={hideQuickViewPage}
+  //               currentProduct={currentProduct}
+  //               getProductPage={getProductPage} 
+  //               addItemToCart={addItemToCart}
+  //               handleQuantityInputChange={handleQuantityInputChange}
+  //               quantityInCart={quantityInCart}
+  //               />
+  //   } else if (displayedPage === "ProductPage") {
+  //     return <ProductPage
+  //               currentProduct={currentProduct} 
+  //               getCategoryPage={getCategoryPage}
+  //               navigateProducts={navigateProducts}
+  //               currentCategory={currentCategory}
+  //               products={products}
+  //               addItemToCart={addItemToCart}
+  //               handleQuantityInputChange={handleQuantityInputChange}
+  //               quantityInCart={quantityInCart}
+  //             />
+  //   } else if (displayedPage.toLocaleLowerCase() === currentCategory) {
+  //     return <CategoryPage
+  //               products={products}
+  //               handleProductClick={handleProductClick}
+  //               currentCategory={currentCategory}
+  //               showQuickViewPage={showQuickViewPage}
+  //               hideQuickViewPage={hideQuickViewPage}
+  //               currentProduct={currentProduct} 
+  //               getProductPage={getProductPage} 
+  //               addItemToCart={addItemToCart}
+  //               handleQuantityInputChange={handleQuantityInputChange}
+  //               quantityInCart={quantityInCart}
+  //           />
+  //   } else if (displayedPage === "StaticPage") {
+  //     return <FooterPages 
+  //               staticPageTitle={staticPageTitle}
+  //               />
+  //   } else {
+  //     return <Cart 
+  //               productsInCart={productsInCart}
+  //               deleteItemInCart={deleteItemInCart}
+  //               adjustQuantityInCart={adjustQuantityInCart}
+  //               updateLocation={updateLocation}
+  //               location={location}
+  //               handleCartProductClick={handleCartProductClick}
+  //     />
+  //   } 
+  // }
 
   //sets the display page with the name of the current category
   const getCategoryPage = () => {
@@ -268,13 +261,13 @@ function App() {
     setLocation(event.target.id);
   }
 
-  const [staticPageTitle, setStaticPageTitle] = useState(null);
-  const linkStaticPage = ({target}) => {
-    setStaticPageTitle(target.innerHTML);
-    setCurrentCategory(null);
-    setDisplayedPage("StaticPage");
-    window.scrollTo(0, 0);
-  }
+  // const [staticPageTitle, setStaticPageTitle] = useState(null);
+  // const linkStaticPage = ({target}) => {
+  //   setStaticPageTitle(target.innerHTML);
+  //   setCurrentCategory(null);
+  //   setDisplayedPage("StaticPage");
+  //   window.scrollTo(0, 0);
+  // }
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   //if the screen is narrower or equal to 600px, updates the class names
@@ -295,83 +288,83 @@ function App() {
   }, [isMobileMenuOpen])
 
   return (
+    <Router>
     <div className="App">
-      <header className="site-header">
-        <h1 
-          className="site-title"
-          id="site-title"
-          onClick={handleSiteLogoClick}
-          >RETRO SECRETS
-        </h1>
-        <button 
-            className="burger-nav-btn"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} 
-            >
-            <div 
-              className="burger-nav-icon"
-              id="burger-nav-icon"
-              >
-            </div>
-        </button>
-        <nav className="nav-bar">
-          <MenuBar
-            handleMenuClick={handleMenuClick} 
-            currentCategory={currentCategory}  
-            categories={categories}
-            setShowCart={setShowCart}
-            productsInCart={productsInCart}
-            isMobileMenuOpen={isMobileMenuOpen}
-            openCart={openCart}
-          />
-        </nav>
-      </header>
+      <SlideOutCart
+          productsInCart={productsInCart}
+          showCart={showCart}
+          hideCart={hideCart}
+          deleteItemInCart={deleteItemInCart} 
+          adjustQuantityInCart={adjustQuantityInCart}
+          openCart={openCart}     
+          handleCartProductClick={handleCartProductClick}       
+        />
+      <Route>
+        <Header 
+          handleMenuClick={handleMenuClick} 
+          currentCategory={currentCategory}  
+          categories={categories}
+          setShowCart={setShowCart}
+          productsInCart={productsInCart}
+          isMobileMenuOpen={isMobileMenuOpen}
+          openCart={openCart}
+        />
+      </Route>
       <main className="site-body">
-        {products && attachPage()}
-        {displayedPage === "Error" && <ErrorPage />}
-          <SlideOutCart
-              productsInCart={productsInCart}
-              showCart={showCart}
-              hideCart={hideCart}
-              deleteItemInCart={deleteItemInCart} 
-              adjustQuantityInCart={adjustQuantityInCart}
-              openCart={openCart}     
-              handleCartProductClick={handleCartProductClick}       
-              />
+        <Switch>
+          <Route path="/:pageTitle">
+            <FooterPages/>
+          </Route>
+          <Route exact path="/home">
+            <Home 
+              products={products}
+              currentCategory={currentCategory}
+              handleProductClick={handleProductClick} 
+              showQuickViewPage={showQuickViewPage}
+              hideQuickViewPage={hideQuickViewPage}
+              currentProduct={currentProduct}
+              getProductPage={getProductPage} 
+              addItemToCart={addItemToCart}
+              handleQuantityInputChange={handleQuantityInputChange}
+              quantityInCart={quantityInCart}
+            />
+          </Route>
+          {/* <Route path="/product/:product_name">
+            <ProductPage
+              currentProduct={currentProduct} 
+              getCategoryPage={getCategoryPage}
+              navigateProducts={navigateProducts}
+              currentCategory={currentCategory}
+              products={products}
+              addItemToCart={addItemToCart}
+              handleQuantityInputChange={handleQuantityInputChange}
+              quantityInCart={quantityInCart}
+            />
+          </Route>
+          <Route path="/category/:category_name">
+            <CategoryPage
+              products={products}
+              handleProductClick={handleProductClick}
+              currentCategory={currentCategory}
+              showQuickViewPage={showQuickViewPage}
+              hideQuickViewPage={hideQuickViewPage}
+              currentProduct={currentProduct} 
+              getProductPage={getProductPage} 
+              addItemToCart={addItemToCart}
+              handleQuantityInputChange={handleQuantityInputChange}
+              quantityInCart={quantityInCart}
+            />
+          </Route>
+          <Route>
+            <ErrorPage />
+          </Route> */}
+        </Switch>
       </main>
-      <footer className="site-footer">
-        <div className="footer-content">
-          <div className="footer-left">
-                <h2>Quick Links</h2>
-                <ul className="quick-link-list">
-                  <li onClick={linkStaticPage}>SHIPPING INFO</li>
-                  <li onClick={linkStaticPage}>RETURN AND EXCHANGE POLICY</li>
-                  <li onClick={linkStaticPage}>OUR PRODUCTS AND YOUR HEALTH</li>
-                  <li onClick={linkStaticPage}>OUR PACKAGING</li>
-                  <li onClick={linkStaticPage}>CARE INSTRUCTIONS</li>
-                  <li onClick={linkStaticPage}>ABOUT US</li>
-                  <li onClick={linkStaticPage}>CONTACT US</li>
-                </ul>
-          </div>
-          <div className="footer-right">
-                <p>Subscribe to learn about the latest arrivals and get exclusive offers! </p>
-                <form>
-                  <input
-                    type="email"
-                    name="email"
-                    className="email-input"
-                    placeholder="Enter your email here*"
-                    required
-                  ></input>
-                  <button className="subscribe-btn">
-                    Subscribe
-                  </button>
-                </form>
-          </div>
-
-        </div>
-        <p>© {new Date().getFullYear()} by Retro Secrets</p>
-      </footer>
+      <Route>
+        <Footer />
+      </Route>
     </div>
+    </Router>
   );
 }
 

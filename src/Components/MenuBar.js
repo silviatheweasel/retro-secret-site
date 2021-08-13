@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 export const MenuBar = ({
                             handleMenuClick, 
                             currentCategory, 
@@ -33,7 +35,10 @@ export const MenuBar = ({
                             style={{
                                     color: currentCategory === "all" ? "#9E8765" : "black"
                                     }}
-                            >Home
+                            >
+                            <NavLink to="/">
+                                Home
+                            </NavLink>
                         </li>
                         {categories.map(
                             (category, i) => (
@@ -42,7 +47,10 @@ export const MenuBar = ({
                                     className="menu-item" 
                                     onClick={handleMenuClick}
                                     style={{color: currentCategory === category.toLowerCase() ? "#9E8765" : "black"}}
-                                    >{category}
+                                >
+                                    <NavLink to={"/" + category}>
+                                        {category}
+                                    </NavLink>
                                 </li>))}
                     </ul>
                 </div>

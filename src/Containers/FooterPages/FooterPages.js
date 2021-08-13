@@ -1,9 +1,13 @@
 import brandLogo from "./brand-logo.png";
 import jsonData from "../../utilities/siteStaticContent.json";
+import { useParams } from "react-router-dom";
 
-export const FooterPages = ({staticPageTitle}) => {
+export const FooterPages = () => {
+    const { pageTitle } = useParams();
+
     const localData = JSON.parse(JSON.stringify(jsonData));
-    const filteredData = localData.filter(data => data.title === staticPageTitle);
+    const filteredData = localData.filter(data => data.link === pageTitle);
+
     if (filteredData.length > 0 ) {
         const { title, content } = filteredData[0];
         return (<div className="static-page-container">
