@@ -11,7 +11,7 @@ export const Header = ({ handleMenuClick,
     
     const history = useHistory();
     const handleClick = () => {
-        history.push("/");
+        history.push("/home");
     }
 
     return (

@@ -36,7 +36,7 @@ export const MenuBar = ({
                                     color: currentCategory === "all" ? "#9E8765" : "black"
                                     }}
                             >
-                            <NavLink to="/">
+                            <NavLink to="/home">
                                 Home
                             </NavLink>
                         </li>
@@ -48,7 +48,7 @@ export const MenuBar = ({
                                     onClick={handleMenuClick}
                                     style={{color: currentCategory === category.toLowerCase() ? "#9E8765" : "black"}}
                                 >
-                                    <NavLink to={"/" + category}>
+                                    <NavLink to={"/category/" + category.toLowerCase()}>
                                         {category}
                                     </NavLink>
                                 </li>))}

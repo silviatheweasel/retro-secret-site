@@ -13,6 +13,7 @@ const Home = ({
                 handleQuantityInputChange,
                 quantityInCart
             }) => {
+                
     return (<>
                 <div className="hero">
                     <img 

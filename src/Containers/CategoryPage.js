@@ -1,4 +1,5 @@
 import { ProductGalary } from "./ProductGalary";
+import { useParams } from "react-router-dom";
 import React from "react";
 
 export const CategoryPage = React.memo(({ 
@@ -13,10 +14,11 @@ export const CategoryPage = React.memo(({
                                             quantityInCart,
                                             handleQuantityInputChange,
                                         }) => {
-    const header = currentCategory[0].toUpperCase() + currentCategory.substring(1)
+                                            
+    const { categoryName } = useParams();
 
     return (<div className="category-page">
-                <h1 className="category-title">{header}</h1>
+                <h1 className="category-title">{categoryName[0].toUpperCase() + categoryName.slice(1, categoryName.length)}</h1>
                 <ProductGalary 
                     products={products}
                     handleProductClick={handleProductClick}

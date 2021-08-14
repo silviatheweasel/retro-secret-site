@@ -287,6 +287,10 @@ function App() {
     }
   }, [isMobileMenuOpen])
 
+  if (!products) {
+    return (<>Loading...</>)
+  }
+
   return (
     <Router>
     <div className="App">
@@ -311,25 +315,7 @@ function App() {
         />
       </Route>
       <main className="site-body">
-        <Switch>
-          <Route path="/:pageTitle">
-            <FooterPages/>
-          </Route>
-          <Route exact path="/home">
-            <Home 
-              products={products}
-              currentCategory={currentCategory}
-              handleProductClick={handleProductClick} 
-              showQuickViewPage={showQuickViewPage}
-              hideQuickViewPage={hideQuickViewPage}
-              currentProduct={currentProduct}
-              getProductPage={getProductPage} 
-              addItemToCart={addItemToCart}
-              handleQuantityInputChange={handleQuantityInputChange}
-              quantityInCart={quantityInCart}
-            />
-          </Route>
-          {/* <Route path="/product/:product_name">
+          <Route path="/product/:product_name">
             <ProductPage
               currentProduct={currentProduct} 
               getCategoryPage={getCategoryPage}
@@ -340,8 +326,7 @@ function App() {
               handleQuantityInputChange={handleQuantityInputChange}
               quantityInCart={quantityInCart}
             />
-          </Route>
-          <Route path="/category/:category_name">
+          <Route path="/category/:categoryName">
             <CategoryPage
               products={products}
               handleProductClick={handleProductClick}
@@ -355,10 +340,32 @@ function App() {
               quantityInCart={quantityInCart}
             />
           </Route>
+          <Route path="/home">
+            <Home 
+              products={products}
+              currentCategory={currentCategory}
+              handleProductClick={handleProductClick} 
+              showQuickViewPage={showQuickViewPage}
+              hideQuickViewPage={hideQuickViewPage}
+              currentProduct={currentProduct}
+              getProductPage={getProductPage} 
+              addItemToCart={addItemToCart}
+              handleQuantityInputChange={handleQuantityInputChange}
+              quantityInCart={quantityInCart}
+            />
+          </Route>
+          <Route path="/:pageTitle">
+            <FooterPages/>
+          </Route>
+          {/* 
+          </Route>
+          <Route path="/cart">
+            <Cart />
+          <Route />
           <Route>
             <ErrorPage />
           </Route> */}
-        </Switch>
+
       </main>
       <Route>
         <Footer />
