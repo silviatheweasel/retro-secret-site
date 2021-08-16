@@ -1,6 +1,7 @@
 import { ProductOverview } from "../Components/ProductOverview/ProductOverview";
-import React from "react";
+import React, { useEffect } from "react";
 import { QuickViewPage } from "./QuickViewPage";
+import { useParams } from "react-router-dom";
 
 export const ProductGalary = React.memo(({ 
                                             hideQuickViewPage, 
@@ -14,12 +15,15 @@ export const ProductGalary = React.memo(({
                                             handleQuantityInputChange,
                                             quantityInCart
                                         }) => {
+    const { categoryName } = useParams();
+    const currentProducts = categoryName === undefined ? products : products.filter(product => product.category === categoryName);
+    
     return (
         <div 
             className="product-galary"
             style={{backgroundColor: currentCategory === null | currentCategory === "all" ? "white" : "#F2F1F0"}}
             >
-              {products.map((product, i) => (
+              {currentProducts.map((product, i) => (
                 <ProductOverview
                     key={"product" + i}
                     mainImg={product.main_image}

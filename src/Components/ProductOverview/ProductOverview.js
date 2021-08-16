@@ -17,7 +17,7 @@ export const ProductOverview = React.memo(({
     });
     const [isLoading, setIsLoading] = useState(true);
 
-    const { categoryName, productName } = useParams();
+    const { categoryName } = useParams();
 
     useEffect(() => {
         const imageToLoad = new Image();
@@ -46,7 +46,7 @@ export const ProductOverview = React.memo(({
             onMouseLeave={handleMouseLeave}
             style={{backgroundColor: currentCategory === null | currentCategory === "all" ? "white" : "#F2F1F0"}}
         >
-            <Link to={"/category/" + categoryName + "/product/" + name.toLowerCase().replaceAll(" ", "_")}>
+            <Link to={"/" + categoryName + "/" + name.toLowerCase().replaceAll(" ", "_")}>
                 <div className="flip-image">
                     <img 
                         src={displayImg.src} 

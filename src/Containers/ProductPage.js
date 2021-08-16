@@ -1,9 +1,9 @@
 import { ProductDetails } from "../Components/ProductDetails";
+import { useParams, Link } from "react-router-dom";
 
 export const ProductPage = ({ 
                                 currentProduct, 
                                 getCategoryPage, 
-                                handleSiteLogoClick, 
                                 navigateProducts, 
                                 products,
                                 currentCategory, 
@@ -12,43 +12,66 @@ export const ProductPage = ({
                                 quantityInCart
 
                             }) => {
-    const categoryName = currentProduct.category[0].toUpperCase() + currentProduct.category.substring(1);
-    const index = products.findIndex(product => product.name === currentProduct.name);
+
+    let { categoryName, productName } = useParams();
+    categoryName = categoryName[0].toUpperCase() + categoryName.substring(1);
+    productName = productName.replace(/[_|-]\w/g, (match) => match[0] + match[1].toUpperCase()).replaceAll("_", " ");
+    productName = productName[0].toUpperCase() + productName.substring(1);
+
+    const currentProducts = categoryName.toLowerCase() === undefined ? products : products.filter(product => product.category === categoryName.toLowerCase());
+    const index = currentProducts.findIndex(product => product.name === productName);
+
+    const next = index <= currentProducts.length - 2 ? currentProducts[index + 1].name.toLowerCase().replaceAll(" ", "_") : currentProducts[index].name.toLowerCase().replaceAll(" ", "_");
+    const prev = index >= 1 ? currentProducts[index - 1].name.toLowerCase().replaceAll(" ", "_") : currentProducts[index].name.toLowerCase().replaceAll(" ", "_");
+    
+
     return (
         <div className="product-page">
             <nav className="product-page-nav">
                 <ul className="breadcrumb-menu">
                     <li 
                         className="breadcrumb-prev"
-                        onClick={handleSiteLogoClick}
-                        >Home</li>
-                    {currentCategory !== "all" && <li 
+                    >
+                        <Link to="/">
+                            Home
+                        </Link>
+                    </li>
+                    {categoryName !== undefined && 
+                    <li 
                         className="breadcrumb-prev"
-                        onClick={getCategoryPage}
-                        >{categoryName}
+                    >
+                        <Link to={"/" + categoryName.toLowerCase()}>
+                            {categoryName}
+                        </Link>
                     </li>}
                     <li 
                         className="breadcrumb-current"
-                        >{currentProduct.name}
+                        >{productName}
                     </li>
                 </ul>
                 <ul className="product-navigation">
                     <li 
                         id="prev-btn"
-                        onClick={navigateProducts}
                         style={{
                                 color: index === 0 ? "gray" : "black", 
                                 cursor: index === 0 ? "default" : "pointer"
                                 }}
-                        >Prev</li>
+                    >
+                        <Link to={"/" + categoryName.toLowerCase() + "/" + prev}>
+                            Prev
+                        </Link>
+                    </li>
                     <li 
                         id="next-btn"
-                        onClick={navigateProducts}
                         style={{
                                 color: index === products.length -1 ? "gray" : "black", 
                                 cursor: index === products.length -1 ? "default" : "pointer"
                                 }}
-                        >Next</li>
+                    >
+                        <Link to={"/" + categoryName.toLowerCase() + "/" + next}>
+                            Next
+                        </Link>
+                    </li>
                 </ul>
             </nav>
             <nav 
@@ -57,21 +80,26 @@ export const ProductPage = ({
                 >
                 {currentCategory === "all" ? 
                 <button
-                    onClick={handleSiteLogoClick}
                     className="back-btn"
-                    >Back to Home
-                </button> : <button
-                                onClick={getCategoryPage}
-                                className="back-btn"
-                                >Back to {categoryName}
-                            </button>}
+                >
+                    <Link to="/">
+                        Back to Home
+                    </Link>
+                </button> : 
+                <button
+                    className="back-btn"
+                >
+                    <Link to={"/" + categoryName.toLowerCase()}>
+                        Back to {categoryName}
+                    </Link>
+                </button>}
             </nav>
-            <ProductDetails 
+            {/* <ProductDetails 
                 currentProduct={currentProduct} 
                 addItemToCart={addItemToCart}
                 handleQuantityInputChange={handleQuantityInputChange}
                 quantityInCart={quantityInCart}
-            />
+            /> */}
             <div className="care-instruction-container">
                 <h2 className="care-title">Care Instructions</h2>
                 <p className="care-text">Do not wear during swims or showers, and the jewellery must be removed before bed and before exercise.</p>

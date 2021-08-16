@@ -43,24 +43,24 @@ function App() {
   }, [displayedPage]);
 
 
-  const handleMenuClick = ({target}) => {
-      //updates the display page state with the inner HTML of the event target
-    if (target.innerHTML !== displayedPage) {
-      setDisplayedPage(`${target.innerHTML}`);
-      //sets the current category to either "all" or a specific category based on the inner HTML of event target
-      if (categories.includes(target.innerHTML)) {
-        setCurrentCategory(target.innerHTML.toLowerCase());
-      } else {
-        setCurrentCategory("all");  
-      }
-      //resets states
-      setProducts(null);
-      setIsMobileMenuOpen(false);
-      window.scrollTo(0, 0);
-      setCurrentProduct(null);
-    }
-    return;
-  }
+  // const handleMenuClick = ({target}) => {
+  //     //updates the display page state with the inner HTML of the event target
+  //   if (target.innerHTML !== displayedPage) {
+  //     setDisplayedPage(`${target.innerHTML}`);
+  //     //sets the current category to either "all" or a specific category based on the inner HTML of event target
+  //     if (categories.includes(target.innerHTML)) {
+  //       setCurrentCategory(target.innerHTML.toLowerCase());
+  //     } else {
+  //       setCurrentCategory("all");  
+  //     }
+  //     //resets states
+  //     setProducts(null);
+  //     setIsMobileMenuOpen(false);
+  //     window.scrollTo(0, 0);
+  //     setCurrentProduct(null);
+  //   }
+  //   return;
+  // }
 
   const [showQuickViewPage, setShowQuickViewPage] = useState(false);
   const handleProductClick = ({target}) => {
@@ -305,7 +305,7 @@ function App() {
         />
       <Route>
         <Header 
-          handleMenuClick={handleMenuClick} 
+          // handleMenuClick={handleMenuClick} 
           currentCategory={currentCategory}  
           categories={categories}
           setShowCart={setShowCart}
@@ -315,7 +315,11 @@ function App() {
         />
       </Route>
       <main className="site-body">
-          <Route path="/product/:product_name">
+        <Switch>
+          <Route path="/info/:pageTitle">
+            <FooterPages/>
+          </Route>
+          <Route path="/:categoryName/:productName">
             <ProductPage
               currentProduct={currentProduct} 
               getCategoryPage={getCategoryPage}
@@ -326,7 +330,8 @@ function App() {
               handleQuantityInputChange={handleQuantityInputChange}
               quantityInCart={quantityInCart}
             />
-          <Route path="/category/:categoryName">
+          </Route>
+          <Route path="/:categoryName">
             <CategoryPage
               products={products}
               handleProductClick={handleProductClick}
@@ -340,7 +345,7 @@ function App() {
               quantityInCart={quantityInCart}
             />
           </Route>
-          <Route path="/home">
+          <Route exact path="/">
             <Home 
               products={products}
               currentCategory={currentCategory}
@@ -354,10 +359,17 @@ function App() {
               quantityInCart={quantityInCart}
             />
           </Route>
-          <Route path="/:pageTitle">
-            <FooterPages/>
-          </Route>
-          {/* 
+          {/* <Route path="/product/:product_name">
+            <ProductPage
+              currentProduct={currentProduct} 
+              getCategoryPage={getCategoryPage}
+              navigateProducts={navigateProducts}
+              currentCategory={currentCategory}
+              products={products}
+              addItemToCart={addItemToCart}
+              handleQuantityInputChange={handleQuantityInputChange}
+              quantityInCart={quantityInCart}
+            />
           </Route>
           <Route path="/cart">
             <Cart />
@@ -365,7 +377,7 @@ function App() {
           <Route>
             <ErrorPage />
           </Route> */}
-
+        </Switch>
       </main>
       <Route>
         <Footer />

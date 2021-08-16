@@ -1,5 +1,5 @@
 import { MenuBar } from "../Components/MenuBar";
-import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const Header = ({ handleMenuClick, 
                          currentCategory, 
@@ -9,18 +9,16 @@ export const Header = ({ handleMenuClick,
                          isMobileMenuOpen, 
                          openCart}) => {
     
-    const history = useHistory();
-    const handleClick = () => {
-        history.push("/home");
-    }
 
     return (
         <header className="site-header">
             <h1 
                 className="site-title"
                 id="site-title"
-                onClick={handleClick}
-                >RETRO SECRETS
+            >
+                <Link to="/">
+                    RETRO SECRETS
+                </Link>
             </h1>
             <button 
                 className="burger-nav-btn"

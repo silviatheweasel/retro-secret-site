@@ -8,37 +8,37 @@ export const Footer = () => {
                         <h2>Quick Links</h2>
                         <ul className="quick-link-list">
                             <li>
-                                <Link to="/shipping_info">
+                                <Link to="/info/shipping_info">
                                     SHIPPING INFO
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/return_policy">
+                                <Link to="/info/return_policy">
                                     RETURN AND EXCHANGE POLICY
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/health_info">
+                                <Link to="/info/health_info">
                                     OUR PRODUCTS AND YOUR HEALTH
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/packaging">
+                                <Link to="/info/packaging">
                                     OUR PACKAGING
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/care_instructions">
+                                <Link to="/info/care_instructions">
                                     CARE INSTRUCTIONS
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/about">
+                                <Link to="/info/about">
                                     ABOUT US
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/contact">
+                                <Link to="/info/contact">
                                 CONTACT US
                                 </Link>
                             </li>
