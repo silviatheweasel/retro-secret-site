@@ -68,15 +68,9 @@ function App() {
     const productName = target.id.slice(0, -1);
     const filtededProduct = products.filter(product => product.name === productName)[0];
     setCurrentProduct(filtededProduct);
-    //if the id of the event target ends with "2", it is a button that opens the quick view page
     //sets the setShowQuickViewPage state to "true" to show the quick view page
-    //otherwise, sets the display page to "ProductPage" to show the product page otherwise
-    if (target.id.slice(-1) !== "2") {
-      setDisplayedPage("ProductPage");
-      window.scrollTo(0, 0);
-    } else {
-      setShowQuickViewPage(true);
-    }
+    setShowQuickViewPage(true);
+
   }
 
   const hideQuickViewPage = () => {
@@ -123,61 +117,6 @@ function App() {
   useEffect(() => {
     setQuantityInCart(1);
   }, [currentProduct]);
-
-  //attaches pages when the "displayedPage" state changes;
-  // const attachPage = () => {
-  //   if (displayedPage === "Home") {
-  //     return <Home 
-  //               products={products}
-  //               currentCategory={currentCategory}
-  //               handleProductClick={handleProductClick} 
-  //               showQuickViewPage={showQuickViewPage}
-  //               hideQuickViewPage={hideQuickViewPage}
-  //               currentProduct={currentProduct}
-  //               getProductPage={getProductPage} 
-  //               addItemToCart={addItemToCart}
-  //               handleQuantityInputChange={handleQuantityInputChange}
-  //               quantityInCart={quantityInCart}
-  //               />
-  //   } else if (displayedPage === "ProductPage") {
-  //     return <ProductPage
-  //               currentProduct={currentProduct} 
-  //               getCategoryPage={getCategoryPage}
-  //               navigateProducts={navigateProducts}
-  //               currentCategory={currentCategory}
-  //               products={products}
-  //               addItemToCart={addItemToCart}
-  //               handleQuantityInputChange={handleQuantityInputChange}
-  //               quantityInCart={quantityInCart}
-  //             />
-  //   } else if (displayedPage.toLocaleLowerCase() === currentCategory) {
-  //     return <CategoryPage
-  //               products={products}
-  //               handleProductClick={handleProductClick}
-  //               currentCategory={currentCategory}
-  //               showQuickViewPage={showQuickViewPage}
-  //               hideQuickViewPage={hideQuickViewPage}
-  //               currentProduct={currentProduct} 
-  //               getProductPage={getProductPage} 
-  //               addItemToCart={addItemToCart}
-  //               handleQuantityInputChange={handleQuantityInputChange}
-  //               quantityInCart={quantityInCart}
-  //           />
-  //   } else if (displayedPage === "StaticPage") {
-  //     return <FooterPages 
-  //               staticPageTitle={staticPageTitle}
-  //               />
-  //   } else {
-  //     return <Cart 
-  //               productsInCart={productsInCart}
-  //               deleteItemInCart={deleteItemInCart}
-  //               adjustQuantityInCart={adjustQuantityInCart}
-  //               updateLocation={updateLocation}
-  //               location={location}
-  //               handleCartProductClick={handleCartProductClick}
-  //     />
-  //   } 
-  // }
 
   //sets the display page with the name of the current category
   const getCategoryPage = () => {
@@ -261,14 +200,6 @@ function App() {
     setLocation(event.target.id);
   }
 
-  // const [staticPageTitle, setStaticPageTitle] = useState(null);
-  // const linkStaticPage = ({target}) => {
-  //   setStaticPageTitle(target.innerHTML);
-  //   setCurrentCategory(null);
-  //   setDisplayedPage("StaticPage");
-  //   window.scrollTo(0, 0);
-  // }
-
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   //if the screen is narrower or equal to 600px, updates the class names
   useEffect(()=> {
@@ -319,7 +250,21 @@ function App() {
           <Route path="/info/:pageTitle">
             <FooterPages/>
           </Route>
-          <Route path="/:categoryName/:productName">
+          <Route exact path="/">
+            <Home 
+              products={products}
+              currentCategory={currentCategory}
+              handleProductClick={handleProductClick} 
+              showQuickViewPage={showQuickViewPage}
+              hideQuickViewPage={hideQuickViewPage}
+              currentProduct={currentProduct}
+              getProductPage={getProductPage} 
+              addItemToCart={addItemToCart}
+              handleQuantityInputChange={handleQuantityInputChange}
+              quantityInCart={quantityInCart}
+            />
+          </Route>
+          <Route path="/products/:categoryName/:productName">
             <ProductPage
               currentProduct={currentProduct} 
               getCategoryPage={getCategoryPage}
@@ -339,20 +284,6 @@ function App() {
               showQuickViewPage={showQuickViewPage}
               hideQuickViewPage={hideQuickViewPage}
               currentProduct={currentProduct} 
-              getProductPage={getProductPage} 
-              addItemToCart={addItemToCart}
-              handleQuantityInputChange={handleQuantityInputChange}
-              quantityInCart={quantityInCart}
-            />
-          </Route>
-          <Route exact path="/">
-            <Home 
-              products={products}
-              currentCategory={currentCategory}
-              handleProductClick={handleProductClick} 
-              showQuickViewPage={showQuickViewPage}
-              hideQuickViewPage={hideQuickViewPage}
-              currentProduct={currentProduct}
               getProductPage={getProductPage} 
               addItemToCart={addItemToCart}
               handleQuantityInputChange={handleQuantityInputChange}

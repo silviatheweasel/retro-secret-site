@@ -18,7 +18,7 @@ export const ProductPage = ({
     productName = productName.replace(/[_|-]\w/g, (match) => match[0] + match[1].toUpperCase()).replaceAll("_", " ");
     productName = productName[0].toUpperCase() + productName.substring(1);
 
-    const currentProducts = categoryName.toLowerCase() === undefined ? products : products.filter(product => product.category === categoryName.toLowerCase());
+    const currentProducts = categoryName === "All" ? products : products.filter(product => product.category === categoryName.toLowerCase());
     const index = currentProducts.findIndex(product => product.name === productName);
 
     const next = index <= currentProducts.length - 2 ? currentProducts[index + 1].name.toLowerCase().replaceAll(" ", "_") : currentProducts[index].name.toLowerCase().replaceAll(" ", "_");
@@ -36,7 +36,7 @@ export const ProductPage = ({
                             Home
                         </Link>
                     </li>
-                    {categoryName !== undefined && 
+                    {categoryName !== "All" && 
                     <li 
                         className="breadcrumb-prev"
                     >
@@ -57,7 +57,7 @@ export const ProductPage = ({
                                 cursor: index === 0 ? "default" : "pointer"
                                 }}
                     >
-                        <Link to={"/" + categoryName.toLowerCase() + "/" + prev}>
+                        <Link to={"/products/" + categoryName.toLowerCase() + "/" + prev}>
                             Prev
                         </Link>
                     </li>
@@ -68,7 +68,7 @@ export const ProductPage = ({
                                 cursor: index === products.length -1 ? "default" : "pointer"
                                 }}
                     >
-                        <Link to={"/" + categoryName.toLowerCase() + "/" + next}>
+                        <Link to={"/products/" + categoryName.toLowerCase() + "/" + next}>
                             Next
                         </Link>
                     </li>
@@ -89,7 +89,7 @@ export const ProductPage = ({
                 <button
                     className="back-btn"
                 >
-                    <Link to={"/" + categoryName.toLowerCase()}>
+                    <Link to={"/products/" + categoryName.toLowerCase()}>
                         Back to {categoryName}
                     </Link>
                 </button>}

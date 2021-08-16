@@ -41,39 +41,43 @@ export const ProductOverview = React.memo(({
         <button 
             className="product-overview-container"
             id={name + "5"}
-            // onClick={handleProductClick}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             style={{backgroundColor: currentCategory === null | currentCategory === "all" ? "white" : "#F2F1F0"}}
         >
-            <Link to={"/" + categoryName + "/" + name.toLowerCase().replaceAll(" ", "_")}>
                 <div className="flip-image">
-                    <img 
-                        src={displayImg.src} 
-                        alt={displayImg.alt}
-                        id={name + "1"}
-                        className="display-image"
-                        style={{
-                            opacity: isLoading ? 0.5 : 1,
-                            transition: "opacity .15s linear"
-                        }}
-                    ></img>
-                    {window.screen.width >= 600 && <div 
+            <Link to={categoryName === undefined ? ("/products/all/" + name.toLowerCase().replaceAll(" ", "_")) : ("/products/" + categoryName + "/" + name.toLowerCase().replaceAll(" ", "_"))}>
+                        <img 
+                            src={displayImg.src} 
+                            alt={displayImg.alt}
+                            id={name + "1"}
+                            className="display-image"
+                            style={{
+                                opacity: isLoading ? 0.5 : 1,
+                                transition: "opacity .15s linear"
+                            }}
+                        ></img>
+            </Link>
+                    {window.screen.width >= 600 && 
+                    <div 
                         id={name + "2"}
                         className="quick-view-btn"
+                        onClick={handleProductClick}
                     >Quick View
-                    </div>}
+                    </div>
+                    }
                 </div>
-                <h3 
-                    id={name + "3"}
-                    className="product-overview-title"
-                    >{name}
-                </h3>
-                <p 
-                    id={name + "4"}
-                    className="product-overview-text"
-                    >£{price}.00
-                </p>
+                <Link to={categoryName === undefined ? ("/products/all/" + name.toLowerCase().replaceAll(" ", "_")) : ("/products/" + categoryName + "/" + name.toLowerCase().replaceAll(" ", "_"))}>
+                    <h3 
+                        id={name + "3"}
+                        className="product-overview-title"
+                        >{name}
+                    </h3>
+                    <p 
+                        id={name + "4"}
+                        className="product-overview-text"
+                        >£{price}.00
+                    </p>
             </Link>
         </button>
     )
