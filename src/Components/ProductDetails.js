@@ -2,12 +2,15 @@ import React, { useEffect, useState } from "react";
 import { AddToCart } from "./AddToCart";
 
 export const ProductDetails = React.memo(({ 
-                                            currentProduct, 
+                                            currentProducts, 
+                                            index,
                                             addItemToCart, 
                                             handleQuantityInputChange,
                                             quantityInCart 
                                         }) => 
 {
+    const currentProduct = currentProducts[index];
+
     const { 
             images, 
             name, 

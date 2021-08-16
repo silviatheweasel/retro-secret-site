@@ -1,4 +1,5 @@
 import { CartProductList } from "../Components/CartProductList";
+import { Link } from "react-router-dom";
 
 export const SlideOutCart = ({ 
                                 productsInCart, 
@@ -81,7 +82,11 @@ export const SlideOutCart = ({
                         <button
                             className="view-cart-btn"
                             onClick={openCart}
-                        >View Cart</button>
+                        >
+                            <Link to="/cart">
+                                View Cart
+                            </Link>
+                        </button>
                     </div>)}
                 </div>
             </div>)

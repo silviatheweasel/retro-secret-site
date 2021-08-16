@@ -1,6 +1,7 @@
 import { AddToCart } from "../Components/AddToCart";
 import { ImageControlDots } from "../Components/ImageControlDots";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export const QuickViewPage = ({  
                                 currentProduct, 
@@ -13,7 +14,8 @@ export const QuickViewPage = ({
             images, 
             name, 
             price, 
-            main_image 
+            main_image, 
+            category 
         } = currentProduct;
 
     const [displayedImg, setDisplayedImg] = useState(main_image); 
@@ -85,9 +87,11 @@ export const QuickViewPage = ({
                             currentProduct={currentProduct}
                         />
                         <button
-                            onClick={getProductPage}
                             className="more-info-btn"
-                            >View More Details
+                        >
+                            <Link to={"/products/" + category.toLowerCase().replaceAll(" ", "_") + "/" + name.toLowerCase().replaceAll(" ", "_")}>
+                            View More Details
+                            </Link>
                         </button> 
                     </div>
                 </div>  

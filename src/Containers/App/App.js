@@ -11,56 +11,24 @@ import { ErrorPage } from "../ErrorPage";
 import { Header } from "../Header";
 import { Footer } from "../Footer";
 
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 
 function App() {
   const categories = ["Necklaces", "Bracelets", "Rings", "Earrings"];
-  const [currentCategory, setCurrentCategory] = useState("all");
   const [currentProduct, setCurrentProduct] = useState(null);
-  const [displayedPage, setDisplayedPage] = useState("Home");
 
-  //retrieves data, sets the display page to the error page if resolved data is falsy, 
-  //saves the resolved data to the "products" state if the current category is "all"
-  //or saves the data of a certain category to "products" if the current category is not "all"
+  //retrieves data and saves data in products
   const [products, setProducts] = useState(null);
   useEffect(() => {
-    const getProductsByCategory = (productData) => {
-      const productsByCategory = productData.filter(product => product.category  === currentCategory);
-      setProducts(productsByCategory);
-    }; 
-    getProductData().then(
-        (resolvedData) => {
+    getProductData()
+      .then((resolvedData) => {
           if (!resolvedData) {
-            setDisplayedPage("Error")
+            <Redirect to="/error" />
           } else {
-            if (currentCategory === "all") {
-              setProducts(resolvedData);
-            } else {
-              getProductsByCategory(resolvedData);
-            }
+            setProducts(resolvedData);
           }
     })
-  }, [displayedPage]);
-
-
-  // const handleMenuClick = ({target}) => {
-  //     //updates the display page state with the inner HTML of the event target
-  //   if (target.innerHTML !== displayedPage) {
-  //     setDisplayedPage(`${target.innerHTML}`);
-  //     //sets the current category to either "all" or a specific category based on the inner HTML of event target
-  //     if (categories.includes(target.innerHTML)) {
-  //       setCurrentCategory(target.innerHTML.toLowerCase());
-  //     } else {
-  //       setCurrentCategory("all");  
-  //     }
-  //     //resets states
-  //     setProducts(null);
-  //     setIsMobileMenuOpen(false);
-  //     window.scrollTo(0, 0);
-  //     setCurrentProduct(null);
-  //   }
-  //   return;
-  // }
+  }, []);
 
   const [showQuickViewPage, setShowQuickViewPage] = useState(false);
   const handleProductClick = ({target}) => {
@@ -70,7 +38,6 @@ function App() {
     setCurrentProduct(filtededProduct);
     //sets the setShowQuickViewPage state to "true" to show the quick view page
     setShowQuickViewPage(true);
-
   }
 
   const hideQuickViewPage = () => {
@@ -118,40 +85,13 @@ function App() {
     setQuantityInCart(1);
   }, [currentProduct]);
 
-  //sets the display page with the name of the current category
-  const getCategoryPage = () => {
-    setDisplayedPage(currentCategory);
-  }
-
-  //sets the display page to the product page
-  const getProductPage = () => {
-    setDisplayedPage("ProductPage");
-    setShowQuickViewPage(false);
-    window.scrollTo(0, 0);
-  }
-
   //gets the name of the product from the id of the event target and finds the product that has the same name
   //sets the display page to the product page of this product 
   const handleCartProductClick = ({target}) => {
-    getProductPage();
     const productName = target.id.slice(0,-3);
     const filteredProduct = productsInCart.filter(product => product.name === productName)[0];
     setCurrentProduct(filteredProduct);
-    setCurrentCategory("all");
     hideCart();
-  }
-
-  //finds the index of the product in the array and sets the current product to the product before or after it in the array
-  const navigateProducts = ({target}) => {
-    const currentProductName = currentProduct.name;
-    let index = products.findIndex(product => product.name === currentProductName);
-      if (index < products.length - 1 && target.id==="next-btn") {
-        setCurrentProduct(products[index + 1]);
-      } else if (index > 0 && target.id==="prev-btn") {
-          setCurrentProduct(products[index - 1]);
-      } else {
-        return;
-      }
   }
 
   //filters out the product with a matching name
@@ -187,9 +127,7 @@ function App() {
   }
 
   const openCart = () => {
-    setDisplayedPage("Cart");
     setShowCart(false);
-    setCurrentCategory(null)
     window.scrollTo(0, 0);
     setIsMobileMenuOpen(false);
   }
@@ -236,8 +174,6 @@ function App() {
         />
       <Route>
         <Header 
-          // handleMenuClick={handleMenuClick} 
-          currentCategory={currentCategory}  
           categories={categories}
           setShowCart={setShowCart}
           productsInCart={productsInCart}
@@ -247,18 +183,26 @@ function App() {
       </Route>
       <main className="site-body">
         <Switch>
+          <Route path="/cart">
+            <Cart 
+              productsInCart={productsInCart} 
+              deleteItemInCart={deleteItemInCart}
+              adjustQuantityInCart={adjustQuantityInCart}
+              updateLocation={updateLocation}
+              location={location}
+              handleCartProductClick={handleCartProductClick}
+            />
+          </Route>
           <Route path="/info/:pageTitle">
             <FooterPages/>
           </Route>
           <Route exact path="/">
             <Home 
               products={products}
-              currentCategory={currentCategory}
               handleProductClick={handleProductClick} 
               showQuickViewPage={showQuickViewPage}
               hideQuickViewPage={hideQuickViewPage}
               currentProduct={currentProduct}
-              getProductPage={getProductPage} 
               addItemToCart={addItemToCart}
               handleQuantityInputChange={handleQuantityInputChange}
               quantityInCart={quantityInCart}
@@ -267,9 +211,6 @@ function App() {
           <Route path="/products/:categoryName/:productName">
             <ProductPage
               currentProduct={currentProduct} 
-              getCategoryPage={getCategoryPage}
-              navigateProducts={navigateProducts}
-              currentCategory={currentCategory}
               products={products}
               addItemToCart={addItemToCart}
               handleQuantityInputChange={handleQuantityInputChange}
@@ -280,34 +221,17 @@ function App() {
             <CategoryPage
               products={products}
               handleProductClick={handleProductClick}
-              currentCategory={currentCategory}
               showQuickViewPage={showQuickViewPage}
               hideQuickViewPage={hideQuickViewPage}
               currentProduct={currentProduct} 
-              getProductPage={getProductPage} 
               addItemToCart={addItemToCart}
               handleQuantityInputChange={handleQuantityInputChange}
               quantityInCart={quantityInCart}
             />
-          </Route>
-          {/* <Route path="/product/:product_name">
-            <ProductPage
-              currentProduct={currentProduct} 
-              getCategoryPage={getCategoryPage}
-              navigateProducts={navigateProducts}
-              currentCategory={currentCategory}
-              products={products}
-              addItemToCart={addItemToCart}
-              handleQuantityInputChange={handleQuantityInputChange}
-              quantityInCart={quantityInCart}
-            />
-          </Route>
-          <Route path="/cart">
-            <Cart />
-          <Route />
-          <Route>
+          </Route>         
+          <Route path="/error">
             <ErrorPage />
-          </Route> */}
+          </Route>
         </Switch>
       </main>
       <Route>
