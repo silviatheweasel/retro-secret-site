@@ -1,13 +1,15 @@
 import { MenuBar } from "../Components/MenuBar";
 import { Link } from "react-router-dom";
 
-export const Header = ({ handleMenuClick, 
-                         currentCategory, 
+export const Header = ({ 
                          categories, 
                          setShowCart, 
                          productsInCart, 
-                         isMobileMenuOpen, 
-                         openCart}) => {
+                         isMobileMenuOpen,
+                         toggleMobileMenu,
+                         openCart,
+                         handleMenuClick
+                        }) => {
     
 
     return (
@@ -15,14 +17,20 @@ export const Header = ({ handleMenuClick,
             <h1 
                 className="site-title"
                 id="site-title"
+                style={{
+                    display: isMobileMenuOpen ? "none" : "block"
+                }}
             >
-                <Link to="/">
+                <Link 
+                    to="/"
+                    onClick={() => window.scrollTo(0, 0)}
+                >
                     RETRO SECRETS
                 </Link>
             </h1>
             <button 
                 className="burger-nav-btn"
-                // onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} 
+                onClick={toggleMobileMenu} 
             >
                 <div 
                     className="burger-nav-icon"
@@ -31,14 +39,13 @@ export const Header = ({ handleMenuClick,
                 </div>
             </button>
             <nav className="nav-bar">
-            <MenuBar
-                handleMenuClick={handleMenuClick} 
-                currentCategory={currentCategory}  
+            <MenuBar 
                 categories={categories}
                 setShowCart={setShowCart}
                 productsInCart={productsInCart}
                 isMobileMenuOpen={isMobileMenuOpen}
                 openCart={openCart}
+                handleMenuClick={handleMenuClick}
             />
             </nav>
         </header>)

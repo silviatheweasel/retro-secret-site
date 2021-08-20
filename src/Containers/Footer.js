@@ -9,8 +9,10 @@ export const Footer = () => {
                 <div className="footer-left">
                         <h2>Quick Links</h2>
                         <ul className="quick-link-list">
-                            {localData.map(dataEntry => (
-                                <li onClick={() => window.scrollTo(0, 0)}>
+                            {localData.map((dataEntry, i) => (
+                                <li 
+                                    onClick={() => window.scrollTo(0, 0)}
+                                    key={"info" + i}>
                                     <Link to={"/info/" + dataEntry.link}>
                                         {dataEntry.title}
                                     </Link>

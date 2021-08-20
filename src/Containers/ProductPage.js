@@ -2,13 +2,10 @@ import { ProductDetails } from "../Components/ProductDetails";
 import { useParams, Link } from "react-router-dom";
 
 export const ProductPage = ({ 
-                                // currentProduct, 
                                 products,
-                                currentCategory, 
                                 addItemToCart,
                                 handleQuantityInputChange,
-                                quantityInCart,
-                                navigateProducts
+                                quantityInCart
                             }) => {
 
     let { categoryName, productName } = useParams();
@@ -80,8 +77,8 @@ export const ProductPage = ({
             <nav 
                 className="product-mobile-nav"
                 style={{display: window.screen.width <= 600? "block" : "none"}}
-                >
-                {currentCategory === "all" ? 
+            >
+                {categoryName === "All" ? 
                 <button
                     className="back-btn"
                 >
@@ -92,7 +89,7 @@ export const ProductPage = ({
                 <button
                     className="back-btn"
                 >
-                    <Link to={"/products/" + categoryName.toLowerCase()}>
+                    <Link to={"/" + categoryName.toLowerCase()}>
                         Back to {categoryName}
                     </Link>
                 </button>}

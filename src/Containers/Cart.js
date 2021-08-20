@@ -248,7 +248,10 @@ export const Cart = ({
                         <div className="empty-cart-prompt">
                             <h2>Cart is empty</h2>
                             <p>
-                                <Link to="/">
+                                <Link 
+                                    to="/"
+                                    onClick={() => window.scrollTo(0, 0)}
+                                >
                                     Continue shopping
                                 </Link>
                             </p>

@@ -142,21 +142,29 @@ function App() {
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   //if the screen is narrower or equal to 600px, updates the class names
-  useEffect(()=> {
-    if (window.screen.width <= 600) {
-      if (isMobileMenuOpen) {
-        document.getElementById("menu").classList.remove("mobile-hidden");
-        document.getElementById("site-title").classList.add("mobile-hidden");
-        document.getElementById("burger-nav-icon").classList.add("close-mobile");
-        document.getElementById("nav-bar-cart-btn").classList.replace("desktop", "mobile");
-      } else {
-        document.getElementById("menu").classList.add("mobile-hidden");
-        document.getElementById("site-title").classList.remove("mobile-hidden");
-        document.getElementById("burger-nav-icon").classList.remove("close-mobile");
-        document.getElementById("nav-bar-cart-btn").classList.replace("mobile", "desktop");
-      }
-    }
-  }, [isMobileMenuOpen])
+  // useEffect(()=> {
+  //   if (window.screen.width <= 600) {
+  //     if (isMobileMenuOpen) {
+  //       document.getElementById("site-title").classList.add("mobile-hidden");
+  //       document.getElementById("burger-nav-icon").classList.add("close-mobile");
+  //       document.getElementById("nav-bar-cart-btn").classList.replace("desktop", "mobile");
+  //     } else {
+  //       document.getElementById("site-title").classList.remove("mobile-hidden");
+  //       document.getElementById("burger-nav-icon").classList.remove("close-mobile");
+  //       document.getElementById("nav-bar-cart-btn").classList.replace("mobile", "desktop");
+  //     }
+  //     return;
+  //   }
+  // }, [isMobileMenuOpen]);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  }
+
+  const handleMenuClick = () => {
+    window.scrollTo(0, 0);
+    setIsMobileMenuOpen(false);
+  }
 
   if (!products) {
     return (<>Loading...</>)
@@ -180,7 +188,9 @@ function App() {
           setShowCart={setShowCart}
           productsInCart={productsInCart}
           isMobileMenuOpen={isMobileMenuOpen}
+          toggleMobileMenu={toggleMobileMenu}
           openCart={openCart}
+          handleMenuClick={handleMenuClick}
         />
       </Route>
       <main className="site-body">

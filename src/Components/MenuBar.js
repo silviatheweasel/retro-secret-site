@@ -1,19 +1,25 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Link, useLocation } from "react-router-dom";
 
 export const MenuBar = ({
-                            handleMenuClick, 
                             currentCategory, 
                             categories,
                             setShowCart,
                             productsInCart,
-                            openCart
+                            openCart,
+                            isMobileMenuOpen,
+                            handleMenuClick
                         }) => {
+
+    const location = useLocation();
     
     return (<>
                 <div 
                     className={window.screen.width <= 600 ? "mobile-menu mobile-hidden" : "desktop-menu"}
+                    style={{
+                        display: window.screen.width > 600 ? "flex" : (isMobileMenuOpen ? "block" : "none") 
+                    }}
                     id="menu"
-                    >
+                >
                     <button
                         className="nav-bar-cart-btn desktop"
                         id="nav-bar-cart-btn"
@@ -25,7 +31,10 @@ export const MenuBar = ({
                                 setShowCart(true);
                             }
                         }}
-                        >{productsInCart.length}
+                    >
+                        <Link to={window.screen.width <= 600 ? "/cart" : location.pathname}>
+                            {productsInCart.length}
+                        </Link>
                     </button>
                     <ul className="menu-list">
                         <li
