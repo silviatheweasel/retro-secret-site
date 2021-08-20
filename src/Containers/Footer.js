@@ -1,47 +1,20 @@
 import { Link } from "react-router-dom";
+import jsonData from "../utilities/siteStaticContent.json";
 
 export const Footer = () => {
+    const localData = JSON.parse(JSON.stringify(jsonData));
     return (
         <footer className="site-footer">
             <div className="footer-content">
                 <div className="footer-left">
                         <h2>Quick Links</h2>
                         <ul className="quick-link-list">
-                            <li>
-                                <Link to="/info/shipping_info">
-                                    SHIPPING INFO
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/info/return_policy">
-                                    RETURN AND EXCHANGE POLICY
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/info/health_info">
-                                    OUR PRODUCTS AND YOUR HEALTH
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/info/packaging">
-                                    OUR PACKAGING
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/info/care_instructions">
-                                    CARE INSTRUCTIONS
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/info/about">
-                                    ABOUT US
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/info/contact">
-                                CONTACT US
-                                </Link>
-                            </li>
+                            {localData.map(dataEntry => (
+                                <li onClick={() => window.scrollTo(0, 0)}>
+                                    <Link to={"/info/" + dataEntry.link}>
+                                        {dataEntry.title}
+                                    </Link>
+                                </li>))}
                         </ul>
                 </div>
                 <div className="footer-right">

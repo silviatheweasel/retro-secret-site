@@ -21,9 +21,7 @@ export const AddToCart = ({
             document.getElementById("over-limit-warning").style.display = "none";
         }
         }, [quantityInCart]);
-
-    console.log(currentProduct.name);
-
+        
     return (<>
                 <label>
                     Quantity

@@ -23,8 +23,6 @@ export const ProductPage = ({
 
     const next = index <= currentProducts.length - 2 ? currentProducts[index + 1].name.toLowerCase().replaceAll(" ", "_") : currentProducts[index].name.toLowerCase().replaceAll(" ", "_");
     const prev = index >= 1 ? currentProducts[index - 1].name.toLowerCase().replaceAll(" ", "_") : currentProducts[index].name.toLowerCase().replaceAll(" ", "_");
-    
-    console.log(products);
 
     return (
         <div className="product-page">

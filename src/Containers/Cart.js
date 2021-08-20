@@ -1,11 +1,11 @@
 import { CartProductList } from "../Components/CartProductList";
 import { useState, useEffect } from "react";
 import { CountryNameSelect } from "../Components/CountryNameSelect";
+import { Link } from "react-router-dom";
 export const Cart = ({ 
                         productsInCart, 
                         deleteItemInCart,
                         adjustQuantityInCart,
-                        handleSiteLogoClick, 
                         updateLocation,
                         location,
                         handleCartProductClick
@@ -247,7 +247,11 @@ export const Cart = ({
                         <h1>My Cart</h1>
                         <div className="empty-cart-prompt">
                             <h2>Cart is empty</h2>
-                            <p onClick={handleSiteLogoClick}>Continue shopping</p>
+                            <p>
+                                <Link to="/">
+                                    Continue shopping
+                                </Link>
+                            </p>
                         </div>
                     </div>)}
                 </div>

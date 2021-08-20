@@ -40,7 +40,6 @@ function App() {
     } else {
       setClickedProduct(target.id.slice(0, target.id.length -1));
       setShowQuickViewPage(true);
-      window.scrollTo(0, 0);
     }
   }
 
@@ -53,7 +52,6 @@ function App() {
   const [showCart, setShowCart] = useState(false);
   const addItemToCart = ({target}) => {
     const { value } = target;
-    console.log(value);
     const filteredProduct = products.filter(product => product.name === value)[0];
     if (quantityInCart) {
       //if the quantity added to the cart is less than the stock quantity, checkes if this product is alread in the cart 
@@ -89,24 +87,14 @@ function App() {
   }
 
   //resets the quantity in cart every time a product page is loaded
-  // useEffect(() => {
-  //   setQuantityInCart(1);
-  // }, [currentProduct]);
+  useEffect(() => {
+    setQuantityInCart(1);
+  }, [productsInCart]);
 
   //gets the name of the product from the id of the event target and finds the product that has the same name
-  const handleCartProductClick = ({target}) => {
-    const productName = target.id.slice(0,-3);
-    const filteredProduct = productsInCart.filter(product => product.name === productName)[0];
-    // setCurrentProduct(filteredProduct);
+  const handleCartProductClick = () => {
     hideCart();
   }
-
-    //finds the index of the product in the array and sets the current product to the product before or after it in the array
-    // const navigateProducts = ({target}) => {   
-    //   const filtered = products.filter(product => product.name.toLowerCase() === target.name.replaceAll("_", " "));
-    //   setCurrentProduct(filtered);
-    //   console.log(currentProduct);
-    // }
 
   //filters out the product with a matching name
   const deleteItemInCart = ({target}) => {
