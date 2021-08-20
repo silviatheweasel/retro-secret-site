@@ -4,7 +4,7 @@ export const AddToCart = ({
                             addItemToCart, 
                             handleQuantityInputChange, 
                             quantityInCart,
-                            currentProduct 
+                            currentProduct
                         }) => {
     //toggles the visibility of warning messages
     useEffect(() => {
@@ -21,6 +21,8 @@ export const AddToCart = ({
             document.getElementById("over-limit-warning").style.display = "none";
         }
         }, [quantityInCart]);
+
+    console.log(currentProduct.name);
 
     return (<>
                 <label>
@@ -52,6 +54,7 @@ export const AddToCart = ({
                 </div>
                 <button 
                     className="add-to-cart-btn"
+                    value={currentProduct.name}
                     onClick={addItemToCart}
                     >Add to Cart
                 </button>

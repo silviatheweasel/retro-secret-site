@@ -4,12 +4,13 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 export const QuickViewPage = ({  
-                                currentProduct, 
-                                getProductPage, 
                                 addItemToCart,
+                                currentProduct,
                                 handleQuantityInputChange,
-                                quantityInCart 
-                            }) => {     
+                                quantityInCart
+                            }) => {    
+
+    
     const {
             images, 
             name, 
@@ -19,6 +20,7 @@ export const QuickViewPage = ({
         } = currentProduct;
 
     const [displayedImg, setDisplayedImg] = useState(main_image); 
+
     //re-renders the displayed image when the current product changes
     useEffect(() => setDisplayedImg(currentProduct.main_image), [currentProduct]); 
 

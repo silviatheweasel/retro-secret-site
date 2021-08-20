@@ -2,15 +2,13 @@ import { ProductDetails } from "../Components/ProductDetails";
 import { useParams, Link } from "react-router-dom";
 
 export const ProductPage = ({ 
-                                currentProduct, 
-                                getCategoryPage, 
-                                navigateProducts, 
+                                // currentProduct, 
                                 products,
                                 currentCategory, 
                                 addItemToCart,
                                 handleQuantityInputChange,
-                                quantityInCart
-
+                                quantityInCart,
+                                navigateProducts
                             }) => {
 
     let { categoryName, productName } = useParams();
@@ -21,9 +19,12 @@ export const ProductPage = ({
     const currentProducts = categoryName === "All" ? products : products.filter(product => product.category === categoryName.toLowerCase());
     const index = currentProducts.findIndex(product => product.name === productName);
 
+    const currentProduct = currentProducts[index];
+
     const next = index <= currentProducts.length - 2 ? currentProducts[index + 1].name.toLowerCase().replaceAll(" ", "_") : currentProducts[index].name.toLowerCase().replaceAll(" ", "_");
     const prev = index >= 1 ? currentProducts[index - 1].name.toLowerCase().replaceAll(" ", "_") : currentProducts[index].name.toLowerCase().replaceAll(" ", "_");
     
+    console.log(products);
 
     return (
         <div className="product-page">
@@ -57,7 +58,9 @@ export const ProductPage = ({
                                 cursor: index === 0 ? "default" : "pointer"
                                 }}
                     >
-                        <Link to={"/products/" + categoryName.toLowerCase() + "/" + prev}>
+                        <Link 
+                            to={"/products/" + categoryName.toLowerCase() + "/" + prev}
+                        >
                             Prev
                         </Link>
                     </li>
@@ -68,7 +71,9 @@ export const ProductPage = ({
                                 cursor: index === products.length -1 ? "default" : "pointer"
                                 }}
                     >
-                        <Link to={"/products/" + categoryName.toLowerCase() + "/" + next}>
+                        <Link 
+                            to={"/products/" + categoryName.toLowerCase() + "/" + next}
+                        >
                             Next
                         </Link>
                     </li>
@@ -96,7 +101,7 @@ export const ProductPage = ({
             </nav>
             <ProductDetails 
                 currentProducts={currentProducts}
-                index={index}
+                currentProduct={currentProduct}
                 addItemToCart={addItemToCart}
                 handleQuantityInputChange={handleQuantityInputChange}
                 quantityInCart={quantityInCart}

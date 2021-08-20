@@ -11,11 +11,11 @@ import { ErrorPage } from "../ErrorPage";
 import { Header } from "../Header";
 import { Footer } from "../Footer";
 
-import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect} from "react-router-dom";
 
 function App() {
   const categories = ["Necklaces", "Bracelets", "Rings", "Earrings"];
-  const [currentProduct, setCurrentProduct] = useState(null);
+  // const [currentProduct, setCurrentProduct] = useState(null);
 
   //retrieves data and saves data in products
   const [products, setProducts] = useState(null);
@@ -30,14 +30,18 @@ function App() {
     })
   }, []);
 
+  const [clickedProduct, setClickedProduct] = useState("");
   const [showQuickViewPage, setShowQuickViewPage] = useState(false);
+
+  
   const handleProductClick = ({target}) => {
-    //gets the name of the product from the id of the event target, and finds the product object with the same name
-    const productName = target.id.slice(0, -1);
-    const filtededProduct = products.filter(product => product.name === productName)[0];
-    setCurrentProduct(filtededProduct);
-    //sets the setShowQuickViewPage state to "true" to show the quick view page
-    setShowQuickViewPage(true);
+    if (target.id.slice(-1) !== "2") {
+      window.scrollTo(0, 0);
+    } else {
+      setClickedProduct(target.id.slice(0, target.id.length -1));
+      setShowQuickViewPage(true);
+      window.scrollTo(0, 0);
+    }
   }
 
   const hideQuickViewPage = () => {
@@ -47,18 +51,22 @@ function App() {
   const [productsInCart, setProductsInCart] = useState([]);
   const [quantityInCart, setQuantityInCart] = useState(1);
   const [showCart, setShowCart] = useState(false);
-  const addItemToCart = () => {
+  const addItemToCart = ({target}) => {
+    const { value } = target;
+    console.log(value);
+    const filteredProduct = products.filter(product => product.name === value)[0];
     if (quantityInCart) {
       //if the quantity added to the cart is less than the stock quantity, checkes if this product is alread in the cart 
-      if (quantityInCart <= currentProduct.quantity) {
+      if (quantityInCart <= filteredProduct.quantity) {
+
         setProductsInCart((prev) => {
           //if the product is not in the cart, adds the product and an addition pair of key and value "quantityInCart: quantityInCart" to the productsInCarts state
-          if (!productsInCart.find(product => product.name === currentProduct.name)) {
-            return [...prev, {...currentProduct, quantityInCart: quantityInCart}]
+          if (!productsInCart.find(product => product.name === value)) {
+            return [...prev, {...filteredProduct, quantityInCart: quantityInCart}]
         } else {
           //if the product is already in the cart, filters out the product, and adds it back with an updated "quantityInCart" value
-            const filtered = prev.filter(product => product.name !== currentProduct.name);
-            return [...filtered, {...currentProduct, quantityInCart: quantityInCart}]
+            const filtered = prev.filter(product => product.name !== value);
+            return [...filtered, {...filteredProduct, quantityInCart: quantityInCart}]
           }
         })
         setShowQuickViewPage(false);
@@ -81,18 +89,24 @@ function App() {
   }
 
   //resets the quantity in cart every time a product page is loaded
-  useEffect(() => {
-    setQuantityInCart(1);
-  }, [currentProduct]);
+  // useEffect(() => {
+  //   setQuantityInCart(1);
+  // }, [currentProduct]);
 
   //gets the name of the product from the id of the event target and finds the product that has the same name
-  //sets the display page to the product page of this product 
   const handleCartProductClick = ({target}) => {
     const productName = target.id.slice(0,-3);
     const filteredProduct = productsInCart.filter(product => product.name === productName)[0];
-    setCurrentProduct(filteredProduct);
+    // setCurrentProduct(filteredProduct);
     hideCart();
   }
+
+    //finds the index of the product in the array and sets the current product to the product before or after it in the array
+    // const navigateProducts = ({target}) => {   
+    //   const filtered = products.filter(product => product.name.toLowerCase() === target.name.replaceAll("_", " "));
+    //   setCurrentProduct(filtered);
+    //   console.log(currentProduct);
+    // }
 
   //filters out the product with a matching name
   const deleteItemInCart = ({target}) => {
@@ -202,7 +216,7 @@ function App() {
               handleProductClick={handleProductClick} 
               showQuickViewPage={showQuickViewPage}
               hideQuickViewPage={hideQuickViewPage}
-              currentProduct={currentProduct}
+              clickedProduct={clickedProduct}
               addItemToCart={addItemToCart}
               handleQuantityInputChange={handleQuantityInputChange}
               quantityInCart={quantityInCart}
@@ -210,7 +224,6 @@ function App() {
           </Route>
           <Route path="/products/:categoryName/:productName">
             <ProductPage
-              currentProduct={currentProduct} 
               products={products}
               addItemToCart={addItemToCart}
               handleQuantityInputChange={handleQuantityInputChange}
@@ -220,13 +233,13 @@ function App() {
           <Route path="/:categoryName">
             <CategoryPage
               products={products}
-              handleProductClick={handleProductClick}
+              handleProductClick={handleProductClick} 
               showQuickViewPage={showQuickViewPage}
               hideQuickViewPage={hideQuickViewPage}
-              currentProduct={currentProduct} 
+              clickedProduct={clickedProduct}
               addItemToCart={addItemToCart}
               handleQuantityInputChange={handleQuantityInputChange}
-              quantityInCart={quantityInCart}
+              quantityInCart={quantityInCart}    
             />
           </Route>         
           <Route path="/error">

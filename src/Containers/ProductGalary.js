@@ -1,27 +1,26 @@
 import { ProductOverview } from "../Components/ProductOverview/ProductOverview";
-import React, { useEffect } from "react";
 import { QuickViewPage } from "./QuickViewPage";
 import { useParams } from "react-router-dom";
+import React from "react";
 
 export const ProductGalary = React.memo(({ 
-                                            hideQuickViewPage, 
-                                            showQuickViewPage, 
-                                            currentCategory, 
-                                            products, 
+                                            products,
                                             handleProductClick,
-                                            currentProduct,
-                                            getProductPage,
+                                            showQuickViewPage,
+                                            hideQuickViewPage,
                                             addItemToCart,
                                             handleQuantityInputChange,
-                                            quantityInCart
+                                            quantityInCart, 
+                                            clickedProduct
                                         }) => {
     const { categoryName } = useParams();
     const currentProducts = categoryName === undefined ? products : products.filter(product => product.category === categoryName);
+    const currentProduct = currentProducts.filter(product => product.name === clickedProduct)[0];
     
     return (
         <div 
             className="product-galary"
-            style={{backgroundColor: currentCategory === null | currentCategory === "all" ? "white" : "#F2F1F0"}}
+            style={{backgroundColor: categoryName ===  undefined ? "white" : "#F2F1F0"}}
             >
               {currentProducts.map((product, i) => (
                 <ProductOverview
@@ -31,23 +30,26 @@ export const ProductGalary = React.memo(({
                     price={product.price}
                     secondaryImg={product.secondary_image}
                     handleProductClick={handleProductClick}
-                    currentCategory={currentCategory}
+                    // currentProducts={currentProducts}
                 />
                 ))}
                 {showQuickViewPage && 
                 <div className="quick-view-wrapper">
                     <div className="quick-view-container">
                         <button 
-                            onClick={hideQuickViewPage}
                             className="close-btn"
+                            onClick={hideQuickViewPage}
                             >&times;
                         </button>
                         <QuickViewPage 
-                            currentProduct={currentProduct}
-                            getProductPage={getProductPage}
+                            // currentProduct={currentProduct}
+
+                            // getProductPage={getProductPage}
                             addItemToCart={addItemToCart}
                             handleQuantityInputChange={handleQuantityInputChange} 
                             quantityInCart={quantityInCart}
+                            clickedProduct={clickedProduct}
+                            currentProduct={currentProduct}
                         />
                     </div>
                 </div>
