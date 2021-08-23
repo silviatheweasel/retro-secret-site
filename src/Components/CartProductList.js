@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export const CartProductList = ({ 
                                     name, 
                                     price, 
@@ -7,6 +9,7 @@ export const CartProductList = ({
                                     adjustQuantityInCart,
                                     id,
                                     quantity,
+                                    category,
                                     handleCartProductClick
                                  }) => {
 
@@ -14,6 +17,7 @@ export const CartProductList = ({
                 className="cart-product-row"
                 >
                 <div className="cart-product-image">
+                    <Link to={"/products/" + category + "/" + name.toLowerCase().replaceAll(" ", "_")}>
                     <img 
                         src={image.src}
                         alt={image.alt}
@@ -21,6 +25,7 @@ export const CartProductList = ({
                         onClick={handleCartProductClick}
                         >
                     </img>
+                    </Link>
                 </div>
                 <div className="cart-product-info">
                     <div className="cart-product-basics">

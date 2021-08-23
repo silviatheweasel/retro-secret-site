@@ -1,17 +1,24 @@
+import { NavLink, Link, useLocation } from "react-router-dom";
+
 export const MenuBar = ({
-                            handleMenuClick, 
-                            currentCategory, 
                             categories,
                             setShowCart,
                             productsInCart,
-                            openCart
+                            openCart,
+                            isMobileMenuOpen,
+                            handleMenuClick
                         }) => {
+
+    const location = useLocation();
     
     return (<>
                 <div 
                     className={window.screen.width <= 600 ? "mobile-menu mobile-hidden" : "desktop-menu"}
+                    style={{
+                        display: window.screen.width > 600 ? "flex" : (isMobileMenuOpen ? "block" : "none") 
+                    }}
                     id="menu"
-                    >
+                >
                     <button
                         className="nav-bar-cart-btn desktop"
                         id="nav-bar-cart-btn"
@@ -23,17 +30,27 @@ export const MenuBar = ({
                                 setShowCart(true);
                             }
                         }}
-                        >{productsInCart.length}
+                    >
+                        <Link 
+                            to={window.screen.width <= 600 ? "/cart" : location.pathname}
+                            className="link"
+                            style={{color: "white"}}
+                        >
+                            {productsInCart.length}
+                        </Link>
                     </button>
                     <ul className="menu-list">
                         <li
                             className="menu-item" 
                             key="home"  
                             onClick={handleMenuClick}
-                            style={{
-                                    color: currentCategory === "all" ? "#9E8765" : "black"
-                                    }}
-                            >Home
+                        >
+                            <NavLink 
+                                exact to="/"
+                                className="nav-link"
+                            >
+                                Home
+                            </NavLink>
                         </li>
                         {categories.map(
                             (category, i) => (
@@ -41,9 +58,16 @@ export const MenuBar = ({
                                     key={"category" + i}
                                     className="menu-item" 
                                     onClick={handleMenuClick}
-                                    style={{color: currentCategory === category.toLowerCase() ? "#9E8765" : "black"}}
-                                    >{category}
-                                </li>))}
+                                >
+                                    <NavLink 
+                                        to={"/" + category.toLowerCase()}
+                                        className="nav-link"
+                                    >
+                                        {category}
+                                    </NavLink>
+                                </li>)
+                            )
+                        }
                     </ul>
                 </div>
             </>)

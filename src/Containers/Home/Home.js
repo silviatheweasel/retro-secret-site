@@ -2,17 +2,16 @@ import { ProductGalary } from "../ProductGalary";
 import heroImg from "./hero-img.jpg";
 
 const Home = ({     
-                hideQuickViewPage, 
-                showQuickViewPage, 
-                products, 
-                handleProductClick, 
-                currentCategory, 
-                currentProduct,
-                getProductPage,
+                products,
+                handleProductClick,
+                showQuickViewPage,
+                hideQuickViewPage,
                 addItemToCart,
                 handleQuantityInputChange,
-                quantityInCart
+                quantityInCart, 
+                clickedProduct
             }) => {
+                
     return (<>
                 <div className="hero">
                     <img 
@@ -32,16 +31,14 @@ const Home = ({
                 <div className="galary-container">
                     <ProductGalary 
                         products={products}
-                        currentCategory={currentCategory}
-                        handleProductClick={handleProductClick}   
-                        showQuickViewPage={showQuickViewPage}  
-                        hideQuickViewPage={hideQuickViewPage}  
-                        currentProduct={currentProduct}  
-                        getProductPage={getProductPage}
+                        handleProductClick={handleProductClick} 
+                        showQuickViewPage={showQuickViewPage}
+                        hideQuickViewPage={hideQuickViewPage}
+                        clickedProduct={clickedProduct}
                         addItemToCart={addItemToCart}
                         handleQuantityInputChange={handleQuantityInputChange}
-                        quantityInCart={quantityInCart}       
-                        />
+                        quantityInCart={quantityInCart}    
+                    />
                 </div>
             </>)
 }

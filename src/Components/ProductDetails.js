@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import { AddToCart } from "./AddToCart";
 
 export const ProductDetails = React.memo(({ 
-                                            currentProduct, 
+                                            currentProduct,
                                             addItemToCart, 
                                             handleQuantityInputChange,
                                             quantityInCart 
                                         }) => 
 {
+
     const { 
             images, 
             name, 
@@ -134,7 +135,7 @@ export const ProductDetails = React.memo(({
                     handleQuantityInputChange={handleQuantityInputChange}
                     quantityInCart={quantityInCart}
                     currentProduct={currentProduct}
-                    />
+                />
             </div>
         </div>
     )

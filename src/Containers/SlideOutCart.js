@@ -1,4 +1,5 @@
 import { CartProductList } from "../Components/CartProductList";
+import { Link } from "react-router-dom";
 
 export const SlideOutCart = ({ 
                                 productsInCart, 
@@ -60,29 +61,45 @@ export const SlideOutCart = ({
                         <h1 className="cart-title">Cart</h1>
                     </header>
                     <main>
-                        {productsInCart.length > 0 ? productsInCart.map((product, i) => <CartProductList 
-                                                                name={product.name}
-                                                                id={"product-in-cart-" + i}
-                                                                key={"product-in-cart-" + i}
-                                                                price={product.price}
-                                                                image={product.main_image}
-                                                                quantityInCart={product.quantityInCart}
-                                                                quantity={product.quantity}
-                                                                deleteItemInCart={deleteItemInCart}
-                                                                adjustQuantityInCart={adjustQuantityInCart}
-                                                                handleCartProductClick={handleCartProductClick}
-                                                                />) : <p className="empty-cart">Cart is empty</p>}
+                        {productsInCart.length > 0 ? 
+                            productsInCart.map((product, i) => 
+                            <CartProductList 
+                                name={product.name}
+                                id={"product-in-cart-" + i}
+                                key={"product-in-cart-" + i}
+                                price={product.price}
+                                image={product.main_image}
+                                quantityInCart={product.quantityInCart}
+                                quantity={product.quantity}
+                                category={product.category}
+                                deleteItemInCart={deleteItemInCart}
+                                adjustQuantityInCart={adjustQuantityInCart}
+                                handleCartProductClick={handleCartProductClick}
+                            />) : 
+                            <p className="empty-cart">Cart is empty</p>
+                        }
                     </main>
-                    {productsInCart.length > 0 && (<div className="subtotal-container">
-                        <p>Subtotal</p>
-                        <p>£{subtotal}.00</p>
-                    </div>)}
-                   {productsInCart.length > 0 && (<div className="view-cart-container">
-                        <button
-                            className="view-cart-btn"
-                            onClick={openCart}
-                        >View Cart</button>
-                    </div>)}
+                    {productsInCart.length > 0 && (
+                        <div className="subtotal-container">
+                            <p>Subtotal</p>
+                            <p>£{subtotal}.00</p>
+                        </div>
+                    )}
+                   {productsInCart.length > 0 && (
+                        <div className="view-cart-container">
+                            <button
+                                className="view-cart-btn"
+                                onClick={openCart}
+                            >
+                                <Link 
+                                    to="/cart"
+                                    className="link"
+                                >
+                                    View Cart
+                                </Link>
+                            </button>
+                        </div>
+                    )}
                 </div>
             </div>)
 }

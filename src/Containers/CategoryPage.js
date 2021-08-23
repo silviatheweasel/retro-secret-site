@@ -1,32 +1,31 @@
 import { ProductGalary } from "./ProductGalary";
+import { useParams } from "react-router-dom";
 import React from "react";
 
 export const CategoryPage = React.memo(({ 
-                                            hideQuickViewPage, 
-                                            showQuickViewPage, 
-                                            currentCategory, 
-                                            products, 
-                                            handleProductClick, 
-                                            currentProduct,
-                                            getProductPage,
+                                            products,
+                                            handleProductClick,
+                                            showQuickViewPage,
+                                            hideQuickViewPage,
                                             addItemToCart,
-                                            quantityInCart,
                                             handleQuantityInputChange,
+                                            quantityInCart,
+                                            clickedProduct
                                         }) => {
-    const header = currentCategory[0].toUpperCase() + currentCategory.substring(1)
+                                            
+    const { categoryName } = useParams();
 
     return (<div className="category-page">
-                <h1 className="category-title">{header}</h1>
+                <h1 className="category-title">{categoryName[0].toUpperCase() + categoryName.slice(1, categoryName.length)}</h1>
                 <ProductGalary 
-                    products={products}
-                    handleProductClick={handleProductClick}
-                    showQuickViewPage={showQuickViewPage}
-                    hideQuickViewPage={hideQuickViewPage}
-                    currentProduct={currentProduct} 
-                    getProductPage={getProductPage}
-                    addItemToCart={addItemToCart}
-                    quantityInCart={quantityInCart} 
-                    handleQuantityInputChange={handleQuantityInputChange}
+                        products={products}
+                        handleProductClick={handleProductClick} 
+                        showQuickViewPage={showQuickViewPage}
+                        hideQuickViewPage={hideQuickViewPage}
+                        clickedProduct={clickedProduct}
+                        addItemToCart={addItemToCart}
+                        handleQuantityInputChange={handleQuantityInputChange}
+                        quantityInCart={quantityInCart}  
                     />
              </div>)
 })

@@ -1,5 +1,6 @@
 [{
     "title": "SHIPPING INFO",
+    "link": "shipping_info",
     "content": [
         "We aim to ship your orders within 48 hours (excluding weekends)", 
         "Standard Delivery (2-5 working days, Hermes) £2.85, FREE on orders of £30 or more",
@@ -7,6 +8,7 @@
     ]
 }, {
     "title": "RETURN AND EXCHANGE POLICY",
+    "link": "return_policy",
     "content": [
         "We accept returns for a refund or exchange within 14 days of receipt.",
         "Certain discounted items may be excluded from the coverage.",
@@ -19,6 +21,7 @@
     ]
 }, {
     "title": "OUR PRODUCTS AND YOUR HEALTH",
+    "link": "health_info",
     "content": [
         "If your ear piercings are new, we do not recommend wearing earrings as they are heavy and can delay the healing of the wound. Please wear small ear studs made from metals such as silver, titanium, and gold to avoid infection.",
         "We avoid lead and nickel, metals known for causing allergies, in our products, so our products are safe with the majority, but we cannot guarantee that certain metal components in our jewellery will not cause allergies to individuals with sensitive skin.",
@@ -27,12 +30,15 @@
     ]
 }, {
     "title": "OUR PACKAGING",
+    "link": "packaging",
     "content": ["We care about the environment! Therefore, we do not use any plastics in our packaging, only recyclable boxes, paper, and tissues."]
 }, {
     "title": "CARE INSTRUCTIONS",
+    "link": "care_instructions",
     "content": ["Do not wear during swims or showers, and the jewellery must be removed before bed and before exercise."]
 }, {
     "title": "ABOUT US",
+    "link": "about",
     "content": [
         "Retro Secrets is an online store based in London. As vintage fashion enthusiasts, we proudly present our great collection of unique pieces that surely will make you stand out in the crowd.",
         "Items in our store are sourced from manufacturers of major fashion franchises, independent jewellery brands, and artisans around the globe, sold at significantly discounted prices. All items are repackaged by us, but some items may have the original brand name engraved. Isn’t it great fun to hunt down bargain deals?",
@@ -40,6 +46,7 @@
     ]
 }, {
     "title": "CONTACT US",
+    "link": "contact",
     "content": [
         "For general questions or order related queries, please email us on hello@retrosecrets.co.uk.",
         "Please make sure to include your order number as this will allow us to resolve your query more quickly.",
