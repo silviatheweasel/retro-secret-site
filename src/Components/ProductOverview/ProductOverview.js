@@ -8,6 +8,7 @@ export const ProductOverview = React.memo(({
                                             name, 
                                             price,
                                             handleProductClick, 
+                                            hideQuickViewPage
                                         }) => {
 
     const [displayImg, setDisplayImg] = useState({
@@ -45,46 +46,53 @@ export const ProductOverview = React.memo(({
             onMouseLeave={handleMouseLeave}
             style={{backgroundColor: categoryName === undefined ? "white" : "#F2F1F0"}}
         >
-        <div className="flip-image">
-            <Link to={categoryName === undefined ? ("/products/all/" + name.toLowerCase().replaceAll(" ", "_")) : ("/products/" + categoryName + "/" + name.toLowerCase().replaceAll(" ", "_"))}>
-                        <img 
-                            src={displayImg.src} 
-                            alt={displayImg.alt}
-                            id={name + "1"}
-                            className="display-image"
-                            name={name}
-                            onClick={handleProductClick}
-                            style={{
-                                opacity: isLoading ? 0.5 : 1,
-                                transition: "opacity .15s linear"
-                            }}
-                        ></img>
-            </Link>
-                    {window.screen.width >= 600 && 
+            <div className="flip-image">
+                <Link 
+                    to={categoryName === undefined ? ("/products/all/" + name.toLowerCase().replaceAll(" ", "_")) : ("/products/" + categoryName + "/" + name.toLowerCase().replaceAll(" ", "_"))}
+                >
+                    <img 
+                        src={displayImg.src} 
+                        alt={displayImg.alt}
+                        id={name + "1"}
+                        className="display-image"
+                        name={name}
+                        onClick={handleProductClick}
+                        style={{
+                            opacity: isLoading ? 0.5 : 1,
+                            transition: "opacity .15s linear"
+                        }}
+                    ></img>
+                </Link>
+                {window.screen.width >= 600 && 
                     <div 
                         id={name + "2"}
                         className="quick-view-btn"
                         value={name}
                         onClick={handleProductClick}
-                    >Quick View
+                    >
+                        Quick View
                     </div>
-                    }
-                </div>
-                <Link to={categoryName === undefined ? ("/products/all/" + name.toLowerCase().replaceAll(" ", "_")) : ("/products/" + categoryName + "/" + name.toLowerCase().replaceAll(" ", "_"))}>
-                    <h3 
-                        id={name + "3"}
-                        name={name}
-                        className="product-overview-title"
-                        onClick={handleProductClick}
-                        >{name}
-                    </h3>
-                    <p 
-                        id={name + "4"}
-                        name={name}
-                        className="product-overview-text"
-                        onClick={handleProductClick}
-                        >£{price}.00
-                    </p>
+                }
+            </div>
+            <Link 
+                to={categoryName === undefined ? ("/products/all/" + name.toLowerCase().replaceAll(" ", "_")) : ("/products/" + categoryName + "/" + name.toLowerCase().replaceAll(" ", "_"))}
+                className="link"
+                style={{margin: "0 auto"}}
+            >
+                <h3 
+                    id={name + "3"}
+                    name={name}
+                    className="product-overview-title"
+                    onClick={handleProductClick}
+                    >{name}
+                </h3>
+                <p 
+                    id={name + "4"}
+                    name={name}
+                    className="product-overview-text"
+                    onClick={handleProductClick}
+                    >£{price}.00
+                </p>
             </Link>
         </button>
     )

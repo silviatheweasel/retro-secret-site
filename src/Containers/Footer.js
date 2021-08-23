@@ -13,7 +13,10 @@ export const Footer = () => {
                                 <li 
                                     onClick={() => window.scrollTo(0, 0)}
                                     key={"info" + i}>
-                                    <Link to={"/info/" + dataEntry.link}>
+                                    <Link 
+                                        to={"/info/" + dataEntry.link}
+                                        className="footer-page-link"
+                                    >
                                         {dataEntry.title}
                                     </Link>
                                 </li>))}

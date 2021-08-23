@@ -6,7 +6,11 @@
     padding: 0;
     margin: 0;
     -webkit-tap-highlight-color: transparent;
-    // border: 1px solid red;
+}
+
+.link, .nav-link {
+    text-decoration: none;
+    color: black;  
 }
 
 html, body {
@@ -36,6 +40,7 @@ html, body {
         font-weight: 400;
         font-size: 20px;
         cursor: pointer;
+        color: black;
         &:hover, :active, :focus {
             color: $gold;
         }
@@ -54,9 +59,13 @@ html, body {
                     display: inline-block;
                     width: 120px;
                     cursor: pointer;
+                    color: black;
                     font-family: $OpenSans;
                     &:hover, :active, :focus {
                         color: $gold !important;
+                    }
+                    .active {
+                        color: $gold;
                     }
                 }
             }
@@ -88,7 +97,12 @@ html, body {
                     cursor: pointer;
                     font-size: 25px !important;
                     padding: 30px;
-
+                    &:hover, :active, :focus {
+                        color: $gold !important;
+                    }
+                    .active {
+                        color: $gold;
+                    }
                 }
             }
             .nav-bar-cart-btn {
@@ -569,19 +583,21 @@ label {
             transition: 0.3s;
             padding: 10px 30px;
             .view-cart-btn {
-                width: 290px;
-                margin: 0 auto;
-                padding: 15px;
-                background-color: $gold;
-                display: block;
-                color: white;
-                font-size: 16px;
-                font-family: $OpenSans;
                 border: none;
                 outline: none;
-                cursor: pointer;
-                &:hover, :active, :focus {
-                    background-color: fade-out($color: $gold, $amount: 0.3);
+                .link {
+                    color: white;
+                    display: block;
+                    font-size: 16px;
+                    font-family: $OpenSans;
+                    width: 290px;
+                    margin: 0 auto;
+                    padding: 15px;
+                    background-color: $gold;
+                    cursor: pointer;
+                    &:hover, :active, :focus {
+                        background-color: fade-out($color: $gold, $amount: 0.3);
+                    }
                 }
             }
         }
@@ -993,7 +1009,7 @@ label {
             }
             .quick-link-list {
                 padding: 20px 0;
-                li {
+                li, .footer-page-link {
                     list-style-type: none;
                     @extend %text;
                     text-decoration: underline;

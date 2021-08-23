@@ -15,7 +15,6 @@ export const Header = ({
     return (
         <header className="site-header">
             <h1 
-                className="site-title"
                 id="site-title"
                 style={{
                     display: isMobileMenuOpen ? "none" : "block"
@@ -23,6 +22,7 @@ export const Header = ({
             >
                 <Link 
                     to="/"
+                    className="site-title link"
                     onClick={() => window.scrollTo(0, 0)}
                 >
                     RETRO SECRETS
@@ -33,7 +33,7 @@ export const Header = ({
                 onClick={toggleMobileMenu} 
             >
                 <div 
-                    className="burger-nav-icon"
+                    className={isMobileMenuOpen ? "burger-nav-icon close-mobile" : "burger-nav-icon"}
                     id="burger-nav-icon"
                 >
                 </div>

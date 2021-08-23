@@ -251,6 +251,7 @@ export const Cart = ({
                                 <Link 
                                     to="/"
                                     onClick={() => window.scrollTo(0, 0)}
+                                    style={{color: "black"}}
                                 >
                                     Continue shopping
                                 </Link>

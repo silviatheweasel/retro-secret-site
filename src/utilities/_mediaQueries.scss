@@ -87,11 +87,17 @@
     }
     .site-title {
         font-size: 30px !important;
-        position: absolute;
+        float: left;
     }
     .mobile-hidden {
         display: none;
     }
+    // &:hover, :active, :focus {
+    //     color: $gold !important;
+    // }
+    // .active {
+    //     color: $gold;
+    // }
     .hero {
         top: 20px;
         height: 550px !important;

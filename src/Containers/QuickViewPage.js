@@ -7,7 +7,8 @@ export const QuickViewPage = ({
                                 addItemToCart,
                                 currentProduct,
                                 handleQuantityInputChange,
-                                quantityInCart
+                                quantityInCart,
+                                hideQuickViewPage
                             }) => {    
 
     
@@ -91,8 +92,15 @@ export const QuickViewPage = ({
                         <button
                             className="more-info-btn"
                         >
-                            <Link to={"/products/" + category.toLowerCase().replaceAll(" ", "_") + "/" + name.toLowerCase().replaceAll(" ", "_")}>
-                            View More Details
+                            <Link 
+                                to={"/products/" + category.toLowerCase().replaceAll(" ", "_") + "/" + name.toLowerCase().replaceAll(" ", "_")}
+                                className="link"
+                                onClick={() => {
+                                    window.scrollTo(0, 0);
+                                    hideQuickViewPage();
+                                }}
+                            >
+                                View More Details
                             </Link>
                         </button> 
                     </div>

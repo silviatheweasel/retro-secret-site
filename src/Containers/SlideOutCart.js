@@ -91,7 +91,10 @@ export const SlideOutCart = ({
                                 className="view-cart-btn"
                                 onClick={openCart}
                             >
-                                <Link to="/cart">
+                                <Link 
+                                    to="/cart"
+                                    className="link"
+                                >
                                     View Cart
                                 </Link>
                             </button>

@@ -13,6 +13,7 @@ export const ProductGalary = React.memo(({
                                             quantityInCart, 
                                             clickedProduct
                                         }) => {
+
     const { categoryName } = useParams();
     const currentProducts = categoryName === undefined ? products : products.filter(product => product.category === categoryName);
     const currentProduct = currentProducts.filter(product => product.name === clickedProduct)[0];
@@ -30,7 +31,6 @@ export const ProductGalary = React.memo(({
                     price={product.price}
                     secondaryImg={product.secondary_image}
                     handleProductClick={handleProductClick}
-                    // currentProducts={currentProducts}
                 />
                 ))}
                 {showQuickViewPage && 
@@ -42,14 +42,12 @@ export const ProductGalary = React.memo(({
                             >&times;
                         </button>
                         <QuickViewPage 
-                            // currentProduct={currentProduct}
-
-                            // getProductPage={getProductPage}
                             addItemToCart={addItemToCart}
                             handleQuantityInputChange={handleQuantityInputChange} 
                             quantityInCart={quantityInCart}
                             clickedProduct={clickedProduct}
                             currentProduct={currentProduct}
+                            hideQuickViewPage={hideQuickViewPage}
                         />
                     </div>
                 </div>

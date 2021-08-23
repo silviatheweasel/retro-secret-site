@@ -15,10 +15,9 @@ import { BrowserRouter as Router, Switch, Route, Redirect} from "react-router-do
 
 function App() {
   const categories = ["Necklaces", "Bracelets", "Rings", "Earrings"];
-  // const [currentProduct, setCurrentProduct] = useState(null);
 
   //retrieves data and saves data in products
-  const [products, setProducts] = useState(null);
+  const [products, setProducts] = useState([]);
   useEffect(() => {
     getProductData()
       .then((resolvedData) => {
@@ -28,6 +27,9 @@ function App() {
             setProducts(resolvedData);
           }
     })
+    return () => {
+      setProducts([]);
+    }
   }, []);
 
   const [clickedProduct, setClickedProduct] = useState("");
@@ -141,21 +143,6 @@ function App() {
   }
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  //if the screen is narrower or equal to 600px, updates the class names
-  // useEffect(()=> {
-  //   if (window.screen.width <= 600) {
-  //     if (isMobileMenuOpen) {
-  //       document.getElementById("site-title").classList.add("mobile-hidden");
-  //       document.getElementById("burger-nav-icon").classList.add("close-mobile");
-  //       document.getElementById("nav-bar-cart-btn").classList.replace("desktop", "mobile");
-  //     } else {
-  //       document.getElementById("site-title").classList.remove("mobile-hidden");
-  //       document.getElementById("burger-nav-icon").classList.remove("close-mobile");
-  //       document.getElementById("nav-bar-cart-btn").classList.replace("mobile", "desktop");
-  //     }
-  //     return;
-  //   }
-  // }, [isMobileMenuOpen]);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -248,6 +235,7 @@ function App() {
       <Route>
         <Footer />
       </Route>
+      <Route render={() => <Redirect to="/" />} />
     </div>
     </Router>
   );
