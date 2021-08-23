@@ -1,7 +1,6 @@
 import { NavLink, Link, useLocation } from "react-router-dom";
 
 export const MenuBar = ({
-                            currentCategory, 
                             categories,
                             setShowCart,
                             productsInCart,
@@ -32,7 +31,11 @@ export const MenuBar = ({
                             }
                         }}
                     >
-                        <Link to={window.screen.width <= 600 ? "/cart" : location.pathname}>
+                        <Link 
+                            to={window.screen.width <= 600 ? "/cart" : location.pathname}
+                            className="link"
+                            style={{color: "white"}}
+                        >
                             {productsInCart.length}
                         </Link>
                     </button>
@@ -41,11 +44,11 @@ export const MenuBar = ({
                             className="menu-item" 
                             key="home"  
                             onClick={handleMenuClick}
-                            style={{
-                                    color: currentCategory === "all" ? "#9E8765" : "black"
-                                    }}
+                        >
+                            <NavLink 
+                                exact to="/"
+                                className="nav-link"
                             >
-                            <NavLink to="/">
                                 Home
                             </NavLink>
                         </li>
@@ -55,12 +58,16 @@ export const MenuBar = ({
                                     key={"category" + i}
                                     className="menu-item" 
                                     onClick={handleMenuClick}
-                                    style={{color: currentCategory === category.toLowerCase() ? "#9E8765" : "black"}}
                                 >
-                                    <NavLink to={"/" + category.toLowerCase()}>
+                                    <NavLink 
+                                        to={"/" + category.toLowerCase()}
+                                        className="nav-link"
+                                    >
                                         {category}
                                     </NavLink>
-                                </li>))}
+                                </li>)
+                            )
+                        }
                     </ul>
                 </div>
             </>)
